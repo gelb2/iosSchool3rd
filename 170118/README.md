@@ -8,15 +8,14 @@
 2. 데이터 타입  
 3. 다형성
 
-> **그외 꿀팁**   
-> 
-> 1. 헤더, 소스 왔다갔다  
->    ``control + command + 위 or 아래``  
-> 2. 영문타자 연습 사이트  
->   <http://www.keybr.com>
+    > **그외 꿀팁**   
+    > 
+    > 1. 헤더, 소스 왔다갔다  
+    >    ``control + command + 위 or 아래``  
+    > 2. 영문타자 연습 사이트  
+    >   <http://www.keybr.com>
 
 ###매개변수를 가지는 메서드  
-> ** **프로젝트 참조  
 > 메서드 선언, 호출 방식이 독특한데  
 > Obejective-C에서 메서드를 호출할 때를, 메시지라고 부름  
 > 편지의 개념...이라 생각해볼 수 있을 듯  
@@ -65,9 +64,9 @@
   - 문자  
      - 단 하나의 문자를 표현 : char [Value Type]  
   - 문자열  
-     - 문장 또는 문단을 표현 : **NSString** [Reference Type]  
-- 형식지정자 (Format Specifiers)
-  > [Apple - String Format Specifiers](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)  
+     - 문장 또는 문단을 표현 : **NSString** [Reference Type]   
+- 형식지정자 (Format Specifiers)  
+   > [Apple - String Format Specifiers](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)  
   - %@, %%, %d, %ld ...
 
 
