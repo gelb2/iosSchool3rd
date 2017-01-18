@@ -1,12 +1,13 @@
-#####8번째 수업 / #2-3
-###실습 프로젝트
+#####8번째 수업 / #2-3  
+
+###실습 프로젝트  
 1. Day3  
 2. War  
 
 ###주제  
-1. 매개변수를 가지는 메서드
+1. 매개변수를 가지는 메서드  
 2. 데이터 타입  
-3. 다형성
+3. 다형성  
 
     > **그외 꿀팁**   
     > 
@@ -47,26 +48,26 @@
   - 값 : YES or NO  
 - 숫자 표현  
   - 정수  
-     > Objective-C에서는 int를 사용하지 않습니다.  
+      > Objective-C에서는 int를 사용하지 않습니다.  
      
      - 부호가 있는 정수 : NSInteger  
      - 부호가 없는 정수 : NSUInteger  
   - 실수  
-    > CGFloat 쓰는걸 추천
+      > CGFloat 쓰는걸 추천
   	 - 32bit 실수 표현 : float  
   	 - 64bit 실수 표현 : double  
   	 - Core Graphic용 실수 표현 : **CGFloat**  
   - 객체형  
-      > @ 뒤에 숫자를 써주었던 것이 객체로 사용한 것  
-      - NSNumber  
+       > @ 뒤에 숫자를 써주었던 것이 객체로 사용한 것  
+       - NSNumber  
       
 - 문자 표현     
   - 문자  
      - 단 하나의 문자를 표현 : char [Value Type]  
   - 문자열  
      - 문장 또는 문단을 표현 : **NSString** [Reference Type]   
-- 형식지정자 (Format Specifiers)  
-   > [Apple - String Format Specifiers](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)  
+- 형식지정자 (Format Specifiers)   
+     > [Apple - String Format Specifiers](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)    
   - %@, %%, %d, %ld ...
 
 
