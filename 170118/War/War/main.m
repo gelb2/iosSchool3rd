@@ -25,9 +25,8 @@ int main(int argc, const char * argv[]) {
     thranduil.name = @"스란두일";
     thranduil.hp = 75;
     thranduil.mp = 100;
-    thranduil.ap = 30;
+    thranduil.ap = 20;
     thranduil.def = 10;
-    
     
     
     // Barbarian vs Thranduil

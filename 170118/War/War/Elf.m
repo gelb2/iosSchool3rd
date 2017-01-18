@@ -13,7 +13,7 @@
 
 - (BOOL)attackTo:(Warrior *)warrior {
  
-    NSLog(@"%@(이)가 %@(을)를 공격!",self.name,warrior.name);
+    NSLog(@"%@(이)가 %@(을)를 공격!", self.name, warrior.name);
     NSInteger damage = self.ap - warrior.def;
     
     if(damage > 0) {
@@ -24,10 +24,12 @@
             return true;        // 끝
         }
         warrior.hp -= damage;
-        NSLog(@"%ld데미지를 입혔다!", damage);
+        NSLog(@"%ld 데미지를 입혔다!", damage);
         NSLog(@"%@ 남은 HP:%ld \n", warrior.name, warrior.hp);
+        
     } else {
-        NSLog(@"miss \n%@ 남은 HP:%lu \n", warrior.name, warrior.hp);
+        NSLog(@"miss");
+        NSLog(@"%@ 남은 HP:%lu \n", warrior.name, warrior.hp);
     }
     
     return false;   // 계속 싸움

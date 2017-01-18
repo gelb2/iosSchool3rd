@@ -13,7 +13,7 @@
 
 - (BOOL)attackTo:(Elf *)elf {
     
-    NSLog(@"%@(이)가 %@(을)를 공격!",self.name,elf.name);
+    NSLog(@"%@(이)가 %@(을)를 공격!", self.name, elf.name);
     NSInteger damage = self.ap - elf.def;
     
     if(damage > 0) {
@@ -24,10 +24,12 @@
             return true;        // 끝
         }
         elf.hp -= damage;
-        NSLog(@"%ld데미지를 입혔다!", damage);
+        NSLog(@"%ld 데미지를 입혔다!", damage);
         NSLog(@"%@ 남은 HP:%ld \n", elf.name, elf.hp);
+        
     } else {
-        NSLog(@"miss \n%@ 남은 HP:%lu \n", elf.name, elf.hp);
+        NSLog(@"miss");
+        NSLog(@"%@ 남은 HP:%lu \n", elf.name, elf.hp);
     }
     
     return false;       // 계속 싸움
