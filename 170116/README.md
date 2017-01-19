@@ -39,3 +39,10 @@ OOP는 객체 단위로 캡슐화하여 데이터와 메소드를 가지는데
 리턴 타입    |상관없음|동일
 
 
+
+
+참고자료
+
+- [위키백과] 객체 지향 프로그래밍 [https://ko.wikipedia.org/wiki/%EA%B0%9D%EC%B2%B4_%EC%A7%80%ED%96%A5_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D﻿]
+- [JAVA] 오버로딩(Overloading) 오버라이딩(Overriding) [http://hyeonstorage.tistory.com/185]
+- 캡슐화,은닉화(Encapsulation)-1 [http://schpritz1.tistory.com/152]
