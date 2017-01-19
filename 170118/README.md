@@ -47,19 +47,22 @@
 - 불리언 표현 (BOOL)  
   - 값 : YES or NO  
 - 숫자 표현  
-  - 정수  
-      > Objective-C에서는 int를 사용하지 않습니다.  
+  - 정수   
+ 
+        > Objective-C에서는 int를 사용하지 않습니다.  
      
      - 부호가 있는 정수 : NSInteger  
      - 부호가 없는 정수 : NSUInteger  
-  - 실수  
-      > CGFloat 쓰는걸 추천  
-      > (알아서  float, double 설정함)
+  - 실수   
+  
+        > CGFloat 쓰는걸 추천  
+        > (알아서  float, double 설정함)
   	 - 32bit 실수 표현 : float  
   	 - 64bit 실수 표현 : double  
   	 - Core Graphic용 실수 표현 : **CGFloat**  
   - 객체형  
-       > @ 뒤에 숫자를 써주었던 것이 객체로 사용한 것  
+  
+         > @ 뒤에 숫자를 써주었던 것이 객체로 사용한 것  
        - NSNumber  
       
 - 문자 표현     
@@ -68,11 +71,13 @@
   - 문자열  
      - 문장 또는 문단을 표현 : **NSString** [Reference Type]   
 - 형식지정자 (Format Specifiers)   
-     > [Apple - String Format Specifiers](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)    
+  
+   > [Apple - String Format Specifiers](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)  
+
   - %@, %%, %d, %ld ...
 
 
-###다형성(polymorphism)
+###다형성(polymorphism)  
 > 프로그램 언어의 각 요소들(상수, 변수, 식, 오브젝트, 함수, 메서드 등)이  
 > 다양한 데이터 타입에 속하는 것이 허가되는 성질
 
