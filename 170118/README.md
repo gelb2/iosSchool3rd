@@ -53,7 +53,8 @@
      - 부호가 있는 정수 : NSInteger  
      - 부호가 없는 정수 : NSUInteger  
   - 실수  
-      > CGFloat 쓰는걸 추천
+      > CGFloat 쓰는걸 추천  
+      > (알아서  float, double 설정함)
   	 - 32bit 실수 표현 : float  
   	 - 64bit 실수 표현 : double  
   	 - Core Graphic용 실수 표현 : **CGFloat**  
