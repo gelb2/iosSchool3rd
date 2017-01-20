@@ -23,7 +23,7 @@
    - 소스 구현부  
       * self = [super init] : NSObject의 init을 호출  
       * 왜 [super init]을 self로 받나? 객체 생성 때에 init한 것을 받는게 Hint임!  
-      (동일하게 init한 것을 해당 클래스 객체로 받아야 함)  
+      (main.m에서 인스턴스 만들 때와 동일하게 init한 것을 해당 클래스 객체로 받아야 함)  
 
       ```
         - (instancetype)initWithName:(NSString *)str {
