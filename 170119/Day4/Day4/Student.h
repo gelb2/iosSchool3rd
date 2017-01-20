@@ -10,7 +10,7 @@
 
 @interface Student : Person
 
-@property (readonly) NSString *grade;
+@property (readonly) NSString *grade;       // 읽기만 가능하게 은닉화
 
 - (void)study;
 //- (void)setGrade:(NSString *) grd;        // readonly한 후, 이렇게 프로퍼티 setter를 만들어주면 write까지 가능하게 되어버림;;

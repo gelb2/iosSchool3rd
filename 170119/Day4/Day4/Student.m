@@ -11,9 +11,7 @@
 
 @interface Student ()
 
-@property NSString *grade;
-
-
+@property NSString *grade;      // 내부에서는 쓸 수 있게함
 
 @end
 

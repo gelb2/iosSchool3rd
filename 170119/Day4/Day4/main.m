@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
     
     
     
-    // Override & Super Test
+    // #1 Override & Super Test
     NSLog(@"#1 Override & Super Test");
     
     [h1 eat];   // Person
@@ -30,14 +30,14 @@ int main(int argc, const char * argv[]) {
     
     
     
-    // Inheritance Test
+    // #2 Inheritance Test
     NSLog(@"#2 Inheritance Test");
     
     [h3 study];
     
     
     
-    // Overload Test
+    // #3 Overload Test
     NSLog(@"#3 Overload Test");
 
     [h3 goMT];
@@ -49,14 +49,14 @@ int main(int argc, const char * argv[]) {
 
     
     
-    // Inheritance & Overload Test
+    // #4 Inheritance & Overload Test
     NSLog(@"#4 Inheritance & Overload Test");
     
     [h3 talkTo:h3];     // Overload 했으나, 호출 형태가 부모클래스에 정의된 메소드 형태(헤더)임
     
     
     
-    // Hidden Test
+    // #5 Hidden Test
     NSLog(@"#5 Hidden Test");
     
 //    h1.idNumber = 920921;     // 은닉화로 접근(set) 불가
@@ -66,7 +66,7 @@ int main(int argc, const char * argv[]) {
     
     
     
-    // Inheritance & Hidden Test
+    // #6 Inheritance & Hidden Test
     NSLog(@"#6 Inheritance & Hidden Test");
 
     [h2 setIdNum:901105];
@@ -76,7 +76,7 @@ int main(int argc, const char * argv[]) {
     
     
     
-    // Inheritance & 속성 Override Test
+    // #7 Inheritance & 속성 Override Test
     NSLog(@"#7 Inheritance & 속성 Override Test");
     
     h3.idNumber = 19900521;             // public하게 오버라이딩
@@ -84,7 +84,7 @@ int main(int argc, const char * argv[]) {
     
     
     
-    // readonly property Test (은닉화를 하는데 read만 가능하게 만든 것)
+    // #8 readonly property Test (은닉화를 하는데 read만 가능하게 만든 것)
     NSLog(@"#8 readOnly property Test");
     
 //    h3.grade = @"A+";     // readonly 프로퍼티 set 불가
