@@ -31,8 +31,9 @@
       		self.name = str;
         }
       ```  
-      
-- init할 떄, 매개변수 상황에 따라 다르게 init할 수 있게 만든 예 (Day5 프로젝트 확인)  
+
+- 매개변수 없이 init, 매개변수 1개, 2개, 3개 넣고 init 등  
+  유연하게 init 할 수 있게 만든 예 (Day5 프로젝트 확인)  
     ```
     - (instancetype)initWithName:(NSString *)name {
   
