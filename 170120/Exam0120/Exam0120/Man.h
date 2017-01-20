@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Person.h"
+//#import "Bank.h" // m파일에서 제거하고 이렇게 넣어도 괜찮음
 
 //@class Bank;      // Person.h에 있으므로 없어도 됨
 
