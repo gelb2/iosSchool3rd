@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FE206C91E31E0A500A2E633 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206C81E31E0A500A2E633 /* main.m */; };
-		3FE206D11E31E0B900A2E633 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206D01E31E0B900A2E633 /* Person.m */; };
-		3FE206D41E31E0C400A2E633 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206D31E31E0C400A2E633 /* Bank.m */; };
-		3FE206D71E31E0D100A2E633 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206D61E31E0D100A2E633 /* Man.m */; };
-		3FE206DA1E31E0DC00A2E633 /* Woman.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206D91E31E0DC00A2E633 /* Woman.m */; };
+		3FE206E81E31F7AB00A2E633 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206E71E31F7AB00A2E633 /* main.m */; };
+		3FE206F61E31F7C200A2E633 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206F01E31F7C200A2E633 /* Person.m */; };
+		3FE206F71E31F7C200A2E633 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206F11E31F7C200A2E633 /* Bank.m */; };
+		3FE206F81E31F7C200A2E633 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206F21E31F7C200A2E633 /* Man.m */; };
+		3FE206F91E31F7C200A2E633 /* Woman.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE206F51E31F7C200A2E633 /* Woman.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3FE206C31E31E0A500A2E633 /* CopyFiles */ = {
+		3FE206E21E31F7AB00A2E633 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -27,20 +27,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3FE206C51E31E0A500A2E633 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FE206C81E31E0A500A2E633 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3FE206CF1E31E0B900A2E633 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		3FE206D01E31E0B900A2E633 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		3FE206D21E31E0C400A2E633 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
-		3FE206D31E31E0C400A2E633 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
-		3FE206D51E31E0D100A2E633 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
-		3FE206D61E31E0D100A2E633 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
-		3FE206D81E31E0DC00A2E633 /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
-		3FE206D91E31E0DC00A2E633 /* Woman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woman.m; sourceTree = "<group>"; };
+		3FE206E41E31F7AB00A2E633 /* Exam0120 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Exam0120; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FE206E71E31F7AB00A2E633 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FE206EE1E31F7C200A2E633 /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
+		3FE206EF1E31F7C200A2E633 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		3FE206F01E31F7C200A2E633 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		3FE206F11E31F7C200A2E633 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
+		3FE206F21E31F7C200A2E633 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		3FE206F31E31F7C200A2E633 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		3FE206F41E31F7C200A2E633 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
+		3FE206F51E31F7C200A2E633 /* Woman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woman.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3FE206C21E31E0A500A2E633 /* Frameworks */ = {
+		3FE206E11E31F7AB00A2E633 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,107 +50,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3FE206BC1E31E0A500A2E633 = {
+		3FE206DB1E31F7AB00A2E633 = {
 			isa = PBXGroup;
 			children = (
-				3FE206C71E31E0A500A2E633 /* Test */,
-				3FE206C61E31E0A500A2E633 /* Products */,
+				3FE206E61E31F7AB00A2E633 /* Exam0120 */,
+				3FE206E51E31F7AB00A2E633 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3FE206C61E31E0A500A2E633 /* Products */ = {
+		3FE206E51E31F7AB00A2E633 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3FE206C51E31E0A500A2E633 /* Test */,
+				3FE206E41E31F7AB00A2E633 /* Exam0120 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3FE206C71E31E0A500A2E633 /* Test */ = {
+		3FE206E61E31F7AB00A2E633 /* Exam0120 */ = {
 			isa = PBXGroup;
 			children = (
-				3FE206C81E31E0A500A2E633 /* main.m */,
-				3FE206CF1E31E0B900A2E633 /* Person.h */,
-				3FE206D01E31E0B900A2E633 /* Person.m */,
-				3FE206D21E31E0C400A2E633 /* Bank.h */,
-				3FE206D31E31E0C400A2E633 /* Bank.m */,
-				3FE206D51E31E0D100A2E633 /* Man.h */,
-				3FE206D61E31E0D100A2E633 /* Man.m */,
-				3FE206D81E31E0DC00A2E633 /* Woman.h */,
-				3FE206D91E31E0DC00A2E633 /* Woman.m */,
+				3FE206E71E31F7AB00A2E633 /* main.m */,
+				3FE206EF1E31F7C200A2E633 /* Person.h */,
+				3FE206F01E31F7C200A2E633 /* Person.m */,
+				3FE206F41E31F7C200A2E633 /* Bank.h */,
+				3FE206F11E31F7C200A2E633 /* Bank.m */,
+				3FE206F31E31F7C200A2E633 /* Man.h */,
+				3FE206F21E31F7C200A2E633 /* Man.m */,
+				3FE206EE1E31F7C200A2E633 /* Woman.h */,
+				3FE206F51E31F7C200A2E633 /* Woman.m */,
 			);
-			path = Test;
+			path = Exam0120;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3FE206C41E31E0A500A2E633 /* Test */ = {
+		3FE206E31E31F7AB00A2E633 /* Exam0120 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3FE206CC1E31E0A500A2E633 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = 3FE206EB1E31F7AB00A2E633 /* Build configuration list for PBXNativeTarget "Exam0120" */;
 			buildPhases = (
-				3FE206C11E31E0A500A2E633 /* Sources */,
-				3FE206C21E31E0A500A2E633 /* Frameworks */,
-				3FE206C31E31E0A500A2E633 /* CopyFiles */,
+				3FE206E01E31F7AB00A2E633 /* Sources */,
+				3FE206E11E31F7AB00A2E633 /* Frameworks */,
+				3FE206E21E31F7AB00A2E633 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Test;
-			productName = Test;
-			productReference = 3FE206C51E31E0A500A2E633 /* Test */;
+			name = Exam0120;
+			productName = Exam0120;
+			productReference = 3FE206E41E31F7AB00A2E633 /* Exam0120 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3FE206BD1E31E0A500A2E633 /* Project object */ = {
+		3FE206DC1E31F7AB00A2E633 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = JeheonChoi;
 				TargetAttributes = {
-					3FE206C41E31E0A500A2E633 = {
+					3FE206E31E31F7AB00A2E633 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 3FE206C01E31E0A500A2E633 /* Build configuration list for PBXProject "Test" */;
+			buildConfigurationList = 3FE206DF1E31F7AB00A2E633 /* Build configuration list for PBXProject "Exam0120" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 3FE206BC1E31E0A500A2E633;
-			productRefGroup = 3FE206C61E31E0A500A2E633 /* Products */;
+			mainGroup = 3FE206DB1E31F7AB00A2E633;
+			productRefGroup = 3FE206E51E31F7AB00A2E633 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3FE206C41E31E0A500A2E633 /* Test */,
+				3FE206E31E31F7AB00A2E633 /* Exam0120 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3FE206C11E31E0A500A2E633 /* Sources */ = {
+		3FE206E01E31F7AB00A2E633 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE206D71E31E0D100A2E633 /* Man.m in Sources */,
-				3FE206D11E31E0B900A2E633 /* Person.m in Sources */,
-				3FE206C91E31E0A500A2E633 /* main.m in Sources */,
-				3FE206D41E31E0C400A2E633 /* Bank.m in Sources */,
-				3FE206DA1E31E0DC00A2E633 /* Woman.m in Sources */,
+				3FE206F81E31F7C200A2E633 /* Man.m in Sources */,
+				3FE206F61E31F7C200A2E633 /* Person.m in Sources */,
+				3FE206E81E31F7AB00A2E633 /* main.m in Sources */,
+				3FE206F71E31F7C200A2E633 /* Bank.m in Sources */,
+				3FE206F91E31F7C200A2E633 /* Woman.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3FE206CA1E31E0A500A2E633 /* Debug */ = {
+		3FE206E91E31F7AB00A2E633 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,7 +197,7 @@
 			};
 			name = Debug;
 		};
-		3FE206CB1E31E0A500A2E633 /* Release */ = {
+		3FE206EA1E31F7AB00A2E633 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -237,14 +237,14 @@
 			};
 			name = Release;
 		};
-		3FE206CD1E31E0A500A2E633 /* Debug */ = {
+		3FE206EC1E31F7AB00A2E633 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		3FE206CE1E31E0A500A2E633 /* Release */ = {
+		3FE206ED1E31F7AB00A2E633 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -254,24 +254,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3FE206C01E31E0A500A2E633 /* Build configuration list for PBXProject "Test" */ = {
+		3FE206DF1E31F7AB00A2E633 /* Build configuration list for PBXProject "Exam0120" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FE206CA1E31E0A500A2E633 /* Debug */,
-				3FE206CB1E31E0A500A2E633 /* Release */,
+				3FE206E91E31F7AB00A2E633 /* Debug */,
+				3FE206EA1E31F7AB00A2E633 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3FE206CC1E31E0A500A2E633 /* Build configuration list for PBXNativeTarget "Test" */ = {
+		3FE206EB1E31F7AB00A2E633 /* Build configuration list for PBXNativeTarget "Exam0120" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FE206CD1E31E0A500A2E633 /* Debug */,
-				3FE206CE1E31E0A500A2E633 /* Release */,
+				3FE206EC1E31F7AB00A2E633 /* Debug */,
+				3FE206ED1E31F7AB00A2E633 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3FE206BD1E31E0A500A2E633 /* Project object */;
+	rootObject = 3FE206DC1E31F7AB00A2E633 /* Project object */;
 }

@@ -1,6 +1,6 @@
 //
 //  Man.h
-//  Test
+//  Exam0120
 //
 //  Created by Jeheon Choi on 2017. 1. 20..
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
