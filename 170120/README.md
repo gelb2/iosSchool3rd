@@ -21,12 +21,13 @@
      ```  
      
    - 소스 구현부  
-      
-       > 추측하건대 NSObject의 init을 호출하는 것일 듯  
-       
+      * self = [super init] : NSObject의 init을 호출  
+      * 왜 [super init]을 self로 받나? 객체 생성 때에 init한 것을 받는게 Hint임!  
+      (동일하게 init한 것을 해당 클래스 객체로 받아야 함)  
+
       ```
-      - (instancetype)initWithName:(NSString *)str {
+        - (instancetype)initWithName:(NSString *)str {
       		self = [super init];
       		self.name = str;
-      }
+        }
       ```  
