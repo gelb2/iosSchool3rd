@@ -6,8 +6,12 @@
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Person.h"
 
-@interface Man : NSObject
+@interface Man : Person
+
+- (void)depositTo:(Bank *)bank amount:(NSUInteger)money;
+- (void)makeCardFrom:(Bank *)bank;
+
 
 @end

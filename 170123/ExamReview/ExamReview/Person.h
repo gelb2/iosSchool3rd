@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Bank.h"
 
 @interface Person : NSObject
+
+@property NSString *name;
+@property NSInteger asset;
+
+- (void)depositTo:(Bank *)bank amount:(NSUInteger)money;
+
+- (void)checkAccount:(Bank *)bank;
 
 @end

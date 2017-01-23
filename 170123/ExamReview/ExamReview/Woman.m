@@ -7,7 +7,12 @@
 //
 
 #import "Woman.h"
+//#import "Bank.h"
 
 @implementation Woman
+
+- (void)updateBankbook:(Bank *)bank {
+    NSLog(@"%@가 %@은행에서 통장정리를 하였습니다.", self.name, bank.name);
+}
 
 @end

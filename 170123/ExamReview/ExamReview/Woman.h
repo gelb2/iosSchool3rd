@@ -6,8 +6,10 @@
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Person.h"
 
-@interface Woman : NSObject
+@interface Woman : Person
+
+- (void)updateBankbook:(Bank *)bank;
 
 @end

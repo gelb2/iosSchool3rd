@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class Person;
+
 @interface Bank : NSObject
+
+@property NSString *name;
+@property NSString *location;
+
+- (void)moveTo:(NSString *)location;
+- (void)transferTo:(Person *)toPerson from:(Person *)fromPerson amount:(NSUInteger)money;
 
 @end

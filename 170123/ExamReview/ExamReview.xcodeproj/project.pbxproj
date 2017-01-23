@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3FD704D71E359043000B8193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD704D61E359043000B8193 /* main.m */; };
+		3FD704DF1E359054000B8193 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD704DE1E359054000B8193 /* Person.m */; };
+		3FD704E21E35905F000B8193 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD704E11E35905F000B8193 /* Bank.m */; };
+		3FD704E51E35906A000B8193 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD704E41E35906A000B8193 /* Man.m */; };
+		3FD704E81E359073000B8193 /* Woman.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD704E71E359073000B8193 /* Woman.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		3FD704D31E359043000B8193 /* ExamReview */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExamReview; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD704D61E359043000B8193 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FD704DD1E359054000B8193 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		3FD704DE1E359054000B8193 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		3FD704E01E35905F000B8193 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
+		3FD704E11E35905F000B8193 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
+		3FD704E31E35906A000B8193 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		3FD704E41E35906A000B8193 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		3FD704E61E359073000B8193 /* Woman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woman.h; sourceTree = "<group>"; };
+		3FD704E71E359073000B8193 /* Woman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woman.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				3FD704D61E359043000B8193 /* main.m */,
+				3FD704DD1E359054000B8193 /* Person.h */,
+				3FD704DE1E359054000B8193 /* Person.m */,
+				3FD704E01E35905F000B8193 /* Bank.h */,
+				3FD704E11E35905F000B8193 /* Bank.m */,
+				3FD704E31E35906A000B8193 /* Man.h */,
+				3FD704E41E35906A000B8193 /* Man.m */,
+				3FD704E61E359073000B8193 /* Woman.h */,
+				3FD704E71E359073000B8193 /* Woman.m */,
 			);
 			path = ExamReview;
 			sourceTree = "<group>";
@@ -119,7 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD704E51E35906A000B8193 /* Man.m in Sources */,
+				3FD704DF1E359054000B8193 /* Person.m in Sources */,
 				3FD704D71E359043000B8193 /* main.m in Sources */,
+				3FD704E21E35905F000B8193 /* Bank.m in Sources */,
+				3FD704E81E359073000B8193 /* Woman.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
