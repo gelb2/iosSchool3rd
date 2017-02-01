@@ -62,10 +62,8 @@ int main(int argc, const char * argv[]) {
     
     
     // switch 문제 : 월의 마지막날 구하기
-    Quiz *q1 = [[Quiz alloc] init];
-    
     for (int i=1 ; i<13 ; i++) {
-        [q1 lastDayOfMonth:i];
+        [Quiz lastDayOfMonth:i];
     }
     
     

@@ -10,13 +10,16 @@
 
 @implementation Toolbox
 
+
+// Class Method 문제 : 디벨로퍼인가?
+
 + (BOOL)isDevloper:(Person *)person {
     if([person.job isEqualToString:@"Developer"]) {     // if (![person.job compare:@"Developer"])
         NSLog(@"%@은 Developer다.", person.name);
         return TRUE;
     }
     else {
-        NSLog(@"%@은 Developer가 아니다.", person.name);
+        NSLog(@"%@(은)는 Developer가 아니다.", person.name);
         return FALSE;
     }
 }

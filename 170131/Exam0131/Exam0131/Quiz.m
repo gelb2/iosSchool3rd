@@ -10,7 +10,8 @@
 
 @implementation Quiz
 
-- (NSInteger)lastDayOfMonth:(NSInteger)month {
+// switch 문제 : 월의 마지막날 구하기
++ (NSInteger)lastDayOfMonth:(NSInteger)month {
     //윤년 무시
     int day = 0;
     
@@ -30,5 +31,6 @@
     NSLog(@"%ld월의 마지막날은 %d일입니다.", month, day);
     return day;
 }
+
 
 @end

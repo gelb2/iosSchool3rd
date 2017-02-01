@@ -10,6 +10,8 @@
 
 @interface Toolbox : Person
 
+
+// Class Method 문제 : 디벨로퍼인가?
 + (BOOL)isDevloper:(Person *)person;
 
 @end

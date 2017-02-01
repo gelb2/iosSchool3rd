@@ -12,6 +12,10 @@
 
 @property NSInteger month;
 
-- (NSInteger)lastDayOfMonth:(NSInteger)month;
+
+// switch 문제 : 월의 마지막날 구하기
++ (NSInteger)lastDayOfMonth:(NSInteger)month;
+
+
 
 @end
