@@ -2,13 +2,14 @@
 
 ###프로젝트명
 - StarQuiz  (연습문제)
+- Day16 (UI View)
 
 ###주제  
 - iOS구조 파악
 - UI Base Guide 학습
 
 #내용  
-###연습문제  
+###연습문제(StarQuiz)  
 - 개수와 모드에 맞춰 별찍기
 
 ```    
