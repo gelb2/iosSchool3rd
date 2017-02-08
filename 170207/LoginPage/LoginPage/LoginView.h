@@ -13,6 +13,8 @@
 
 @interface LoginView : UIScrollView
 
+@property (nonatomic, weak) id <LoginViewDelegate> delegate;
+
 - (void)setLoginViews;
 
 @end
@@ -20,6 +22,6 @@
 
 @protocol LoginViewDelegate <NSObject>
 
-
+- (BOOL)selectedLoginBtnWithID:(NSString *)ID withPW:(NSString *)PW;
 
 @end
