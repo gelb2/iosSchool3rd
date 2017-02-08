@@ -4,10 +4,10 @@
 - PokemonBack  
 
 
-###내용      
+### 대표적으로 사용된 View들
 - UIView
-- UIImageView, UIImage
-- UILabel, UIFont
+- UIImageView
+- UILabel
 - UIButton
 - UIScrollView
 
