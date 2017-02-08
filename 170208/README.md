@@ -4,31 +4,23 @@
 
 ##포인터 pointer
 ###Memory구조  
-
 ###Pointer  
 
 ##Value & Reference  
-
 ###구조체 struct  
-
 ###typedef 별명 짓기  
 ```objc
 typedef <데이터타입> <이름>;
-```
-
+```  
 ###구조체 vs 클래스
 
 
 
 ##배열 array  
 ###Array  
-
 ###Linked List   
-
 ###NSArray  
-
 ###NSMutableArray  
-
 ###Dictionary
 
 
