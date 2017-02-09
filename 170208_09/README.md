@@ -1,6 +1,6 @@
 ####2017.02.08 - #20 (5주차 3번째 수업)
 
-#자료구조
+#자료구조 1
 
 ##포인터 pointer
 ###Memory구조  
@@ -21,6 +21,13 @@ typedef <데이터타입> <이름>;
 ###Linked List   
 ###NSArray  
 ###NSMutableArray  
+NSMutableArray는 NSArray와 다르게 리터럴 표현이 안된다!!!!!!!!!!!!!!!!
+```objc  
+NSMutableArray *arr = @[@5,@4,@2,@3,@1];    // 
+
+NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:@[@5,@4,@2,@3,@1]];
+```  
+
 ###Dictionary
 
 
@@ -58,7 +65,7 @@ typedef <데이터타입> <이름>;
 }
 ```
 
-##과제
+##과제 (170208)
 ###Literal문법 알아보기  
 
 리터럴이란, **컴파일시 프로그램 내에 정의되어 있는 그대로 정확히 해석되어야 할 값**을 의미한다. 이에 비해, 변수란 프로그램의 실행 중에 상황에 따라 다른 값들을 표현할 수 있으며, 상수는 프로그램 실행 중 늘 같은 값을 표현한다. 그러나 리터럴은 명칭이 아니라, 값 그 자체이다. 예를 들어 아래의 수식에서 "x"는 변수이며 "7"은 리터럴이다.
@@ -75,9 +82,6 @@ typedef <데이터타입> <이름>;
 - [위키백과 - "리터럴"](https://ko.wikipedia.org/wiki/%EB%A6%AC%ED%84%B0%EB%9F%B4)  
 - [텀즈 - "리터럴" ](http://www.terms.co.kr/literal.htm)  
 - [블로그 - "Objective-C 리터럴(Literal) 문법"](http://blog.naver.com/PostView.nhn?blogId=itperson&logNo=220822481437&redirect=Dlog&widgetTypeCall=true)  
-
-
-
 
 
 ###JSON 알아보기
@@ -98,3 +102,9 @@ JSON(JavaScript Object Notation)은 속성-값 쌍으로 이루어진 데이터 
 #####JSON 참고자료  
 - [위키백과 - "JSON"](https://ko.wikipedia.org/wiki/JSON)  
 - [JSON - "JSON" ](http://www.json.org/json-ko.html)  
+
+
+
+
+
+
