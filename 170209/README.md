@@ -32,7 +32,22 @@ for (NSString *k in dic1)
 ####selection sort (선택 정렬)    
 
 ```objc
-
+- (NSMutableArray *)selectionSortWithArr:(NSMutableArray *)arr
+{
+    NSUInteger i, j, minIndex;
+    
+    for (i=0 ; i < arr.count-1 ; i++) {
+        minIndex = i;
+        for (j=minIndex+1 ; j < arr.count ; j++) {
+            if (arr[j] <= arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        [arr exchangeObjectAtIndex:i withObjectAtIndex:minIndex];
+    }
+    
+    return arr;
+}
 ```  
 
 ####insertion sort (삽입 정렬)  

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BubbleSort.xcodeproj">
+      location = "self:MorningAlgorithm.xcodeproj">
    </FileRef>
 </Workspace>

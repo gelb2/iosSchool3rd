@@ -1,8 +1,8 @@
 //
 //  main.m
-//  BubbleSort
+//  MorningAlgorithm
 //
-//  Created by Jeheon Choi on 2017. 2. 9..
+//  Created by Jeheon Choi on 2017. 2. 10..
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
 //
 
