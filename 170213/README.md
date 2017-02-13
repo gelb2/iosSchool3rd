@@ -19,7 +19,7 @@ TextField로 입력받은 숫자가 Harshad Number인지 아닌지 알아내기 
         sum += p/q;
     }
     
-    if((float)num/sum - num/sum == 0) {     // num % sum이 더 간결한듯
+    if((float)num/sum - num/sum == 0) {     // num % sum == 0 이 더 간결한듯
         return TRUE;
     }
     return FALSE;
