@@ -8,10 +8,10 @@ ex) 12의 약수 = 1, 2, 3, 4, 6, 12 -> 약수 sum = 28
 ####A.  
 ```objc
 - (NSInteger)factorsSumWithNum:(NSInteger)num {
-    NSInteger sum = 1;  // 1은 모든 수의 약수, 일단 갖고 시작함
-    NSMutableArray *arr = [[NSMutableArray alloc] initWithObjects:@"1", nil];
+    NSInteger sum = 0;
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
     
-    for (NSInteger i = 2; i <= num; i++) {
+    for (NSInteger i = 1; i <= num; i++) {
         if (num % i == 0) {
             sum += i;
             [arr addObject:[NSString stringWithFormat:@"%ld", i]];
