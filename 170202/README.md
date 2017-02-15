@@ -12,16 +12,73 @@
 ###연습문제(StarQuiz)  
 - 개수와 모드에 맞춰 별찍기
 
-```    
-  1 -> ***     2 -> *   
-       **           **  
-       *            ***  
-  
-   
-  3 ->   *     4 ->  *  
-        **          * *  
-       ***         * * *  
+```objc    
+//  1 -> ***     2 -> *   
+//       **           **  
+//       *            ***  
+     
+//  3 ->   *     4 ->  *  
+//        **          * *  
+//       ***         * * *  
+       
++ (void)starStar:(NSUInteger)starNum mode:(NSUInteger)modeNum {
+    NSLog(@"starNum: %lu, mode: %lu", starNum, modeNum);
+
+    NSString *starStr = [[NSString alloc] init];
+    
+    for (NSUInteger i = 0 ; i < starNum ; i++) {
+        
+        switch (modeNum) {
+            case 1:
+                for (NSUInteger j = 0 ; j < starNum - i ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@"*"];
+                }
+                
+                for (NSUInteger j = 0 ; j < i ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@" "];
+                }
+                
+                break;
+                
+            case 2:
+                for (NSUInteger j = 0 ; j <= i ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@"*"];
+                }
+                
+                break;
+                
+            case 3:
+                for (NSUInteger j = 0 ; j < starNum - i -1 ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@" "];
+                }
+                
+                for (NSUInteger j = 0 ; j <= i ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@"*"];
+                }
+                
+                break;
+                
+            case 4:
+                for (NSUInteger j = i ; j < starNum - 1 ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@" "];
+                }
+                
+                for (NSUInteger j = starNum - i ; j <= starNum ; j++) {
+                    starStr = [starStr stringByAppendingFormat:@"*"];
+                    starStr = [starStr stringByAppendingFormat:@" "];
+                }
+                
+                break;
+        }
+
+        NSLog(@"%@", starStr);  // Log찍고
+        starStr = @"";          // 값 초기화
+    }
+}
+       
+       
 ```  
+
 
 
 
