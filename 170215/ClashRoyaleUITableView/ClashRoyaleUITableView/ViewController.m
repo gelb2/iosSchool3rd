@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  AnimalUITableView
+//  ClashRoyaleUITableView
 //
-//  Created by Jeheon Choi on 2017. 2. 15..
+//  Created by Jeheon Choi on 2017. 2. 16..
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
 //
 
@@ -67,13 +67,13 @@
     myLabel.font = [UIFont boldSystemFontOfSize:18];
     myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
     [myLabel setTextAlignment:NSTextAlignmentCenter];
-    [myLabel setBackgroundColor:[UIColor whiteColor]];
     
     UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, myLabel.frame.size.height + 10, myLabel.frame.size.width, 2)];
     [bottomLine setBackgroundColor:[UIColor lightGrayColor]];
     [myLabel addSubview:bottomLine];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [headerView setBackgroundColor:[UIColor whiteColor]];
     
     [headerView addSubview:myLabel];
     [headerView addSubview:bottomLine];
