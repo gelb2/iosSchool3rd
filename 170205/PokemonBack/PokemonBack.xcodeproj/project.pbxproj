@@ -118,6 +118,7 @@
 				TargetAttributes = {
 					3F82D0861E47470F009DB341 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JVMFT5G5K6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -280,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JVMFT5G5K6;
 				INFOPLIST_FILE = PokemonBack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jereator.PokemonBack;
@@ -291,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JVMFT5G5K6;
 				INFOPLIST_FILE = PokemonBack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jereator.PokemonBack;
@@ -317,6 +320,7 @@
 				3F82D0A01E47470F009DB341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

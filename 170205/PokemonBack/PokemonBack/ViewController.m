@@ -10,7 +10,7 @@
 #import "ItemBtn.h"
 
 @interface ViewController ()
-
+<UIScrollViewDelegate>
 
 @property NSInteger myCoin;
 @property UILabel *myCoinLabel;
@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     self.myCoin = 50;
-    self.realMoney = 0;
+    self.realMoney = 0.0;
 
     
     // Shop Scroll View
@@ -249,7 +249,7 @@
     [item4Label setTextAlignment:NSTextAlignmentCenter];
     [item4View addSubview:item4Label];
     
-    // - - item4BtnView 버튼 이해 부족..
+    // - - item4BtnView
     UIView *item4BtnView = [[UIView alloc] initWithFrame:CGRectMake(20, item4ImgView.frame.size.height + item4Label.frame.size.height + 4, item4View.frame.size.width - 40, 20)];
     item4BtnView.backgroundColor = [UIColor colorWithRed:230/255.0 green:241/255.0 blue:222/255.0 alpha:1];
     [item4BtnView.layer setCornerRadius:3];
@@ -292,7 +292,7 @@
     [item5Label setTextAlignment:NSTextAlignmentCenter];
     [item5View addSubview:item5Label];
     
-    // - - item5BtnView 버튼 이해 부족..
+    // - - item5BtnView
     UIView *item5BtnView = [[UIView alloc] initWithFrame:CGRectMake(20, item5ImgView.frame.size.height + item5Label.frame.size.height + 4, item5View.frame.size.width - 40, 20)];
     item5BtnView.backgroundColor = [UIColor colorWithRed:230/255.0 green:241/255.0 blue:222/255.0 alpha:1];
     [item5BtnView.layer setCornerRadius:3];
@@ -416,6 +416,7 @@
     ItemBtn *coin1Btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
     coin1Btn.frame = CGRectMake(0, 0, coin1View.frame.size.width - 40, 20);
     [coin1Btn setTitle:@"US$1.09" forState:UIControlStateNormal];
+    coin1Btn.tag = 109;
     coin1Btn.value = 100;
     [coin1Btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [coin1Btn.titleLabel setTextAlignment:NSTextAlignmentRight];
@@ -450,6 +451,7 @@
     ItemBtn *coin2Btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
     coin2Btn.frame = CGRectMake(0, 0, coin2View.frame.size.width - 40, 20);
     [coin2Btn setTitle:@"US$5.49" forState:UIControlStateNormal];
+    coin2Btn.tag = 549;
     coin2Btn.value = 500;
     [coin2Btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [coin2Btn.titleLabel setTextAlignment:NSTextAlignmentRight];
@@ -484,6 +486,7 @@
     ItemBtn *coin3Btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
     coin3Btn.frame = CGRectMake(0, 0, coin3View.frame.size.width - 40, 20);
     [coin3Btn setTitle:@"US$10.99" forState:UIControlStateNormal];
+    coin3Btn.tag = 1099;
     coin3Btn.value = 1200;
     [coin3Btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [coin3Btn.titleLabel setTextAlignment:NSTextAlignmentRight];
@@ -517,6 +520,7 @@
     ItemBtn *coin4Btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
     coin4Btn.frame = CGRectMake(0, 0, coin4View.frame.size.width - 40, 20);
     [coin4Btn setTitle:@"US$21.99" forState:UIControlStateNormal];
+    coin4Btn.tag = 2199;
     coin4Btn.value = 2500;
     [coin4Btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [coin4Btn.titleLabel setTextAlignment:NSTextAlignmentRight];
@@ -551,6 +555,7 @@
     ItemBtn *coin5Btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
     coin5Btn.frame = CGRectMake(0, 0, coin5View.frame.size.width - 40, 20);
     [coin5Btn setTitle:@"US$43.99" forState:UIControlStateNormal];
+    coin5Btn.tag = 4399;
     coin5Btn.value = 5200;
     [coin5Btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [coin5Btn.titleLabel setTextAlignment:NSTextAlignmentRight];
@@ -585,6 +590,7 @@
     ItemBtn *coin6Btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
     coin6Btn.frame = CGRectMake(0, 0, coin6View.frame.size.width - 40, 20);
     [coin6Btn setTitle:@"US$109.99" forState:UIControlStateNormal];
+    coin6Btn.tag = 10999;
     coin6Btn.value = 14500;
     [coin6Btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [coin6Btn.titleLabel setTextAlignment:NSTextAlignmentRight];
@@ -635,13 +641,17 @@
     
     
     if (self.myCoin + sender.value < 0) {
+        [self.stateLabel setFrame:CGRectMake(0, 200, 150, 30)];
+        self.stateLabel.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2 + 200);
         NSLog(@"잔액이 부족합니다.");
         self.stateLabel.text = @"잔액이 부족합니다.";
         self.stateLabel.backgroundColor = [UIColor colorWithRed:230/255.0 green:241/255.0 blue:222/255.0 alpha:0.8];
         [self.stateLabel setTextColor:[UIColor colorWithRed:57/255.0 green:85/255.0 blue:82/255.0 alpha:1]];
     } else if (sender.value > 0) {
-        self.realMoney += [sender.currentTitle floatValue];
-        self.stateLabel.text = [NSString stringWithFormat:@"%지금까지 총 $%.2f 현질하였습니다.", self.realMoney];
+        self.realMoney += (float)sender.tag/100;
+        [self.stateLabel setFrame:CGRectMake(0, 200, self.view.frame.size.width-100, 30)];
+        self.stateLabel.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2 + 200);
+        self.stateLabel.text = [NSString stringWithFormat:@"지금까지 총 $%.2f 현질하였습니다.", self.realMoney];
         self.stateLabel.backgroundColor = [UIColor colorWithRed:230/255.0 green:241/255.0 blue:222/255.0 alpha:0.8];
         [self.stateLabel setTextColor:[UIColor colorWithRed:57/255.0 green:85/255.0 blue:82/255.0 alpha:1]];
         
@@ -649,6 +659,8 @@
         [self.myCoinLabel setText:[NSString stringWithFormat:@"%ld",self.myCoin]];
         
     } else {
+        [self.stateLabel setFrame:CGRectMake(0, 200, self.view.frame.size.width-100, 30)];
+        self.stateLabel.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2 + 200);
         self.stateLabel.text = [NSString stringWithFormat:@"%ld Pokecoins 결제하였습니다.", -sender.value];
         self.stateLabel.backgroundColor = [UIColor colorWithRed:230/255.0 green:241/255.0 blue:222/255.0 alpha:0.8];
         [self.stateLabel setTextColor:[UIColor colorWithRed:57/255.0 green:85/255.0 blue:82/255.0 alpha:1]];
