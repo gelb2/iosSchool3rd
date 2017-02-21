@@ -13,7 +13,7 @@
 @interface CustomTableViewCell ()
 
 // Info Labels
-@property (nonatomic, weak) UILabel *termLabel;
+@property  UILabel *termLabel;
 @property (nonatomic, weak) UILabel *nameLabel;
 @property (nonatomic, weak) UILabel *percentLabel;
 
@@ -121,7 +121,7 @@
     [separatorLine setBackgroundColor:[UIColor whiteColor]];
     [self.contentView addSubview:separatorLine];
     self.separatorLine = separatorLine;
-    
+
 }
 
 - (void)updateLayout {

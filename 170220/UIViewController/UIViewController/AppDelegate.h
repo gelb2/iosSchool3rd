@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  AtCopyApp
+//  UIViewController
 //
-//  Created by Jeheon Choi on 2017. 2. 19..
+//  Created by Jeheon Choi on 2017. 2. 20..
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
 //
 
@@ -11,6 +11,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
 
 @end
 
