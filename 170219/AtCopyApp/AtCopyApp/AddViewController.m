@@ -13,16 +13,12 @@
 @interface AddViewController ()
 <UITableViewDelegate, UITableViewDataSource, CustomUINavigationBarDelegate>
 
-@property NSArray *dataArr;
-
 @end
 
 @implementation AddViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.dataArr = @[@[],@[],@[]];
     
     [self createAndLayoutSubviews];
     
@@ -32,7 +28,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 /////////////// UI Setting ///////////////
@@ -73,6 +68,20 @@
 
 /////////////// UITableView ///////////////
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] init];
+    [headerView setBackgroundColor:[UIColor whiteColor]];
+    
+    
+    
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 75;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
 }
@@ -86,9 +95,20 @@
     cell.textLabel.text = @"Hahahaha";
     
     UISwitch *switcher = [[UISwitch alloc] init];
+    switcher.tag = indexPath.row;
+    [switcher addTarget:self action:@selector(selectedSwitch:) forControlEvents:UIControlEventValueChanged];
     cell.accessoryView = switcher;
     
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"Switch%ld",switcher.tag]]) {
+        switcher.on = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"Switch%ld",switcher.tag]];
+    }
+    
     return cell;
+}
+
+- (void)selectedSwitch:(UISwitch *)sender {    
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on forKey:[NSString stringWithFormat:@"Switch%ld", sender.tag]];
 }
 
 

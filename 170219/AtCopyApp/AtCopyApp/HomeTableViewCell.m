@@ -13,7 +13,7 @@
 @interface HomeTableViewCell ()
 
 // Info Labels
-@property  UILabel *termLabel;
+@property (nonatomic, weak) UILabel *termLabel;
 @property (nonatomic, weak) UILabel *nameLabel;
 @property (nonatomic, weak) UILabel *percentLabel;
 
@@ -50,6 +50,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.percent = 0;
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self createSubviews];
         [self updateLayout];
         //        [self test];
@@ -144,8 +145,12 @@
     offsetX = MARGIN;
     offsetY = self.frame.size.height * 4/5;
     self.backgroundBar.frame = CGRectMake(offsetX, offsetY, self.frame.size.width - MARGIN*2, 12);
-    
+  
     self.statusBar.frame = CGRectMake(0, 0, self.backgroundBar.frame.size.width * self.percent / 100.0, self.backgroundBar.frame.size.height);
+    
+    
+//    [self updateLayoutAndAnimationViewsWithAnimationDuration:0.7];
+    
     
     // Status Character
     self.character.frame = CGRectMake(0, 0, self.frame.size.width/16, self.frame.size.height/3);
@@ -161,12 +166,36 @@
         self.speechBalloon.frame = CGRectMake(-self.character.frame.size.width * 4, 5, self.character.frame.size.width * 4, self.character.frame.size.height/2);
         self.speechBalloonLabel.frame = CGRectMake(3, -2, self.speechBalloon.frame.size.width*5/6, self.speechBalloon.frame.size.height);
     }
-    
+
     
     // Cell SeparatorLine
     self.separatorLine.frame = CGRectMake(0, self.frame.size.height - 0.8, self.frame.size.width, 0.8);
     
 }
+
+- (void)updateLayoutAndAnimationViewsWithAnimationDuration:(CGFloat)time {
+    self.statusBar.frame = CGRectMake(0, 0, 0, self.backgroundBar.frame.size.height);   // 애니메이션 시작 프레임 초기화
+    
+//    time
+//    self.statusBar.frame = CGRectMake(0, 0, self.backgroundBar.frame.size.width * self.percent / 100.0, self.backgroundBar.frame.size.height);
+    CGFloat width = self.backgroundBar.frame.size.width * self.percent / 100.0;
+    NSLog(@"%lf", width);
+    
+    [UIView animateWithDuration:time animations:^{
+   
+        
+        // Status Bar
+        CGRect statusBarFrame = self.statusBar.frame;
+        statusBarFrame.size.width += 100.0f;
+        self.statusBar.frame = statusBarFrame;
+        
+        // Status Character
+        
+        NSLog(@"statusBarWidth : %lf", self.statusBar.frame.size.width);
+        
+    }];
+}
+
 
 - (void)test {
     [self setBackgroundColor:[UIColor grayColor]];

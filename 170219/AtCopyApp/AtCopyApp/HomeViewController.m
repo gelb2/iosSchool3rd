@@ -15,7 +15,7 @@
 @interface HomeViewController ()
 <UITableViewDelegate, UITableViewDataSource, CustomUINavigationBarDelegate>
 
-@property NSArray *dataArr;
+@property (nonatomic) NSArray *dataArr;
 
 @end
 

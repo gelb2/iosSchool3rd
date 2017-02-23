@@ -10,7 +10,7 @@
 
 @interface CustomUINavigationBar ()
 
-@property NSInteger currentNaviType;
+@property (nonatomic) NSInteger currentNaviType;
 
 @end
 

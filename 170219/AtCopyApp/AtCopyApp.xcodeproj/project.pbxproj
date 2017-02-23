@@ -14,6 +14,7 @@
 		3F1A722F1E59B3A80013D1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A722D1E59B3A80013D1C1 /* LaunchScreen.storyboard */; };
 		3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A723D1E59D3170013D1C1 /* DDay.m */; };
 		3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */; };
+		3F72B4671E5EB5150000D878 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F72B4661E5EB5150000D878 /* DataCenter.m */; };
 		3F97E8A01E5B075200836432 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F97E89F1E5B075200836432 /* AddViewController.m */; };
 		3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */; };
 		3FF3D0F01E5D747F00CCF9AA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EB1E5D747F00CCF9AA /* back.png */; };
@@ -40,6 +41,8 @@
 		3F1A723D1E59D3170013D1C1 /* DDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDay.m; sourceTree = "<group>"; };
 		3F1A72421E59EEC10013D1C1 /* StatusCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCharacter.h; sourceTree = "<group>"; };
 		3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCharacter.m; sourceTree = "<group>"; };
+		3F72B4651E5EB5150000D878 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
+		3F72B4661E5EB5150000D878 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 		3F97E89E1E5B075200836432 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		3F97E89F1E5B075200836432 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		3FF3D0E81E5D54F100CCF9AA /* CustomUINavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUINavigationBar.h; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 			children = (
 				3F1A72221E59B3A80013D1C1 /* AppDelegate.h */,
 				3F1A72231E59B3A80013D1C1 /* AppDelegate.m */,
+				3F72B4651E5EB5150000D878 /* DataCenter.h */,
+				3F72B4661E5EB5150000D878 /* DataCenter.m */,
 				3F1A72281E59B3A80013D1C1 /* Main.storyboard */,
 				3FF3D1071E5DA80200CCF9AA /* BasicUI */,
 				3FF3D0FB1E5DA4C900CCF9AA /* Home */,
@@ -263,6 +268,7 @@
 				3F1A72241E59B3A80013D1C1 /* AppDelegate.m in Sources */,
 				3F97E8A01E5B075200836432 /* AddViewController.m in Sources */,
 				3F1A72211E59B3A80013D1C1 /* main.m in Sources */,
+				3F72B4671E5EB5150000D878 /* DataCenter.m in Sources */,
 				3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
