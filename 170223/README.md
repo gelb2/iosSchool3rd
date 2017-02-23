@@ -22,8 +22,8 @@
       @implementation Singleton
 
       + (instancetype)sharedInstance {
-    
-            static Singleton *singleton = nil;
+    
+            static Singleton *singleton = nil;
     
             static dispatch_once_t onceToken;
             dispatch_once(&onceToken, ^{
