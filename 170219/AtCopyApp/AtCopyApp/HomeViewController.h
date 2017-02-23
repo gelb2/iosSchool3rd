@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  AtCopyApp
 //
 //  Created by Jeheon Choi on 2017. 2. 19..
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface HomeViewController : UIViewController
 
 @end
-

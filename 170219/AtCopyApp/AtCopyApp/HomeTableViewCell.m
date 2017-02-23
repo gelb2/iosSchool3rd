@@ -1,16 +1,16 @@
 //
-//  CustomTableViewCell.m
+//  HomeTableViewCell.m
 //  AtCopyApp
 //
 //  Created by Jeheon Choi on 2017. 2. 19..
 //  Copyright © 2017년 JeheonChoi. All rights reserved.
 //
 
-#import "CustomTableViewCell.h"
+#import "HomeTableViewCell.h"
 #import "DDay.h"
 #import "StatusCharacter.h"
 
-@interface CustomTableViewCell ()
+@interface HomeTableViewCell ()
 
 // Info Labels
 @property  UILabel *termLabel;
@@ -32,7 +32,7 @@
 @end
 
 
-@implementation CustomTableViewCell
+@implementation HomeTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -41,7 +41,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -52,7 +52,7 @@
         self.percent = 0;
         [self createSubviews];
         [self updateLayout];
-//        [self test];
+        //        [self test];
     }
     return self;
 }
@@ -85,7 +85,7 @@
     [percentLabel setTextAlignment:NSTextAlignmentRight];
     [self.contentView addSubview:percentLabel];
     self.percentLabel = percentLabel;
-
+    
     // Status Bar
     UIView *backgroundBar = [[UIView alloc] init];
     [backgroundBar setBackgroundColor:[UIColor whiteColor]];
@@ -121,17 +121,17 @@
     [separatorLine setBackgroundColor:[UIColor whiteColor]];
     [self.contentView addSubview:separatorLine];
     self.separatorLine = separatorLine;
-
+    
 }
 
 - (void)updateLayout {
     CGFloat const MARGIN = 20;
     CGFloat offsetX = MARGIN;
     CGFloat offsetY = MARGIN;
-
+    
     // Info Labels
     self.termLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width*3/4 - MARGIN, 20);
-
+    
     offsetY += self.termLabel.frame.size.height;
     self.nameLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width*3/4 - MARGIN, 25);
     
@@ -144,7 +144,7 @@
     offsetX = MARGIN;
     offsetY = self.frame.size.height * 4/5;
     self.backgroundBar.frame = CGRectMake(offsetX, offsetY, self.frame.size.width - MARGIN*2, 12);
-
+    
     self.statusBar.frame = CGRectMake(0, 0, self.backgroundBar.frame.size.width * self.percent / 100.0, self.backgroundBar.frame.size.height);
     
     // Status Character
@@ -165,7 +165,7 @@
     
     // Cell SeparatorLine
     self.separatorLine.frame = CGRectMake(0, self.frame.size.height - 0.8, self.frame.size.width, 0.8);
-
+    
 }
 
 - (void)test {
@@ -182,14 +182,14 @@
 - (void)setCellDataWithName:(NSString *)name
               withStartDate:(NSData *)startDate
                 withEndDate:(NSData *)endDate {
-
-
+    
+    
     [self.nameLabel setText:name];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy. MM. dd. hh. mm. ss"];
     NSString *today = [dateFormatter stringFromDate:[NSDate date]];
-
+    
     NSInteger totalDay = 0;
     
     if ([endDate isEqual:@"0000. 00. 00"]) {
@@ -197,14 +197,14 @@
         
         totalDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[today.description substringToIndex:12]];
         [self.percentLabel setText:[NSString stringWithFormat:@"%ld%%", totalDay > 100 ? 99 : totalDay - 1]];
-
+        
         self.percent = totalDay > 100 ? 99.0 : (CGFloat)totalDay - 1;
         
         [self.speechBalloonLabel setText:[NSString stringWithFormat:@"+%ld", totalDay]];
         
     } else {
         [self.termLabel setText:[NSString stringWithFormat:@"%@ - %@", [startDate.description substringToIndex:12], [endDate.description substringToIndex:12]]];
-    
+        
         totalDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[endDate.description substringToIndex:12]];
         NSInteger restDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[today.description substringToIndex:12]];
         

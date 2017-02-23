@@ -9,18 +9,22 @@
 /* Begin PBXBuildFile section */
 		3F1A72211E59B3A80013D1C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72201E59B3A80013D1C1 /* main.m */; };
 		3F1A72241E59B3A80013D1C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72231E59B3A80013D1C1 /* AppDelegate.m */; };
-		3F1A72271E59B3A80013D1C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72261E59B3A80013D1C1 /* ViewController.m */; };
 		3F1A722A1E59B3A80013D1C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A72281E59B3A80013D1C1 /* Main.storyboard */; };
 		3F1A722C1E59B3A80013D1C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A722B1E59B3A80013D1C1 /* Assets.xcassets */; };
 		3F1A722F1E59B3A80013D1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A722D1E59B3A80013D1C1 /* LaunchScreen.storyboard */; };
-		3F1A72381E59B53A0013D1C1 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72371E59B53A0013D1C1 /* CustomTableViewCell.m */; };
 		3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A723D1E59D3170013D1C1 /* DDay.m */; };
 		3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */; };
-		3F1A724C1E5A01320013D1C1 /* speechBalloonR.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A724A1E5A01320013D1C1 /* speechBalloonR.png */; };
-		3F1A724D1E5A01320013D1C1 /* speechBalloonL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A724B1E5A01320013D1C1 /* speechBalloonL.png */; };
 		3F97E8A01E5B075200836432 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F97E89F1E5B075200836432 /* AddViewController.m */; };
-		3F97E8A31E5B116E00836432 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F97E8A11E5B116E00836432 /* add.png */; };
-		3F97E8A41E5B116E00836432 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F97E8A21E5B116E00836432 /* menu.png */; };
+		3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */; };
+		3FF3D0F01E5D747F00CCF9AA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EB1E5D747F00CCF9AA /* back.png */; };
+		3FF3D0F11E5D747F00CCF9AA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EC1E5D747F00CCF9AA /* menu.png */; };
+		3FF3D0F21E5D747F00CCF9AA /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0ED1E5D747F00CCF9AA /* add.png */; };
+		3FF3D0F31E5D747F00CCF9AA /* speechBalloonR.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EE1E5D747F00CCF9AA /* speechBalloonR.png */; };
+		3FF3D0F41E5D747F00CCF9AA /* speechBalloonL.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EF1E5D747F00CCF9AA /* speechBalloonL.png */; };
+		3FF3D0F71E5D777700CCF9AA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D0F61E5D777700CCF9AA /* MenuViewController.m */; };
+		3FF3D1031E5DA69900CCF9AA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D1021E5DA69900CCF9AA /* HomeTableViewCell.m */; };
+		3FF3D1061E5DA71500CCF9AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D1051E5DA71500CCF9AA /* HomeViewController.m */; };
+		3FF3D10B1E5DA8B300CCF9AA /* AddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D10A1E5DA8B300CCF9AA /* AddTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,24 +32,31 @@
 		3F1A72201E59B3A80013D1C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F1A72221E59B3A80013D1C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F1A72231E59B3A80013D1C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3F1A72251E59B3A80013D1C1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3F1A72261E59B3A80013D1C1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F1A72291E59B3A80013D1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F1A722B1E59B3A80013D1C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F1A722E1E59B3A80013D1C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F1A72301E59B3A80013D1C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F1A72361E59B53A0013D1C1 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
-		3F1A72371E59B53A0013D1C1 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		3F1A723C1E59D3170013D1C1 /* DDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDay.h; sourceTree = "<group>"; };
 		3F1A723D1E59D3170013D1C1 /* DDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDay.m; sourceTree = "<group>"; };
 		3F1A72421E59EEC10013D1C1 /* StatusCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCharacter.h; sourceTree = "<group>"; };
 		3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCharacter.m; sourceTree = "<group>"; };
-		3F1A724A1E5A01320013D1C1 /* speechBalloonR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speechBalloonR.png; sourceTree = "<group>"; };
-		3F1A724B1E5A01320013D1C1 /* speechBalloonL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speechBalloonL.png; sourceTree = "<group>"; };
 		3F97E89E1E5B075200836432 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		3F97E89F1E5B075200836432 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
-		3F97E8A11E5B116E00836432 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		3F97E8A21E5B116E00836432 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		3FF3D0E81E5D54F100CCF9AA /* CustomUINavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUINavigationBar.h; sourceTree = "<group>"; };
+		3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUINavigationBar.m; sourceTree = "<group>"; };
+		3FF3D0EB1E5D747F00CCF9AA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Images/back.png; sourceTree = "<group>"; };
+		3FF3D0EC1E5D747F00CCF9AA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = Images/menu.png; sourceTree = "<group>"; };
+		3FF3D0ED1E5D747F00CCF9AA /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Images/add.png; sourceTree = "<group>"; };
+		3FF3D0EE1E5D747F00CCF9AA /* speechBalloonR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speechBalloonR.png; path = Images/speechBalloonR.png; sourceTree = "<group>"; };
+		3FF3D0EF1E5D747F00CCF9AA /* speechBalloonL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speechBalloonL.png; path = Images/speechBalloonL.png; sourceTree = "<group>"; };
+		3FF3D0F51E5D777700CCF9AA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		3FF3D0F61E5D777700CCF9AA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		3FF3D1011E5DA69900CCF9AA /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		3FF3D1021E5DA69900CCF9AA /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		3FF3D1041E5DA71500CCF9AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3FF3D1051E5DA71500CCF9AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3FF3D1091E5DA8B300CCF9AA /* AddTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTableViewCell.h; sourceTree = "<group>"; };
+		3FF3D10A1E5DA8B300CCF9AA /* AddTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +91,12 @@
 			children = (
 				3F1A72221E59B3A80013D1C1 /* AppDelegate.h */,
 				3F1A72231E59B3A80013D1C1 /* AppDelegate.m */,
-				3F1A72251E59B3A80013D1C1 /* ViewController.h */,
-				3F1A72261E59B3A80013D1C1 /* ViewController.m */,
-				3F1A72361E59B53A0013D1C1 /* CustomTableViewCell.h */,
-				3F1A72371E59B53A0013D1C1 /* CustomTableViewCell.m */,
-				3F1A723C1E59D3170013D1C1 /* DDay.h */,
-				3F1A723D1E59D3170013D1C1 /* DDay.m */,
-				3F1A72421E59EEC10013D1C1 /* StatusCharacter.h */,
-				3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */,
-				3F97E89E1E5B075200836432 /* AddViewController.h */,
-				3F97E89F1E5B075200836432 /* AddViewController.m */,
 				3F1A72281E59B3A80013D1C1 /* Main.storyboard */,
+				3FF3D1071E5DA80200CCF9AA /* BasicUI */,
+				3FF3D0FB1E5DA4C900CCF9AA /* Home */,
+				3FF3D0FF1E5DA63E00CCF9AA /* Add */,
+				3FF3D1001E5DA65500CCF9AA /* Menu */,
+				3FF3D1081E5DA84500CCF9AA /* DateCalculator */,
 				3F1A722B1E59B3A80013D1C1 /* Assets.xcassets */,
 				3F1A722D1E59B3A80013D1C1 /* LaunchScreen.storyboard */,
 				3F1A72301E59B3A80013D1C1 /* Info.plist */,
@@ -111,12 +117,64 @@
 		3F1A72451E59F9840013D1C1 /* IMG */ = {
 			isa = PBXGroup;
 			children = (
-				3F97E8A11E5B116E00836432 /* add.png */,
-				3F97E8A21E5B116E00836432 /* menu.png */,
-				3F1A724A1E5A01320013D1C1 /* speechBalloonR.png */,
-				3F1A724B1E5A01320013D1C1 /* speechBalloonL.png */,
+				3FF3D0EB1E5D747F00CCF9AA /* back.png */,
+				3FF3D0EC1E5D747F00CCF9AA /* menu.png */,
+				3FF3D0ED1E5D747F00CCF9AA /* add.png */,
+				3FF3D0EE1E5D747F00CCF9AA /* speechBalloonR.png */,
+				3FF3D0EF1E5D747F00CCF9AA /* speechBalloonL.png */,
 			);
 			name = IMG;
+			sourceTree = "<group>";
+		};
+		3FF3D0FB1E5DA4C900CCF9AA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3FF3D1041E5DA71500CCF9AA /* HomeViewController.h */,
+				3FF3D1051E5DA71500CCF9AA /* HomeViewController.m */,
+				3FF3D1011E5DA69900CCF9AA /* HomeTableViewCell.h */,
+				3FF3D1021E5DA69900CCF9AA /* HomeTableViewCell.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		3FF3D0FF1E5DA63E00CCF9AA /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				3F97E89E1E5B075200836432 /* AddViewController.h */,
+				3F97E89F1E5B075200836432 /* AddViewController.m */,
+				3FF3D1091E5DA8B300CCF9AA /* AddTableViewCell.h */,
+				3FF3D10A1E5DA8B300CCF9AA /* AddTableViewCell.m */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		3FF3D1001E5DA65500CCF9AA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3FF3D0F51E5D777700CCF9AA /* MenuViewController.h */,
+				3FF3D0F61E5D777700CCF9AA /* MenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		3FF3D1071E5DA80200CCF9AA /* BasicUI */ = {
+			isa = PBXGroup;
+			children = (
+				3FF3D0E81E5D54F100CCF9AA /* CustomUINavigationBar.h */,
+				3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */,
+				3F1A72421E59EEC10013D1C1 /* StatusCharacter.h */,
+				3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */,
+			);
+			name = BasicUI;
+			sourceTree = "<group>";
+		};
+		3FF3D1081E5DA84500CCF9AA /* DateCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				3F1A723C1E59D3170013D1C1 /* DDay.h */,
+				3F1A723D1E59D3170013D1C1 /* DDay.m */,
+			);
+			name = DateCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,13 +236,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF3D0F41E5D747F00CCF9AA /* speechBalloonL.png in Resources */,
+				3FF3D0F01E5D747F00CCF9AA /* back.png in Resources */,
+				3FF3D0F11E5D747F00CCF9AA /* menu.png in Resources */,
 				3F1A722F1E59B3A80013D1C1 /* LaunchScreen.storyboard in Resources */,
+				3FF3D0F21E5D747F00CCF9AA /* add.png in Resources */,
 				3F1A722C1E59B3A80013D1C1 /* Assets.xcassets in Resources */,
-				3F1A724C1E5A01320013D1C1 /* speechBalloonR.png in Resources */,
-				3F97E8A31E5B116E00836432 /* add.png in Resources */,
-				3F97E8A41E5B116E00836432 /* menu.png in Resources */,
+				3FF3D0F31E5D747F00CCF9AA /* speechBalloonR.png in Resources */,
 				3F1A722A1E59B3A80013D1C1 /* Main.storyboard in Resources */,
-				3F1A724D1E5A01320013D1C1 /* speechBalloonL.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,11 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */,
+				3FF3D10B1E5DA8B300CCF9AA /* AddTableViewCell.m in Sources */,
+				3FF3D0F71E5D777700CCF9AA /* MenuViewController.m in Sources */,
+				3FF3D1031E5DA69900CCF9AA /* HomeTableViewCell.m in Sources */,
+				3FF3D1061E5DA71500CCF9AA /* HomeViewController.m in Sources */,
 				3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */,
-				3F1A72271E59B3A80013D1C1 /* ViewController.m in Sources */,
 				3F1A72241E59B3A80013D1C1 /* AppDelegate.m in Sources */,
 				3F97E8A01E5B075200836432 /* AddViewController.m in Sources */,
-				3F1A72381E59B53A0013D1C1 /* CustomTableViewCell.m in Sources */,
 				3F1A72211E59B3A80013D1C1 /* main.m in Sources */,
 				3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.h
+//  HomeTableViewCell.h
 //  AtCopyApp
 //
 //  Created by Jeheon Choi on 2017. 2. 19..
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomTableViewCell : UITableViewCell
+@interface HomeTableViewCell : UITableViewCell
 
 - (void)setCellDataWithName:(NSString *)name
               withStartDate:(NSData *)startDate
