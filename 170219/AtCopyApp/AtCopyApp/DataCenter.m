@@ -26,6 +26,8 @@
 {
     self = [super init];
     if (self) {
+        
+        self.cellColor = @[];
         self.switcherValue = [[NSMutableArray alloc] init];
     }
     return self;

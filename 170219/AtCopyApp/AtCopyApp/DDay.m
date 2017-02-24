@@ -60,11 +60,17 @@
     NSUInteger yearGap = 0;
     NSUInteger monthGap = 0;
     
-    
-    if (firstYY >= lastYY) {
-        if (firstMM >= lastMM) {
-            if (firstDD >= lastDD) {
-                return sumDays;     // 0
+    // 같은 날짜부터 +1
+    if (firstYY > lastYY) {
+        return -[DDay firstDay:lastDay lastDay:firstDay];
+    } else if (firstYY == lastYY) {
+        if (firstMM > lastMM) {
+            return -[DDay firstDay:lastDay lastDay:firstDay];
+        } else if (firstMM == lastMM) {
+            if (firstDD > lastDD) {
+                return -[DDay firstDay:lastDay lastDay:firstDay];
+            } else if (firstDD == lastDD) {
+                return 1;       // 같은 날짜
             }
             sumDays = lastDD - firstDD + 1;
             return sumDays;
@@ -85,7 +91,6 @@
         sumDays += [DDay lastDayOfMonth:firstMM + i year:firstYY];
     }
     
-
     yearGap = lastYY - firstYY - 1;
     while(true) {
         if (yearGap >= 1) {

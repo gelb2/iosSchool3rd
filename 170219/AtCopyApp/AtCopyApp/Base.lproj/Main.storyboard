@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="LXA-ln-WqU">
             <objects>
-                <viewController id="FXV-TU-wbY" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="FXV-TU-wbY" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKT-Jn-Ebu"/>
                         <viewControllerLayoutGuide type="bottom" id="8qb-sp-dU2"/>

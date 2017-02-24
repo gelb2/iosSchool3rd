@@ -11,6 +11,7 @@
 
 @interface DataCenter : NSObject
 
+@property NSArray *cellColor;
 @property NSMutableArray *switcherValue;
 
 + (instancetype)sharedInstance;

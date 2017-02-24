@@ -53,6 +53,7 @@
 //// CustomUINavigationBar Button Events ////
 
 - (void)selectedNaviBarBackBtn {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"noti" object:@"Choi"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

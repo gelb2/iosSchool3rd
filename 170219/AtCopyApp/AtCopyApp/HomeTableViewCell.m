@@ -54,12 +54,15 @@
         [self createSubviews];
         [self updateLayout];
         //        [self test];
+        
     }
     return self;
 }
 
 - (void)layoutSubviews {
+    NSLog(@"layoutSubviews");
     [self updateLayout];        // frame 재조정 적용
+    [self statusBarAnimationStart]; // 조정 후, 애니메이션 (?)
 }
 
 
@@ -75,13 +78,13 @@
     self.termLabel = termLabel;
     
     UILabel *nameLabel = [[UILabel alloc] init];
-    [nameLabel setFont:[UIFont systemFontOfSize:20]];
+    [nameLabel setFont:[UIFont systemFontOfSize:18]];
     [nameLabel setTextColor:[UIColor whiteColor]];
     [self.contentView addSubview:nameLabel];
     self.nameLabel = nameLabel;
     
     UILabel *percentLabel = [[UILabel alloc] init];
-    [percentLabel setFont:[UIFont systemFontOfSize:20]];
+    [percentLabel setFont:[UIFont systemFontOfSize:18]];
     [percentLabel setTextColor:[UIColor whiteColor]];
     [percentLabel setTextAlignment:NSTextAlignmentRight];
     [self.contentView addSubview:percentLabel];
@@ -110,7 +113,7 @@
     self.speechBalloon = speechBalloon;
     
     UILabel *speechBalloonLabel = [[UILabel alloc] init];
-    [speechBalloonLabel setFont:[UIFont systemFontOfSize:15]];
+    [speechBalloonLabel setFont:[UIFont systemFontOfSize:14]];
     [speechBalloonLabel setTextColor:[UIColor blackColor]];
     [speechBalloonLabel setTextAlignment:NSTextAlignmentCenter];
     [self.speechBalloon addSubview:speechBalloonLabel];
@@ -126,6 +129,8 @@
 }
 
 - (void)updateLayout {
+    // StatusBar, Charecter는 애니메이션을 위해 따로 Layout 세팅 및 애니메이션 줌
+    
     CGFloat const MARGIN = 20;
     CGFloat offsetX = MARGIN;
     CGFloat offsetY = MARGIN;
@@ -141,21 +146,26 @@
     self.percentLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width/4 - MARGIN, 25);
     
     
-    // Status Bar
+    // Status Background Bar
     offsetX = MARGIN;
     offsetY = self.frame.size.height * 4/5;
     self.backgroundBar.frame = CGRectMake(offsetX, offsetY, self.frame.size.width - MARGIN*2, 12);
-  
-    self.statusBar.frame = CGRectMake(0, 0, self.backgroundBar.frame.size.width * self.percent / 100.0, self.backgroundBar.frame.size.height);
     
     
-//    [self updateLayoutAndAnimationViewsWithAnimationDuration:0.7];
+    // Cell SeparatorLine
+    self.separatorLine.frame = CGRectMake(0, self.frame.size.height - 0.8, self.frame.size.width, 0.8);
     
+}
+
+- (void)setInitialLayoutForAnimation {
     
-    // Status Character
+    // Status Bar 초기 프레임 설정
+    self.statusBar.frame = CGRectMake(0, 0, 0, self.backgroundBar.frame.size.height);
+    
+    // Status Character 초기 프레임 설정
     self.character.frame = CGRectMake(0, 0, self.frame.size.width/16, self.frame.size.height/3);
     [self.character setCharacterType:1];
-    self.character.center = CGPointMake(self.statusBar.frame.size.width, -self.character.frame.size.height/4);
+    self.character.center = CGPointMake(self.statusBar.frame.size.width, -self.character.frame.size.height/5);
     
     if (self.percent <= 50) {
         [self.speechBalloon setImage:[UIImage imageNamed:@"speechBalloonL"]];
@@ -166,33 +176,24 @@
         self.speechBalloon.frame = CGRectMake(-self.character.frame.size.width * 4, 5, self.character.frame.size.width * 4, self.character.frame.size.height/2);
         self.speechBalloonLabel.frame = CGRectMake(3, -2, self.speechBalloon.frame.size.width*5/6, self.speechBalloon.frame.size.height);
     }
-
-    
-    // Cell SeparatorLine
-    self.separatorLine.frame = CGRectMake(0, self.frame.size.height - 0.8, self.frame.size.width, 0.8);
-    
 }
 
-- (void)updateLayoutAndAnimationViewsWithAnimationDuration:(CGFloat)time {
-    self.statusBar.frame = CGRectMake(0, 0, 0, self.backgroundBar.frame.size.height);   // 애니메이션 시작 프레임 초기화
+- (void)statusBarAnimationStart {
+    NSLog(@"애니메이션 시작!");
     
-//    time
-//    self.statusBar.frame = CGRectMake(0, 0, self.backgroundBar.frame.size.width * self.percent / 100.0, self.backgroundBar.frame.size.height);
-    CGFloat width = self.backgroundBar.frame.size.width * self.percent / 100.0;
-    NSLog(@"%lf", width);
+    // 애니메이션 시작 프레임 초기화
+    [self setInitialLayoutForAnimation];
     
-    [UIView animateWithDuration:time animations:^{
-   
-        
+    // Start Animation
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView animateWithDuration:0.5 animations:^{
+
         // Status Bar
-        CGRect statusBarFrame = self.statusBar.frame;
-        statusBarFrame.size.width += 100.0f;
-        self.statusBar.frame = statusBarFrame;
-        
+        self.statusBar.frame = CGRectMake(0, 0, self.backgroundBar.frame.size.width * self.percent / 100.0, self.backgroundBar.frame.size.height);
+  
         // Status Character
-        
-        NSLog(@"statusBarWidth : %lf", self.statusBar.frame.size.width);
-        
+        self.character.center = CGPointMake(self.statusBar.frame.size.width, -self.character.frame.size.height/5);
+
     }];
 }
 
@@ -222,26 +223,63 @@
     NSInteger totalDay = 0;
     
     if ([endDate isEqual:@"0000. 00. 00"]) {
+        // 1. 시작지점 설정 Ver.
         [self.termLabel setText:[NSString stringWithFormat:@"%@", [startDate.description substringToIndex:12]]];
         
         totalDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[today.description substringToIndex:12]];
-        [self.percentLabel setText:[NSString stringWithFormat:@"%ld%%", totalDay > 100 ? 99 : totalDay - 1]];
         
-        self.percent = totalDay > 100 ? 99.0 : (CGFloat)totalDay - 1;
-        
-        [self.speechBalloonLabel setText:[NSString stringWithFormat:@"+%ld", totalDay]];
-        
+        if (totalDay < 0) {
+            // 아직 시작일도 안됐을 경우
+            self.percent = 0;
+            [self.percentLabel setText:@"0%"];
+            [self.speechBalloonLabel setText:[NSString stringWithFormat:@"%ld", totalDay]]; // 그대로 음수 노출
+        } else if (totalDay == 1) {
+            self.percent = totalDay;
+            [self.percentLabel setText:@"1%"];
+            [self.speechBalloonLabel setText:@"START!"]; // 그대로 음수 노출
+        } else{
+            self.percent = totalDay > 100 ? 99.0 : (CGFloat)totalDay;       // percent 1일차부터 1%씩
+            [self.percentLabel setText:[NSString stringWithFormat:@"%ld%%", totalDay > 100 ? 99 : totalDay]];
+            [self.speechBalloonLabel setText:[NSString stringWithFormat:@"+%ld", totalDay]];
+        }
     } else {
+        // 2. 기간 설정 Ver.
         [self.termLabel setText:[NSString stringWithFormat:@"%@ - %@", [startDate.description substringToIndex:12], [endDate.description substringToIndex:12]]];
         
-        totalDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[endDate.description substringToIndex:12]];
-        NSInteger restDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[today.description substringToIndex:12]];
+        totalDay = [DDay firstDay:[startDate.description substringToIndex:12] lastDay:[endDate.description substringToIndex:12]] - 1;
+        NSInteger restDay = [DDay firstDay:[today.description substringToIndex:12] lastDay:[endDate.description substringToIndex:12]] - 1;
+    
+        // 둘 다 -1한건 같은 날에 0이 되어야함 (1. 때문에, 같은날이 +1 나오도록 만들어놓음)
         
-        [self.percentLabel setText:[NSString stringWithFormat:@"%ld%%", restDay*100/totalDay]];
-        self.percent = restDay * 100 / (CGFloat)totalDay;
+        NSLog(@"%@, total : %ld, rest : %ld",name, totalDay, restDay);
         
-        [self.speechBalloonLabel setText:[NSString stringWithFormat:@"-%ld", totalDay-restDay]];
+        if (restDay < 0) {
+            // 종료일 초과했을 경우
+            self.percent = 100;
+            [self.percentLabel setText:@"100%"];
+            [self.speechBalloonLabel setText:[NSString stringWithFormat:@"+%ld", -restDay]];
+        } else if (totalDay < restDay) {
+            // 아직 시작일도 안됐을 경우
+            self.percent = 0;
+            [self.percentLabel setText:@"0%"];
+            [self.speechBalloonLabel setText:@"Zzz"];
+        } else if (restDay == 0) {
+            // 종료일일 경우
+            self.percent = 100;
+            [self.percentLabel setText:@"100%"];
+            [self.speechBalloonLabel setText:@"D-Day"];
+        } else if (totalDay == restDay) {
+            // 시작일일 경우
+            self.percent = 0;
+            [self.percentLabel setText:@"0%"];
+            [self.speechBalloonLabel setText:@"START!"];
+        } else {
+            self.percent = (totalDay - restDay) * 100 / (CGFloat)totalDay;
+            [self.percentLabel setText:[NSString stringWithFormat:@"%ld%%", (totalDay-restDay)*100/totalDay]];
+            [self.speechBalloonLabel setText:[NSString stringWithFormat:@"-%ld", restDay]];
+        }
     }
 }
+
 
 @end

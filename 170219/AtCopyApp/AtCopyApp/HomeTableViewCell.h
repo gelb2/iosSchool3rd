@@ -14,4 +14,8 @@
               withStartDate:(NSData *)startDate
                 withEndDate:(NSData *)endDate;
 
+- (void)setInitialLayoutForAnimation;
+
+- (void)statusBarAnimationStart;
+
 @end

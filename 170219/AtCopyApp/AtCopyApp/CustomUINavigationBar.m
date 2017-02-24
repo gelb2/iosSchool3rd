@@ -47,14 +47,14 @@
     
     UIButton *centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     centerBtn.frame = CGRectMake(self.center.x - 24, self.center.y - 12, 48, 24);
-    [centerBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:21]];
+    [centerBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
     [centerBtn addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
     centerBtn.tag = 200;
     [self addSubview:centerBtn];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame = CGRectMake(self.frame.size.width - 58, self.center.y - 12, 48, 24);
-    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:16]];
+    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [rightBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [rightBtn addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
     rightBtn.tag = 300;
