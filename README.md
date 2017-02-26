@@ -1,4 +1,4 @@
-#FastCampus - iOS SCHOOL 3th  
+#FastCampus - iOS SCHOOL 3rd  
 ####2017.01.09~
 
 
