@@ -236,7 +236,7 @@
         } else if (totalDay == 1) {
             self.percent = totalDay;
             [self.percentLabel setText:@"1%"];
-            [self.speechBalloonLabel setText:@"START!"]; // 그대로 음수 노출
+            [self.speechBalloonLabel setText:@"START!"]; // 1일차 -> START
         } else{
             self.percent = totalDay > 100 ? 99.0 : (CGFloat)totalDay;       // percent 1일차부터 1%씩
             [self.percentLabel setText:[NSString stringWithFormat:@"%ld%%", totalDay > 100 ? 99 : totalDay]];

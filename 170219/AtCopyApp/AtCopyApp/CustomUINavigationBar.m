@@ -54,7 +54,7 @@
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame = CGRectMake(self.frame.size.width - 58, self.center.y - 12, 48, 24);
-    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [rightBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [rightBtn addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
     rightBtn.tag = 300;

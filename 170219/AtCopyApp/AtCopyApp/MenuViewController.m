@@ -44,7 +44,7 @@
     naviBar.delegate = self;
     
     //AddSubviews
-    [self.view addSubview:naviBar];
+    [self.view addSubview:naviBar];     // NaviBar를 맨 앞에 배치 (Shadow)
     
 }
 

@@ -62,13 +62,13 @@
     
     // 같은 날짜부터 +1
     if (firstYY > lastYY) {
-        return -[DDay firstDay:lastDay lastDay:firstDay];
+        return -[DDay firstDay:lastDay lastDay:firstDay] + 1;
     } else if (firstYY == lastYY) {
         if (firstMM > lastMM) {
-            return -[DDay firstDay:lastDay lastDay:firstDay];
+            return -[DDay firstDay:lastDay lastDay:firstDay] + 1;
         } else if (firstMM == lastMM) {
             if (firstDD > lastDD) {
-                return -[DDay firstDay:lastDay lastDay:firstDay];
+                return -[DDay firstDay:lastDay lastDay:firstDay] + 1;
             } else if (firstDD == lastDD) {
                 return 1;       // 같은 날짜
             }
