@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CustomTableViewCellType) {
+    TITLE = 0,
+    DATE,
+    CHARACTER
+};
+
 @interface AddTableViewCell : UITableViewCell
+
+- (void)setCellType:(NSInteger)typeNum;
 
 @end

@@ -21,7 +21,7 @@
 @property (nonatomic) NSArray *dataArr;
 @property (nonatomic) NSArray *colorArr;
 
-@property UITableView *tv;
+@property UITableView *tV;
 
 @end
 
@@ -70,7 +70,7 @@
     
     // 기기에서는 잘되는데, 시뮬레이터에서는 초기 애니메이션 안보일 때가 많음..;;
     NSLog(@"viewWillAppear");
-    for (HomeTableViewCell *cell in self.tv.visibleCells) {
+    for (HomeTableViewCell *cell in self.tV.visibleCells) {
         [cell statusBarAnimationStart];
     }
 }
@@ -99,7 +99,7 @@
     tV.delegate = self;
     tV.dataSource = self;
     [tV setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    self.tv = tV;
+    self.tV = tV;
     
     //AddSubviews
     [self.view addSubview:tV];
@@ -130,8 +130,8 @@
     return CELLSIZE;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeTableViewCell *cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+- (HomeTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
