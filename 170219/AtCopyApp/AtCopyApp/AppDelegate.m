@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "DataCenter.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // DataCenter 싱글턴 객체 생성 및 초기 세팅
+    [DataCenter sharedInstance];
     
     return YES;
 }

@@ -74,7 +74,7 @@
             [self setBackgroundColor:[UIColor whiteColor]];
             [leftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
             [centerBtn setTitle:@"NEW" forState:UIControlStateNormal];
-            [centerBtn setTitleColor:[UIColor colorWithRed:109/255.0 green:109/255.0 blue:109/255.0 alpha:1] forState:UIControlStateNormal];
+            [centerBtn setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
             [rightBtn setTitle:@"완료" forState:UIControlStateNormal];
             [rightBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             
@@ -84,7 +84,7 @@
             [self setBackgroundColor:[UIColor whiteColor]];
             [leftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
             [centerBtn setTitle:@"메뉴" forState:UIControlStateNormal];
-            [centerBtn setTitleColor:[UIColor colorWithRed:109/255.0 green:109/255.0 blue:109/255.0 alpha:1] forState:UIControlStateNormal];
+            [centerBtn setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
 
             break;
 

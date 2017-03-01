@@ -12,7 +12,7 @@
 #import "AddViewController.h"
 #import "MenuViewController.h"
 
-#define CELLSIZE 125.f
+#define CELL_SIZE 125.f
 
 
 @interface HomeViewController ()
@@ -50,7 +50,7 @@
                      @[@"어제부터(17.02.27기준)", @"2017. 02. 26", @"0000. 00. 00"],
                      @[@"오늘부터(17.02.27기준)", @"2017. 02. 27", @"0000. 00. 00"],
                      @[@"내일부터(17.02.27기준)", @"2017. 02. 28", @"0000. 00. 00"],
-                     @[@"모레부터(17.02.27기준)", @"2017. 02. 29", @"0000. 00. 00"],
+                     @[@"모레부터(17.02.27기준)", @"2017. 03. 01", @"0000. 00. 00"],
                      @[@"입학", @"2011. 03. 02", @"0000. 00. 00"],
                      @[@"음 뭘 적을까? Zzz", @"2017. 04. 01", @"2017. 05. 24"],
                      @[@"음하하하", @"2017. 02. 01", @"2017. 11. 01"]];
@@ -69,7 +69,7 @@
     [super viewWillAppear:animated];
     
     // 기기에서는 잘되는데, 시뮬레이터에서는 초기 애니메이션 안보일 때가 많음..;;
-    NSLog(@"viewWillAppear");
+//    NSLog(@"viewWillAppear");
     for (HomeTableViewCell *cell in self.tV.visibleCells) {
         [cell statusBarAnimationStart];
     }
@@ -91,7 +91,7 @@
 - (void)createAndLayoutSubviews {
     
     //Custom NavigationBar
-    CustomUINavigationBar *naviBar = [[CustomUINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, CELLSIZE/2) withType:HOME];
+    CustomUINavigationBar *naviBar = [[CustomUINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, CELL_SIZE/2) withType:HOME];
     naviBar.delegate = self;
     
     //TableView
@@ -99,6 +99,10 @@
     tV.delegate = self;
     tV.dataSource = self;
     [tV setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//    [tV setSeparatorInset:UIEdgeInsetsZero];
+//    [tV setSeparatorColor:[UIColor whiteColor]];
+//    tV.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     self.tV = tV;
     
     //AddSubviews
@@ -127,10 +131,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return CELLSIZE;
+    return CELL_SIZE;
 }
 
-- (HomeTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
@@ -143,6 +147,8 @@
     
     return cell;
 }
+
+///////////////////////////////////////////
 
 
 - (void)notification:(NSNotification *)noti {

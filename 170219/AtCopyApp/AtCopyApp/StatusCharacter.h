@@ -10,6 +10,8 @@
 
 @interface StatusCharacter : UIView
 
-- (void)setCharacterType:(NSInteger)num;
+- (void)setCharacterType:(NSInteger)typeNum;
+
++ (UIView *)getCharacterListView;
 
 @end

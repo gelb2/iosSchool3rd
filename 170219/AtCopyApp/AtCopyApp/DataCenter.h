@@ -8,14 +8,38 @@
 //  Singleton
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+
+typedef NS_ENUM(NSInteger, ArrDataType) {
+    ADD1 = 0,
+    ADD2,
+    CUSTOM,
+    MORE
+};
+
+typedef NS_ENUM(NSInteger, AddTableViewCellType) {
+    TITLE = 0,
+    DATE,
+    DATE2,
+    CHARACTER,
+    DEFAULTINFO,
+    DEFAULT2,
+    DEFAULT
+};
 
 @interface DataCenter : NSObject
 
-@property NSArray *cellColor;
-@property NSMutableArray *switcherValue;
+@property (nonatomic) NSArray *cellColor;
+@property (nonatomic) NSArray *addArrData;
 
 + (instancetype)sharedInstance;
+- (void)setInitialData;
 
-- (void)hasSwitcherValueIndex:(NSInteger)index;
+// ADD View
+@property (nonatomic, weak) UIImageView *pickedImg;
+
++ (NSInteger)addCellTypeStr2Num:(NSString *)cellTypeStr;
++ (double)getAddCellHeight:(NSString *)cellTypeStr;
+
 
 @end

@@ -10,6 +10,8 @@
 #import "DDay.h"
 #import "StatusCharacter.h"
 
+#define CHARACTER_HEIGHT_SIZE 20
+
 @interface HomeTableViewCell ()
 
 // Info Labels
@@ -60,8 +62,9 @@
 }
 
 - (void)layoutSubviews {
-    NSLog(@"layoutSubviews");
-    [self updateLayout];        // frame 재조정 적용
+    [super layoutSubviews];
+//    NSLog(@"layoutSubviews");
+    [self updateLayout];       // frame 재조정 적용
     [self statusBarAnimationStart]; // 조정 후, 애니메이션 (?)
 }
 
@@ -163,8 +166,8 @@
     self.statusBar.frame = CGRectMake(0, 0, 0, self.backgroundBar.frame.size.height);
     
     // Status Character 초기 프레임 설정
-    self.character.frame = CGRectMake(0, 0, self.frame.size.width/16, self.frame.size.height/3);
-    [self.character setCharacterType:1];
+    self.character.frame = CGRectMake(0, 0, CHARACTER_HEIGHT_SIZE, self.frame.size.height/3);
+    [self.character setCharacterType:0];
     self.character.center = CGPointMake(self.statusBar.frame.size.width, -self.character.frame.size.height/5);
     
     if (self.percent <= 50) {
@@ -176,10 +179,11 @@
         self.speechBalloon.frame = CGRectMake(-self.character.frame.size.width * 4, 5, self.character.frame.size.width * 4, self.character.frame.size.height/2);
         self.speechBalloonLabel.frame = CGRectMake(3, -2, self.speechBalloon.frame.size.width*5/6, self.speechBalloon.frame.size.height);
     }
+    
 }
 
 - (void)statusBarAnimationStart {
-    NSLog(@"애니메이션 시작!");
+//    NSLog(@"애니메이션 시작!");
     
     // 애니메이션 시작 프레임 초기화
     [self setInitialLayoutForAnimation];
@@ -250,8 +254,6 @@
         NSInteger restDay = [DDay firstDay:[today.description substringToIndex:12] lastDay:[endDate.description substringToIndex:12]] - 1;
     
         // 둘 다 -1한건 같은 날에 0이 되어야함 (1. 때문에, 같은날이 +1 나오도록 만들어놓음)
-        
-        NSLog(@"%@, total : %ld, rest : %ld",name, totalDay, restDay);
         
         if (restDay < 0) {
             // 종료일 초과했을 경우
