@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, StatusCharacterView) {
+    SINGLE_CHARACTER = 0,
+    CHARACTER_LIST
+};
+
+
 @interface StatusCharacter : UIView
 
 - (void)setCharacterType:(NSInteger)typeNum;
 
-+ (UIView *)getCharacterListView;
+- (instancetype)initWithViewVer:(NSInteger)viewVer;
+
+- (void)characterListView;
+
+//+ (UIView *)getCharacterListView;
 
 @end

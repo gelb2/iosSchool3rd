@@ -23,3 +23,9 @@
 - 애니메이션 문제 (중복으로 불러야 시작 됨..?!)  
 - Plain Style UITableView에서의 Separator 설정 문제  
 - 커스텀테이블뷰셀 사용시, 기존 테이블뷰셀의 textFiled, accessoryView 사용이 안됨  
+
+#### 2017.03.02  
+  
+##### 업데이트 내용   
+- StatusCharacter 클래스 재구성
+

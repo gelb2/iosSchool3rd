@@ -16,6 +16,7 @@
 		3F1A722F1E59B3A80013D1C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1A722D1E59B3A80013D1C1 /* LaunchScreen.storyboard */; };
 		3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A723D1E59D3170013D1C1 /* DDay.m */; };
 		3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */; };
+		3F52044D1E67AFF8002C13DA /* AssetListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52044C1E67AFF8002C13DA /* AssetListView.m */; };
 		3F72B4671E5EB5150000D878 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F72B4661E5EB5150000D878 /* DataCenter.m */; };
 		3F97E8A01E5B075200836432 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F97E89F1E5B075200836432 /* AddViewController.m */; };
 		3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */; };
@@ -45,6 +46,8 @@
 		3F1A723D1E59D3170013D1C1 /* DDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDay.m; sourceTree = "<group>"; };
 		3F1A72421E59EEC10013D1C1 /* StatusCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCharacter.h; sourceTree = "<group>"; };
 		3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCharacter.m; sourceTree = "<group>"; };
+		3F52044B1E67AFF8002C13DA /* AssetListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetListView.h; sourceTree = "<group>"; };
+		3F52044C1E67AFF8002C13DA /* AssetListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetListView.m; sourceTree = "<group>"; };
 		3F72B4651E5EB5150000D878 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
 		3F72B4661E5EB5150000D878 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 		3F97E89E1E5B075200836432 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */,
 				3F1A72421E59EEC10013D1C1 /* StatusCharacter.h */,
 				3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */,
+				3F52044B1E67AFF8002C13DA /* AssetListView.h */,
+				3F52044C1E67AFF8002C13DA /* AssetListView.m */,
 			);
 			name = BasicUI;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */,
+				3F52044D1E67AFF8002C13DA /* AssetListView.m in Sources */,
 				3FF3D10B1E5DA8B300CCF9AA /* AddTableViewCell.m in Sources */,
 				3FF3D0F71E5D777700CCF9AA /* MenuViewController.m in Sources */,
 				3FF3D1031E5DA69900CCF9AA /* HomeTableViewCell.m in Sources */,

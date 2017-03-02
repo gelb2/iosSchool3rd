@@ -196,7 +196,7 @@
             offsetY += self.lB.frame.size.height + MARGIN/2;
             self.scrollView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 100);
             
-            UIView *characterListView = [StatusCharacter getCharacterListView];
+            StatusCharacter *characterListView = [[StatusCharacter alloc] initWithViewVer:CHARACTER_LIST];
             self.scrollView.contentSize = characterListView.frame.size;
             [self.scrollView addSubview:characterListView];
             
@@ -219,6 +219,10 @@
 
 - (void)selectedBtn:(UIButton *)btn {
     NSLog(@"버튼 누름");
+    
+    if (btn.tag == 1) {
+        
+    }
 }
 
 

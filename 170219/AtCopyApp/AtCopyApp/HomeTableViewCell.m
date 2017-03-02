@@ -106,7 +106,7 @@
     
     
     // Status Character
-    StatusCharacter *character = [[StatusCharacter alloc] init];
+    StatusCharacter *character = [[StatusCharacter alloc] initWithViewVer:SINGLE_CHARACTER];
     [self.backgroundBar addSubview:character];
     self.character = character;
     

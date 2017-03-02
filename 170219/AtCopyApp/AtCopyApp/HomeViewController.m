@@ -31,6 +31,7 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"noti" object:nil];
+
     
     [self.navigationController.navigationBar setHidden:YES];
     

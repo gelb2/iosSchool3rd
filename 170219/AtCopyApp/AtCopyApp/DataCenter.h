@@ -10,6 +10,8 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 
+#define TOTAL_CHARACTER_NUM 2
+
 typedef NS_ENUM(NSInteger, ArrDataType) {
     ADD1 = 0,
     ADD2,

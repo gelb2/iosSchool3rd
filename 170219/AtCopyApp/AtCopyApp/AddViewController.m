@@ -209,6 +209,7 @@
                 if (indexPath.row - self.currentAddVer == 4) {
                     cell.textLabel.text = @"위젯 설정";
                     switcher.tag = 2; // 위젯 설정 : 2
+                    [switcher setOn:YES];
                 } else {
                     cell.textLabel.text = @"배지 설정";
                     switcher.tag = 3; // 배지 설정 : 3
