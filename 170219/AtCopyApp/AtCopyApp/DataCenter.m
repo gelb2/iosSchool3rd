@@ -68,7 +68,7 @@
         case DATE:
             return 135;
         case DATE2:
-            return 170;
+            return 240;
         case CHARACTER:
             return 180;
         case DEFAULTINFO:

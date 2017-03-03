@@ -174,7 +174,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return [DataCenter getAddCellHeight:[DataCenter sharedInstance].addArrData[indexPath.section][indexPath.row]];
+    return [DataCenter getAddCellHeight:[DataCenter sharedInstance].addArrData[self.currentAddVer][indexPath.row]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -189,44 +189,44 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];     // 선택시 Highlighted 되는거 해제
-        }
+            
+            // Switch 기본 설정
+            UISwitch *switcher = [[UISwitch alloc] init];
+            [switcher setOnTintColor:[UIColor colorWithRed:228/255.0 green:76/255.0 blue:88/255.0 alpha:1]];
+            [switcher addTarget:self action:@selector(selectedSwitcher:) forControlEvents:UIControlEventValueChanged];
+            self.switcher = switcher;
+            [cell setAccessoryView:switcher];
+            
+            switch ([DataCenter addCellTypeStr2Num:cellStr]) {
+                case DEFAULTINFO:
+                    // 일단 레이아웃 짜기 위해 아래같은 수식 씀
+                    if (indexPath.row == 4) {
+                        cell.textLabel.text = @"위젯 설정";
+                        switcher.tag = 2; // 위젯 설정 : 2
+                        [switcher setOn:YES];
+                    } else {
+                        cell.textLabel.text = @"배지 설정";
+                        switcher.tag = 3; // 배지 설정 : 3
+                    }
+                    
+                    break;
+                    
+                case DEFAULT2:
+                    cell.textLabel.text = @"반복 설정";
+                    switcher.tag = 1; // 반복 설정 : 1
+                    break;
+                    
+                default:    //DEFAULT
+                    cell.textLabel.text = @"기간으로 설정";
+                    switcher.tag = 0; // 기간으로 설정 : 0
+                    
+                    break;
+            }
         
-        // Text 기본 설정
-        [cell.textLabel setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
-        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:20]];
-        
-        // Switch 기본 설정
-        
-        UISwitch *switcher = [[UISwitch alloc] init];
-        [switcher setOnTintColor:[UIColor colorWithRed:228/255.0 green:76/255.0 blue:88/255.0 alpha:1]];
-        [switcher addTarget:self action:@selector(selectedSwitcher:) forControlEvents:UIControlEventValueChanged];
-        self.switcher = switcher;
-        [cell setAccessoryView:switcher];
-        
-        switch ([DataCenter addCellTypeStr2Num:cellStr]) {
-            case DEFAULTINFO:
-                // 일단 레이아웃 짜기 위해 아래같은 수식 씀
-                if (indexPath.row - self.currentAddVer == 4) {
-                    cell.textLabel.text = @"위젯 설정";
-                    switcher.tag = 2; // 위젯 설정 : 2
-                    [switcher setOn:YES];
-                } else {
-                    cell.textLabel.text = @"배지 설정";
-                    switcher.tag = 3; // 배지 설정 : 3
-                }
-                
-                break;
-                
-            case DEFAULT2:
-                cell.textLabel.text = @"반복 설정";
-                switcher.tag = 1; // 반복 설정 : 1
-                break;
-                
-            default:    //DEFAULT
-                cell.textLabel.text = @"기간으로 설정";
-                switcher.tag = 0; // 기간으로 설정 : 0
-                
-                break;
+            // Text 기본 설정
+            [cell.textLabel setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
+            [cell.textLabel setFont:[UIFont boldSystemFontOfSize:20]];
+            
         }
         
         return cell;
@@ -247,6 +247,10 @@
 
 - (void)selectedSwitcher:(UISwitch *)switcher {
     NSLog(@"스위치 누름");
+    if (switcher.tag == 0) {
+        self.currentAddVer = switcher.on ? ADD2 : ADD1;
+        [self.tV reloadData];
+    }
 }
 
 

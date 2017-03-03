@@ -19,7 +19,9 @@
 @property (nonatomic, weak) UIButton *btn3;
 @property (nonatomic, weak) UIButton *btn4;
 @property (nonatomic, weak) UITextField *tF;
-@property (nonatomic, weak) UILabel *lB;
+@property (nonatomic, weak) UILabel *lB1;
+@property (nonatomic, weak) UILabel *lB2;
+@property (nonatomic, weak) UILabel *lB3;
 @property (nonatomic, weak) UIScrollView *scrollView;
 
 @end
@@ -72,12 +74,12 @@
         }
         case DATE: {
 
-            UILabel *lB = [[UILabel alloc] init];
-            [lB setText:@"날짜 선택"];
-            [lB setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
-            [lB setFont:[UIFont boldSystemFontOfSize:20]];
-            [self.contentView addSubview:lB];
-            self.lB = lB;
+            UILabel *lB1 = [[UILabel alloc] init];
+            [lB1 setText:@"날짜 선택"];
+            [lB1 setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
+            [lB1 setFont:[UIFont boldSystemFontOfSize:20]];
+            [self.contentView addSubview:lB1];
+            self.lB1 = lB1;
             
             
             // 오늘 날짜 형식에 맞게 생성
@@ -110,23 +112,110 @@
             
             break;
         }
-        case DATE2:
+        case DATE2: {
+            
+            UILabel *lB1 = [[UILabel alloc] init];
+            [lB1 setText:@"날짜 선택"];
+            [lB1 setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
+            [lB1 setFont:[UIFont boldSystemFontOfSize:20]];
+            [self.contentView addSubview:lB1];
+            self.lB1 = lB1;
+            
+            // 오늘 날짜 형식에 맞게 생성
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy. MM. dd. hh. mm. ss"];
+            NSString *today = [dateFormatter stringFromDate:[NSDate date]];
+            
+            
+            // 시작
+            UILabel *lB2 = [[UILabel alloc] init];
+            [lB2 setText:@"시작"];
+            [lB2 setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
+            [lB2 setFont:[UIFont boldSystemFontOfSize:14]];
+            [self.contentView addSubview:lB2];
+            self.lB2 = lB2;
+            
+            
+            UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn1 setTitle:[today.description substringToIndex:12] forState:UIControlStateNormal];
+            [btn1.titleLabel setFont:[UIFont systemFontOfSize:16]];
+            [btn1 setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
+            [btn1 setBackgroundColor:[UIColor colorWithRed:243/255.0 green:243/255.0 blue:243/255.0 alpha:1]];
+            [btn1 addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
+            [btn1 setTitleEdgeInsets:UIEdgeInsetsMake(0, -32, 0, 0)];
+            btn1.tag = 1;
+            [self.contentView addSubview:btn1];
+            self.btn1 = btn1;
+            
+            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn2 setTitle:@"00:00" forState:UIControlStateNormal];
+            [btn2.titleLabel setFont:[UIFont systemFontOfSize:16]];
+            [btn2 setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
+            [btn2 setBackgroundColor:[UIColor colorWithRed:243/255.0 green:243/255.0 blue:243/255.0 alpha:1]];
+            [btn2.titleLabel setTextAlignment:NSTextAlignmentLeft];
+            [btn2 addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
+            [btn2 setTitleEdgeInsets:UIEdgeInsetsMake(0, -32, 0, 0)];
+            btn2.tag = 2;
+            [self.contentView addSubview:btn2];
+            self.btn2 = btn2;
+            
+            
+            // 종료
+            UILabel *lB3 = [[UILabel alloc] init];
+            [lB3 setText:@"종료"];
+            [lB3 setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
+            [lB3 setFont:[UIFont boldSystemFontOfSize:14]];
+            [self.contentView addSubview:lB3];
+            self.lB3 = lB3;
+            
+            UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn3 setTitle:[today.description substringToIndex:12] forState:UIControlStateNormal];
+            [btn3.titleLabel setFont:[UIFont systemFontOfSize:16]];
+            [btn3 setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
+            [btn3 setBackgroundColor:[UIColor colorWithRed:243/255.0 green:243/255.0 blue:243/255.0 alpha:1]];
+            [btn3 addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
+            [btn3 setTitleEdgeInsets:UIEdgeInsetsMake(0, -32, 0, 0)];
+            btn3.tag = 3;
+            [self.contentView addSubview:btn3];
+            self.btn3 = btn3;
+            
+            UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn4 setTitle:@"00:00" forState:UIControlStateNormal];
+            [btn4.titleLabel setFont:[UIFont systemFontOfSize:16]];
+            [btn4 setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
+            [btn4 setBackgroundColor:[UIColor colorWithRed:243/255.0 green:243/255.0 blue:243/255.0 alpha:1]];
+            [btn4.titleLabel setTextAlignment:NSTextAlignmentLeft];
+            [btn4 addTarget:self action:@selector(selectedBtn:) forControlEvents:UIControlEventTouchUpInside];
+            [btn4 setTitleEdgeInsets:UIEdgeInsetsMake(0, -32, 0, 0)];
+            btn4.tag = 4;
+            [self.contentView addSubview:btn4];
+            self.btn4 = btn4;
+            
             
             break;
-            
+        }
         case CHARACTER:{
             
-            UILabel *lB = [[UILabel alloc] init];
-            [lB setText:@"캐릭터 선택"];
-            [lB setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
-            [lB setFont:[UIFont boldSystemFontOfSize:20]];
-            [self.contentView addSubview:lB];
-            self.lB = lB;
+            UILabel *lB1 = [[UILabel alloc] init];
+            [lB1 setText:@"캐릭터 선택"];
+            [lB1 setTextColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1]];
+            [lB1 setFont:[UIFont boldSystemFontOfSize:20]];
+            [self.contentView addSubview:lB1];
+            self.lB1 = lB1;
             
             UIScrollView *scrollView = [[UIScrollView alloc] init];
             scrollView.delegate = self;
             [self.contentView addSubview:scrollView];
             self.scrollView = scrollView;
+            
+            
+            // Frame 고정으로 Character List View 한 번 생성
+            // 후에, Collection View로 바꾸면 더 좋을 것 같음
+            self.scrollView.frame = CGRectMake(16, 65, self.frame.size.width, 100);
+            
+            StatusCharacter *characterListView = [[StatusCharacter alloc] initWithViewVer:CHARACTER_LIST];
+            self.scrollView.contentSize = characterListView.frame.size;
+            [self.scrollView addSubview:characterListView];
             
             break;
         }
@@ -176,9 +265,9 @@
             break;
             
         case DATE:
-            self.lB.frame = CGRectMake(offsetX, offsetY, 150, 35);
+            self.lB1.frame = CGRectMake(offsetX, offsetY, 150, 35);
             
-            offsetY += self.lB.frame.size.height + MARGIN/2;
+            offsetY += self.lB1.frame.size.height + MARGIN/2;
             self.btn1.frame = CGRectMake(offsetX, offsetY, 160, 45);
             
             offsetX += self.btn1.frame.size.width + 15;
@@ -187,18 +276,40 @@
             break;
             
         case DATE2:
+            self.lB1.frame = CGRectMake(offsetX, offsetY, 150, 35);
+            
+            // 시작
+            offsetY += self.lB1.frame.size.height + MARGIN/2;
+            self.lB2.frame = CGRectMake(offsetX, offsetY, 100, 20);
+            
+            offsetY += self.lB2.frame.size.height + 5;
+            self.btn1.frame = CGRectMake(offsetX, offsetY, 160, 45);
+            
+            offsetX += self.btn1.frame.size.width + 15;
+            self.btn2.frame = CGRectMake(offsetX, offsetY, 105, 45);
+            
+            // 종료
+            offsetX = 16;
+            offsetY += self.btn1.frame.size.height + MARGIN/2 + 5;
+            self.lB3.frame = CGRectMake(offsetX, offsetY, 100, 20);
+            
+            offsetY += self.lB3.frame.size.height + 5;
+            self.btn3.frame = CGRectMake(offsetX, offsetY, 160, 45);
+            
+            offsetX += self.btn3.frame.size.width + 15;
+            self.btn4.frame = CGRectMake(offsetX, offsetY, 105, 45);
             
             break;
             
         case CHARACTER: {
-            self.lB.frame = CGRectMake(offsetX, offsetY, 150, 35);
+            self.lB1.frame = CGRectMake(offsetX, offsetY, 150, 35);
             
-            offsetY += self.lB.frame.size.height + MARGIN/2;
-            self.scrollView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 100);
-            
-            StatusCharacter *characterListView = [[StatusCharacter alloc] initWithViewVer:CHARACTER_LIST];
-            self.scrollView.contentSize = characterListView.frame.size;
-            [self.scrollView addSubview:characterListView];
+//            offsetY += self.lB.frame.size.height + MARGIN/2;
+//            self.scrollView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 100);
+//            
+//            StatusCharacter *characterListView = [[StatusCharacter alloc] initWithViewVer:CHARACTER_LIST];
+//            self.scrollView.contentSize = characterListView.frame.size;
+//            [self.scrollView addSubview:characterListView];
             
             break;
         }
