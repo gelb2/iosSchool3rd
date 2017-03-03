@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>ChoiJeHeon</key>
-	<string>01076771061</string>
-	<key>HongGilDong</key>
-	<string>0235342302</string>
-</dict>
+<array>
+	<dict>
+		<key>JeHeonChoi</key>
+		<string>01011111111</string>
+	</dict>
+	<dict>
+		<key>GilDongHong</key>
+		<string>02453342</string>
+	</dict>
+</array>
 </plist>
