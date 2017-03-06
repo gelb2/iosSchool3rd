@@ -36,15 +36,15 @@
     // AT Data Docu Set
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = [paths objectAtIndex:0];
-    NSString *docuPath = [basePath stringByAppendingPathComponent:@"AT_DATA"];
+    self.docuPath = [basePath stringByAppendingPathComponent:@"AT_DATA"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:docuPath]) {
+    if (![fileManager fileExistsAtPath:self.docuPath]) {
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"AT_DATA" ofType:@"plist"];
-        [fileManager copyItemAtPath:bundlePath toPath:docuPath error:nil];
+        [fileManager copyItemAtPath:bundlePath toPath:self.docuPath error:nil];
     }
     
-    self.atDataArr = [NSMutableArray arrayWithContentsOfFile:docuPath];
+    self.atDataArr = [NSMutableArray arrayWithContentsOfFile:self.docuPath];
     
     
     
@@ -97,11 +97,42 @@
 }
 
 
-//
+// AT Data 관련 메소드들
 
-- (void)addAtData {
-//    [self.atDataArr addObject:<#(nonnull id)#>]
+- (void)setAtData:(AT_DATA)data withIndex:(NSInteger)index {
     
+    if (!data.hasTerm) {
+        data.endDate = @"0000. 00. 00";
+    } else if (data.isRepeat) {     // data.hasTerm && data.isRepeat 상황
+        data.endDate = data.startDate;
+    }
+    
+    NSDictionary *dataDic = @{ @"name":data.name,
+                               @"startDate":data.startDate,
+                               @"endDate":data.endDate,
+                               @"hasTerm":[NSNumber numberWithBool:data.hasTerm],
+                               @"isRepeat":[NSNumber numberWithBool:data.isRepeat],
+                               @"setWidget":[NSNumber numberWithBool:data.setWidget],
+                               @"setBadge":[NSNumber numberWithBool:data.setBadge],
+                               @"character":[NSNumber numberWithInteger:data.character] };
+    
+    
+    if (index == -1) {        // index = -1일 때, 생성
+        [self.atDataArr addObject:dataDic];
+    } else {    // 기존 데이터 수정
+        [self.atDataArr replaceObjectAtIndex:index withObject:dataDic];
+    }
+    
+    // Document에 저장
+    [self.atDataArr writeToFile:self.docuPath atomically:NO];
+}
+
+- (AT_DATA)getAtDataWithIndex:(NSInteger)index {
+
+    self.atDataArr = [NSMutableArray arrayWithContentsOfFile:self.docuPath];
+    NSDictionary *dataDic = [self.atDataArr objectAtIndex:index];
+    
+    return AtDataMake([dataDic objectForKey:@"name"], [dataDic objectForKey:@"startDate"], [dataDic objectForKey:@"endDate"], [[dataDic objectForKey:@"hasTerm"] boolValue], [[dataDic objectForKey:@"isRepeat"] boolValue], [[dataDic objectForKey:@"setWidget"] boolValue], [[dataDic objectForKey:@"setBadge"] boolValue], [[dataDic objectForKey:@"character"] integerValue]);
 }
 
 

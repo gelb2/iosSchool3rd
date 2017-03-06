@@ -30,3 +30,9 @@
 - StatusCharacter 클래스 재구성
 
 
+#### 2017.03.06  
+  
+##### 업데이트 내용   
+- AT data 구조 제작 (DataCenter에 Struct, get, set 메소드 구성했고, Document에 저장까지)
+- ADD Menu에서의 TableViewCell Reuse 문제 수정 (결국 다시 테이블뷰, 셀 구조 짤 듯.....)
+
