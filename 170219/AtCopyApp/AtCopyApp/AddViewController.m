@@ -8,19 +8,19 @@
 
 #import "AddViewController.h"
 #import "CustomUINavigationBar.h"
+#import "TabView.h"
 #import "AddTableViewCell.h"
 #import "DataCenter.h"
 
 #define TAB_MENU_HEIGHT 60
 
 @interface AddViewController ()
-<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, CustomUINavigationBarDelegate>
+<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, CustomUINavigationBarDelegate, TabViewDelegate>
 
 
 @property NSInteger currentAddVer;
 
 @property UITableView *tV;
-@property (nonatomic, weak) UISwitch *switcher;
 
 @end
 
@@ -124,46 +124,11 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    //Tab View
-    UIView *tabView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TAB_MENU_HEIGHT)];
     
-    UIButton *tabButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    tabButton1.frame = CGRectMake(0, 0, self.view.frame.size.width/3, tabView.frame.size.height);
-    [tabButton1 setTitle:@"시간" forState:UIControlStateNormal];
-    [tabButton1 setTitleColor:[UIColor colorWithRed:83/255.0 green:83/255.0 blue:83/255.0 alpha:1] forState:UIControlStateNormal];
-    [tabButton1.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
-    [tabButton1 addTarget:self action:@selector(selectedTabBtn:) forControlEvents:UIControlEventTouchUpInside];
-    tabButton1.tag = 0;
-    [tabView addSubview:tabButton1];
-    
-    UIButton *tabButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    tabButton2.frame = CGRectMake(self.view.frame.size.width/3, 0, self.view.frame.size.width/3, tabView.frame.size.height);
-    [tabButton2 setTitle:@"커스텀" forState:UIControlStateNormal];
-    [tabButton2 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [tabButton2.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
-    [tabButton2 addTarget:self action:@selector(selectedTabBtn:) forControlEvents:UIControlEventTouchUpInside];
-    tabButton2.tag = 1;
-    [tabView addSubview:tabButton2];
-    
-    UIButton *tabButton3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    tabButton3.frame = CGRectMake(self.view.frame.size.width*2/3, 0, self.view.frame.size.width/3, tabView.frame.size.height);
-    [tabButton3 setTitle:@"더보기" forState:UIControlStateNormal];
-    [tabButton3 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [tabButton3.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
-    [tabButton3 addTarget:self action:@selector(selectedTabBtn:) forControlEvents:UIControlEventTouchUpInside];
-    tabButton3.tag = 2;
-    [tabView addSubview:tabButton3];
-    
-    // Selected Red Line
-    UIView *redLine = [[UIView alloc] initWithFrame:CGRectMake(10, tabView.frame.size.height - 4.5, tabView.frame.size.width/3 - 20, 4)];
-    [redLine setBackgroundColor:[UIColor colorWithRed:228/255.0 green:76/255.0 blue:88/255.0 alpha:1]];
-    [tabView addSubview:redLine];
-    
-    // Cell SeparatorLine
-    UIView *separatorLine = [[UIView alloc] initWithFrame:CGRectMake(0, tabView.frame.size.height - 0.5, self.view.frame.size.width, 0.5)];
-    [separatorLine setBackgroundColor:[UIColor lightGrayColor]];
-    [tabView addSubview:separatorLine];
-    
+    // Tab View
+    TabView *tabView = [[TabView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TAB_MENU_HEIGHT)];
+    tabView.delegate = self;
+
     return tabView;
 }
 
@@ -194,32 +159,29 @@
             UISwitch *switcher = [[UISwitch alloc] init];
             [switcher setOnTintColor:[UIColor colorWithRed:228/255.0 green:76/255.0 blue:88/255.0 alpha:1]];
             [switcher addTarget:self action:@selector(selectedSwitcher:) forControlEvents:UIControlEventValueChanged];
-            self.switcher = switcher;
+            
             [cell setAccessoryView:switcher];
             
             switch ([DataCenter addCellTypeStr2Num:cellStr]) {
-                case DEFAULTINFO:
-                    // 일단 레이아웃 짜기 위해 아래같은 수식 씀
-                    if (indexPath.row == 4) {
-                        cell.textLabel.text = @"위젯 설정";
-                        switcher.tag = 2; // 위젯 설정 : 2
-                        [switcher setOn:YES];
-                    } else {
-                        cell.textLabel.text = @"배지 설정";
-                        switcher.tag = 3; // 배지 설정 : 3
-                    }
+                case DEFAULTINFO2:
+                    cell.textLabel.text = @"배지 설정";
+                    switcher.tag = 3;   // 배지 설정 : 3
+                    break;
                     
+                case DEFAULTINFO1:
+                    cell.textLabel.text = @"위젯 설정";
+                    switcher.tag = 2;   // 위젯 설정 : 2
+                    [switcher setOn:YES];       // 초기 세팅 On
                     break;
                     
                 case DEFAULT2:
                     cell.textLabel.text = @"반복 설정";
-                    switcher.tag = 1; // 반복 설정 : 1
+                    switcher.tag = 1;   // 반복 설정 : 1
                     break;
                     
                 default:    //DEFAULT
                     cell.textLabel.text = @"기간으로 설정";
-                    switcher.tag = 0; // 기간으로 설정 : 0
-                    
+                    switcher.tag = 0;   // 기간으로 설정 : 0
                     break;
             }
         
@@ -242,6 +204,21 @@
     }
 }
 
+////////////// Tab View //////////////
+
+- (void)selectedTabViewLeftBtn:(UIButton *)btn {
+    
+}
+
+- (void)selectedTabViewMiddleBtn:(UIButton *)btn {
+    
+}
+
+- (void)selectedTabViewRightBtn:(UIButton *)btn {
+    
+}
+
+
 
 ////////////// Switch Click //////////////
 
@@ -249,7 +226,7 @@
     NSLog(@"스위치 누름");
     if (switcher.tag == 0) {
         self.currentAddVer = switcher.on ? ADD2 : ADD1;
-        [self.tV reloadData];
+        [self.tV reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

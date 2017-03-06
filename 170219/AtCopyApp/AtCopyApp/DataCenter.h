@@ -23,13 +23,16 @@ typedef NS_ENUM(NSInteger, AddTableViewCellType) {
     TITLE = 0,
     DATE,
     DATE2,
-    CHARACTER,
-    DEFAULTINFO,
-    DEFAULT2,
-    DEFAULT
+    DEFAULT1,       // 기간으로 설정
+    DEFAULT2,       // 반복 설정
+    DEFAULTINFO1,   // 위젯 설정
+    DEFAULTINFO2,    // 배지 설정
+    CHARACTERLIST
 };
 
 @interface DataCenter : NSObject
+
+@property (nonatomic) NSMutableArray *atDataArr;
 
 @property (nonatomic) NSArray *cellColor;
 @property (nonatomic) NSArray *addArrData;
@@ -43,5 +46,8 @@ typedef NS_ENUM(NSInteger, AddTableViewCellType) {
 + (NSInteger)addCellTypeStr2Num:(NSString *)cellTypeStr;
 + (double)getAddCellHeight:(NSString *)cellTypeStr;
 
+
++ (void)addAtData;
++ (NSDictionary *)getAtDataWithNum:(NSInteger)num;
 
 @end

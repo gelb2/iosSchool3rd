@@ -17,8 +17,10 @@
 		3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A723D1E59D3170013D1C1 /* DDay.m */; };
 		3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */; };
 		3F52044D1E67AFF8002C13DA /* AssetListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52044C1E67AFF8002C13DA /* AssetListView.m */; };
+		3F5204781E693816002C13DA /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5204771E693816002C13DA /* TabView.m */; };
 		3F72B4671E5EB5150000D878 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F72B4661E5EB5150000D878 /* DataCenter.m */; };
 		3F97E8A01E5B075200836432 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F97E89F1E5B075200836432 /* AddViewController.m */; };
+		3FB55B951E6D303C00BC932F /* AT_DATA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FB55B941E6D303C00BC932F /* AT_DATA.plist */; };
 		3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */; };
 		3FF3D0F01E5D747F00CCF9AA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EB1E5D747F00CCF9AA /* back.png */; };
 		3FF3D0F11E5D747F00CCF9AA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D0EC1E5D747F00CCF9AA /* menu.png */; };
@@ -48,10 +50,13 @@
 		3F1A72431E59EEC10013D1C1 /* StatusCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCharacter.m; sourceTree = "<group>"; };
 		3F52044B1E67AFF8002C13DA /* AssetListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetListView.h; sourceTree = "<group>"; };
 		3F52044C1E67AFF8002C13DA /* AssetListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetListView.m; sourceTree = "<group>"; };
+		3F5204761E693816002C13DA /* TabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabView.h; sourceTree = "<group>"; };
+		3F5204771E693816002C13DA /* TabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabView.m; sourceTree = "<group>"; };
 		3F72B4651E5EB5150000D878 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
 		3F72B4661E5EB5150000D878 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 		3F97E89E1E5B075200836432 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		3F97E89F1E5B075200836432 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		3FB55B941E6D303C00BC932F /* AT_DATA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AT_DATA.plist; sourceTree = "<group>"; };
 		3FF3D0E81E5D54F100CCF9AA /* CustomUINavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUINavigationBar.h; sourceTree = "<group>"; };
 		3FF3D0E91E5D54F100CCF9AA /* CustomUINavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUINavigationBar.m; sourceTree = "<group>"; };
 		3FF3D0EB1E5D747F00CCF9AA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Images/back.png; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 				3FF3D1081E5DA84500CCF9AA /* DateCalculator */,
 				3F1A722B1E59B3A80013D1C1 /* Assets.xcassets */,
 				3F1A722D1E59B3A80013D1C1 /* LaunchScreen.storyboard */,
+				3FB55B941E6D303C00BC932F /* AT_DATA.plist */,
 				3F1A72301E59B3A80013D1C1 /* Info.plist */,
 				3F1A72451E59F9840013D1C1 /* IMG */,
 				3F1A721F1E59B3A80013D1C1 /* Supporting Files */,
@@ -158,6 +164,8 @@
 				3F97E89F1E5B075200836432 /* AddViewController.m */,
 				3FF3D1091E5DA8B300CCF9AA /* AddTableViewCell.h */,
 				3FF3D10A1E5DA8B300CCF9AA /* AddTableViewCell.m */,
+				3F5204761E693816002C13DA /* TabView.h */,
+				3F5204771E693816002C13DA /* TabView.m */,
 			);
 			name = Add;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 				3FF3D0F11E5D747F00CCF9AA /* menu.png in Resources */,
 				3F1A722F1E59B3A80013D1C1 /* LaunchScreen.storyboard in Resources */,
 				3FF3D0F21E5D747F00CCF9AA /* add.png in Resources */,
+				3FB55B951E6D303C00BC932F /* AT_DATA.plist in Resources */,
 				3F011DA41E66F60D0098D6F9 /* launchImg.jpeg in Resources */,
 				3F1A722C1E59B3A80013D1C1 /* Assets.xcassets in Resources */,
 				3FF3D0F31E5D747F00CCF9AA /* speechBalloonR.png in Resources */,
@@ -282,6 +291,7 @@
 				3F1A72241E59B3A80013D1C1 /* AppDelegate.m in Sources */,
 				3F97E8A01E5B075200836432 /* AddViewController.m in Sources */,
 				3F1A72211E59B3A80013D1C1 /* main.m in Sources */,
+				3F5204781E693816002C13DA /* TabView.m in Sources */,
 				3F72B4671E5EB5150000D878 /* DataCenter.m in Sources */,
 				3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */,
 			);

@@ -32,8 +32,26 @@
 }
 
 - (void)setInitialData {
-    self.addArrData = @[@[@"TITLE", @"DATE", @"DEFAULT", @"DEFAULT2", @"DEFAULTINFO", @"DEFAULTINFO", @"CHARACTER"],      // ADD1
-                        @[@"TITLE", @"DATE2", @"DEFAULT", @"DEFAULT2", @"DEFAULTINFO", @"DEFAULTINFO", @"CHARACTER"]];    // ADD2
+    
+    // AT Data Docu Set
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths objectAtIndex:0];
+    NSString *docuPath = [basePath stringByAppendingPathComponent:@"AT_DATA"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:docuPath]) {
+        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"AT_DATA" ofType:@"plist"];
+        [fileManager copyItemAtPath:bundlePath toPath:docuPath error:nil];
+    }
+    
+    self.atDataArr = [NSMutableArray arrayWithContentsOfFile:docuPath];
+    
+    
+    
+    // ADD View
+    
+    self.addArrData = @[@[@"TITLE", @"DATE", @"DEFAULT1", @"DEFAULT2", @"DEFAULTINFO1", @"DEFAULTINFO2", @"CHARACTERLIST"],      // ADD1
+                        @[@"TITLE", @"DATE2", @"DEFAULT1", @"DEFAULT2", @"DEFAULTINFO1", @"DEFAULTINFO2", @"CHARACTERLIST"]];    // ADD2
     
 }
 
@@ -49,14 +67,16 @@
         return DATE;
     } else if ([cellTypeStr isEqualToString:@"DATE2"]) {
         return DATE2;
-    } else if ([cellTypeStr isEqualToString:@"CHARACTER"]) {
-        return CHARACTER;
-    } else if ([cellTypeStr isEqualToString:@"DEFAULTINFO"]) {
-        return DEFAULTINFO;
+    } else if ([cellTypeStr isEqualToString:@"CHARACTERLIST"]) {
+        return CHARACTERLIST;
+    } else if ([cellTypeStr isEqualToString:@"DEFAULTINFO1"]) {
+        return DEFAULTINFO1;
+    } else if ([cellTypeStr isEqualToString:@"DEFAULTINFO2"]) {
+        return DEFAULTINFO2;
     } else if ([cellTypeStr isEqualToString:@"DEFAULT2"]) {
         return DEFAULT2;
     } else {    // DEFAULT
-        return DEFAULT;
+        return DEFAULT1;
     }
 }
 
@@ -69,13 +89,19 @@
             return 135;
         case DATE2:
             return 240;
-        case CHARACTER:
+        case CHARACTERLIST:
             return 180;
-        case DEFAULTINFO:
-        case DEFAULT2:
-        default:    // DEFAULT
+        default:    // DEFAULT 전부
             return 75;
     }
+}
+
+
+//
+
+- (void)addAtData {
+//    [self.atDataArr addObject:<#(nonnull id)#>]
+    
 }
 
 

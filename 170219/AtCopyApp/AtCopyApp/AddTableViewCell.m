@@ -194,7 +194,7 @@
             
             break;
         }
-        case CHARACTER:{
+        case CHARACTERLIST:{
             
             UILabel *lB1 = [[UILabel alloc] init];
             [lB1 setText:@"캐릭터 선택"];
@@ -301,7 +301,7 @@
             
             break;
             
-        case CHARACTER: {
+        case CHARACTERLIST: {
             self.lB1.frame = CGRectMake(offsetX, offsetY, 150, 35);
             
 //            offsetY += self.lB.frame.size.height + MARGIN/2;
