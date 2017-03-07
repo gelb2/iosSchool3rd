@@ -65,5 +65,3 @@ add(3,5)	// 3+5 -> 8
 - 애플에서는 define 쓰지 말라 권고함
 - [[StackOverFlow] What is the best way to create constants in Objective-C](http://stackoverflow.com/questions/17228334/what-is-the-best-way-to-create-constants-in-objective-c)
 
-
-## 기기테스트

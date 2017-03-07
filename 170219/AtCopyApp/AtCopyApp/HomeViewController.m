@@ -11,6 +11,7 @@
 #import "HomeTableViewCell.h"
 #import "AddViewController.h"
 #import "MenuViewController.h"
+#import "DataCenter.h"
 
 #define CELL_SIZE 125.f
 
@@ -19,7 +20,7 @@
 <UITableViewDelegate, UITableViewDataSource, CustomUINavigationBarDelegate>
 
 @property (nonatomic) NSArray *dataArr;
-@property (nonatomic) NSArray *colorArr;
+@property (nonatomic) NSArray *cellColor;
 
 @property UITableView *tV;
 
@@ -35,11 +36,7 @@
     
     [self.navigationController.navigationBar setHidden:YES];
     
-    self.colorArr = @[[UIColor colorWithRed:101/255.0 green:199/255.0 blue:179/255.0 alpha:1],
-                      [UIColor colorWithRed:152/255.0 green:207/255.0 blue:152/255.0 alpha:1],
-                      [UIColor colorWithRed:216/255.0 green:212/255.0 blue:136/255.0 alpha:1],
-                      [UIColor colorWithRed:240/255.0 green:185/255.0 blue:112/255.0 alpha:1],
-                      [UIColor colorWithRed:239/255.0 green:150/255.0 blue:109/255.0 alpha:1]];
+    self.cellColor = [DataCenter sharedInstance].cellColor;
     
     
     self.dataArr = @[@[@"일생", @"1992. 09. 21", @"0000. 00. 00"],
@@ -141,7 +138,7 @@
         cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    [cell setBackgroundColor:self.colorArr[indexPath.row % self.colorArr.count]];
+    [cell setBackgroundColor:self.cellColor[indexPath.row % self.cellColor.count]];
     [cell setCellDataWithName:self.dataArr[indexPath.row][0] withStartDate:self.dataArr[indexPath.row][1] withEndDate:self.dataArr[indexPath.row][2]];
 
     [cell statusBarAnimationStart];     // layoutSubviews와 여기 둘 다 넣어줘야 초기 애니메이션 잘 작동 됨 (?)

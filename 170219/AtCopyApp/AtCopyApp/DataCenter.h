@@ -8,40 +8,11 @@
 //  Singleton
 
 #import <Foundation/Foundation.h>
-#import "AppDelegate.h"
+#import <UIKit/UIKit.h>
+
 
 #define TOTAL_CHARACTER_NUM 2
 
-typedef struct AT_DATA {
-    __unsafe_unretained NSString *name;
-    __unsafe_unretained NSString *startDate;        // YYYY. MM. DD. HH. MM
-    __unsafe_unretained NSString *endDate;          // YYYY. MM. DD. HH. MM
-    BOOL hasTerm;       // 기간으로 설정
-    BOOL isRepeat;      // 반복 설정
-    BOOL setWidget;     // 위젯 설정
-    BOOL setBadge;      // 배지 설정
-    NSInteger character;
-} AT_DATA;
-
-AT_DATA AtDataMake(NSString *name, NSString* startDate, NSString *endDate, BOOL hasTerm, BOOL isRepeat, BOOL setWidget, BOOL setBadge, NSInteger character)
-{
-    AT_DATA data;
-    
-    data.name = name;
-    data.startDate = startDate;
-    data.endDate = endDate;
-    data.hasTerm = hasTerm;
-    data.isRepeat = isRepeat;
-    data.setWidget = setWidget;
-    data.setBadge = setBadge;
-    data.character = character;
-    
-    return data;
-}
-
-
-
-////////////////////
 
 typedef NS_ENUM(NSInteger, ArrDataType) {
     ADD1 = 0,
@@ -63,6 +34,7 @@ typedef NS_ENUM(NSInteger, AddTableViewCellType) {
 
 
 
+////////////////// DataCenter //////////////////
 
 @interface DataCenter : NSObject
 
@@ -70,8 +42,8 @@ typedef NS_ENUM(NSInteger, AddTableViewCellType) {
 @property (nonatomic) NSMutableArray *atDataArr;
 @property (nonatomic) NSString* docuPath;
 
-- (void)setAtData:(AT_DATA)data withIndex:(NSInteger)index;     // index : -1 넣으면 추가, 그 외 수정
-- (AT_DATA)getAtDataWithIndex:(NSInteger)index;
+//- (void)setAtData:(AT_DATA)data withIndex:(NSInteger)index;     // index : -1 넣으면 추가, 그 외 수정
+//- (AT_DATA)getAtDataWithIndex:(NSInteger)index;
 
 //////////
 
@@ -88,5 +60,30 @@ typedef NS_ENUM(NSInteger, AddTableViewCellType) {
 + (double)getAddCellHeight:(NSString *)cellTypeStr;
 
 
+@end
+
+
+
+
+////////////////// AT_DATA //////////////////
+
+// AT_DATA 싱글톤 객체로 AT 데이터들 set, get함
+
+@interface AT_DATA : NSObject
+
+@property NSString *name;
+@property NSString *startDate;        // YYYY. MM. DD. HH. MM
+@property NSString *endDate;          // YYYY. MM. DD. HH. MM
+@property BOOL hasTerm;       // 기간으로 설정
+@property BOOL isRepeat;      // 반복 설정
+@property BOOL setWidget;     // 위젯 설정
+@property BOOL setBadge;      // 배지 설정
+@property NSInteger character;
+
++ (instancetype)AtDataMakeWithName:(NSString *)name withStartDate:(NSString *) startDate withEndDate:(NSString *)endDate withHasTerm:(BOOL)hasTerm withIsRepeat:(BOOL)isRepeat withSetWidget:(BOOL)setWidget withSetBadge:(BOOL)setBadge withCharacter:(NSInteger)character;
+
 
 @end
+
+
+

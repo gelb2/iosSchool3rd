@@ -8,6 +8,9 @@
 
 #import "DataCenter.h"
 
+
+////////////////// DataCenter //////////////////
+
 @implementation DataCenter
 
 + (instancetype)sharedInstance {
@@ -33,10 +36,17 @@
 
 - (void)setInitialData {
     
+    // Cell Color
+    self.cellColor = @[[UIColor colorWithRed:101/255.0 green:199/255.0 blue:179/255.0 alpha:1],
+                       [UIColor colorWithRed:152/255.0 green:207/255.0 blue:152/255.0 alpha:1],
+                       [UIColor colorWithRed:216/255.0 green:212/255.0 blue:136/255.0 alpha:1],
+                       [UIColor colorWithRed:240/255.0 green:185/255.0 blue:112/255.0 alpha:1],
+                       [UIColor colorWithRed:239/255.0 green:150/255.0 blue:109/255.0 alpha:1]];
+    
     // AT Data Docu Set
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = [paths objectAtIndex:0];
-    self.docuPath = [basePath stringByAppendingPathComponent:@"AT_DATA"];
+    self.docuPath = [basePath stringByAppendingPathComponent:@"AT_DATA.plist"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:self.docuPath]) {
@@ -99,7 +109,7 @@
 
 // AT Data 관련 메소드들
 
-- (void)setAtData:(AT_DATA)data withIndex:(NSInteger)index {
+- (void)setAtData:(AT_DATA *)data withIndex:(NSInteger)index {
     
     if (!data.hasTerm) {
         data.endDate = @"0000. 00. 00";
@@ -127,13 +137,54 @@
     [self.atDataArr writeToFile:self.docuPath atomically:NO];
 }
 
-- (AT_DATA)getAtDataWithIndex:(NSInteger)index {
+- (AT_DATA *)getAtDataWithIndex:(NSInteger)index {
 
     self.atDataArr = [NSMutableArray arrayWithContentsOfFile:self.docuPath];
     NSDictionary *dataDic = [self.atDataArr objectAtIndex:index];
     
-    return AtDataMake([dataDic objectForKey:@"name"], [dataDic objectForKey:@"startDate"], [dataDic objectForKey:@"endDate"], [[dataDic objectForKey:@"hasTerm"] boolValue], [[dataDic objectForKey:@"isRepeat"] boolValue], [[dataDic objectForKey:@"setWidget"] boolValue], [[dataDic objectForKey:@"setBadge"] boolValue], [[dataDic objectForKey:@"character"] integerValue]);
+    
+    return [AT_DATA AtDataMakeWithName:[dataDic objectForKey:@"name"] withStartDate:[dataDic objectForKey:@"startDate"] withEndDate:[dataDic objectForKey:@"endDate"] withHasTerm:[[dataDic objectForKey:@"hasTerm"] boolValue] withIsRepeat:[[dataDic objectForKey:@"isRepeat"] boolValue] withSetWidget:[[dataDic objectForKey:@"setWidget"] boolValue] withSetBadge:[[dataDic objectForKey:@"setBadge"] boolValue] withCharacter:[[dataDic objectForKey:@"character"] integerValue]];
 }
 
+@end
+
+
+
+
+
+////////////////// AT_DATA //////////////////
+
+// AT_DATA 싱글톤 객체로 AT 데이터들 set, get함
+
+@implementation AT_DATA
+
++ (instancetype)sharedAtData {
+    
+    static AT_DATA *data = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        data = [[AT_DATA alloc] init];
+    });
+    
+    return data;
+}
+
+
++ (AT_DATA *)AtDataMakeWithName:(NSString *)name withStartDate:(NSString *) startDate withEndDate:(NSString *)endDate withHasTerm:(BOOL)hasTerm withIsRepeat:(BOOL)isRepeat withSetWidget:(BOOL)setWidget withSetBadge:(BOOL)setBadge withCharacter:(NSInteger)character {
+    
+    AT_DATA *data = [AT_DATA sharedAtData];
+    
+    data.name = name;
+    data.startDate = startDate;
+    data.endDate = endDate;
+    data.hasTerm = hasTerm;
+    data.isRepeat = isRepeat;
+    data.setWidget = setWidget;
+    data.setBadge = setBadge;
+    data.character = character;
+    
+    return data;
+}
 
 @end

@@ -232,7 +232,7 @@
 				TargetAttributes = {
 					3F1A721B1E59B3A80013D1C1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JVMFT5G5K6;
+						DevelopmentTeam = NN7QXHC8A3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -281,19 +281,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */,
-				3F52044D1E67AFF8002C13DA /* AssetListView.m in Sources */,
-				3FF3D10B1E5DA8B300CCF9AA /* AddTableViewCell.m in Sources */,
-				3FF3D0F71E5D777700CCF9AA /* MenuViewController.m in Sources */,
-				3FF3D1031E5DA69900CCF9AA /* HomeTableViewCell.m in Sources */,
-				3FF3D1061E5DA71500CCF9AA /* HomeViewController.m in Sources */,
-				3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */,
 				3F1A72241E59B3A80013D1C1 /* AppDelegate.m in Sources */,
-				3F97E8A01E5B075200836432 /* AddViewController.m in Sources */,
-				3F1A72211E59B3A80013D1C1 /* main.m in Sources */,
-				3F5204781E693816002C13DA /* TabView.m in Sources */,
 				3F72B4671E5EB5150000D878 /* DataCenter.m in Sources */,
+				3FF3D0EA1E5D54F100CCF9AA /* CustomUINavigationBar.m in Sources */,
 				3F1A72441E59EEC10013D1C1 /* StatusCharacter.m in Sources */,
+				3F52044D1E67AFF8002C13DA /* AssetListView.m in Sources */,
+				3FF3D1061E5DA71500CCF9AA /* HomeViewController.m in Sources */,
+				3FF3D1031E5DA69900CCF9AA /* HomeTableViewCell.m in Sources */,
+				3F97E8A01E5B075200836432 /* AddViewController.m in Sources */,
+				3FF3D10B1E5DA8B300CCF9AA /* AddTableViewCell.m in Sources */,
+				3F5204781E693816002C13DA /* TabView.m in Sources */,
+				3FF3D0F71E5D777700CCF9AA /* MenuViewController.m in Sources */,
+				3F1A723E1E59D3170013D1C1 /* DDay.m in Sources */,
+				3F1A72211E59B3A80013D1C1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,10 +412,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JVMFT5G5K6;
+				DEVELOPMENT_TEAM = NN7QXHC8A3;
 				INFOPLIST_FILE = AtCopyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Jereator.AtCopyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeheon.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -425,10 +425,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JVMFT5G5K6;
+				DEVELOPMENT_TEAM = NN7QXHC8A3;
 				INFOPLIST_FILE = AtCopyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Jereator.AtCopyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeheon.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
