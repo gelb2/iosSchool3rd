@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 
-int num = 2;
+int num = 1;
 
 @interface ViewController ()
 
