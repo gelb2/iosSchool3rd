@@ -12,6 +12,6 @@ typedef NSString* (^BtnClickBlock)(void);
 
 @interface CustomUIView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame WithBlock:NSString* (^)(void)btnClickBlock;
+- (instancetype)initWithFrame:(CGRect)frame WithBlock:(BtnClickBlock)btnClickBlock;
 
 @end
