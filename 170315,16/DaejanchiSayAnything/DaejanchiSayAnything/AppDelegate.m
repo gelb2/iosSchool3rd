@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DataCenter.h"
 
 @interface AppDelegate ()
 
