@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSLog(@"Main VC viewDidLoad");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,5 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)logOutBtnAction:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 @end

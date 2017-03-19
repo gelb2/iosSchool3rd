@@ -48,6 +48,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="aTc-LK-Vmo"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -70,7 +73,10 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="O5a-9n-eDV"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -103,8 +109,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="signUpBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F9F-8O-d8m"/>
-                                                            <segue destination="MHq-3m-r8s" kind="presentation" id="795-KE-z1J"/>
+                                                            <action selector="signUpBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Zl-zC-NyB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -154,8 +159,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Oyl-zh-NUY"/>
-                            <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ccQ-aG-wt3"/>
+                            <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" identifier="loginViewCenterConstraint" id="Oyl-zh-NUY"/>
                             <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j1q-gq-Tdl"/>
                         </constraints>
                     </view>
@@ -181,7 +185,20 @@
                     <view key="view" contentMode="scaleToFill" id="Dro-pJ-hYA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4H-86-k2s">
+                                <rect key="frame" x="160" y="318.5" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutBtnAction:" destination="AUb-sx-qTZ" eventType="touchUpInside" id="4bM-RB-exy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E4H-86-k2s" firstAttribute="centerY" secondItem="Dro-pJ-hYA" secondAttribute="centerY" id="Lyl-s5-1Pt"/>
+                            <constraint firstItem="E4H-86-k2s" firstAttribute="centerX" secondItem="Dro-pJ-hYA" secondAttribute="centerX" id="ip6-gP-lhH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixe-dU-n2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,7 +208,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="oNo-fP-0T1">
             <objects>
-                <viewController id="MHq-3m-r8s" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="MHq-3m-r8s" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gdi-yX-DUj"/>
                         <viewControllerLayoutGuide type="bottom" id="S1O-U4-qMa"/>
@@ -200,7 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hew-pG-OMN">
+                            <view contentMode="scaleToFill" restorationIdentifier="signUpViewCenterConstraint" translatesAutoresizingMaskIntoConstraints="NO" id="hew-pG-OMN">
                                 <rect key="frame" x="72.5" y="228.5" width="230" height="210"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -231,6 +248,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="MHq-3m-r8s" id="SB9-Zi-8QQ"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -254,6 +274,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="MHq-3m-r8s" id="f6j-WM-a2h"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -276,7 +299,10 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="MHq-3m-r8s" id="5C7-VG-KgL"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -353,10 +379,9 @@
                             <constraint firstItem="hew-pG-OMN" firstAttribute="centerX" secondItem="U4a-GR-Poq" secondAttribute="centerX" id="3q2-1k-lYE"/>
                             <constraint firstItem="nQr-PE-4U0" firstAttribute="centerX" secondItem="hew-pG-OMN" secondAttribute="centerX" id="6BX-C6-HXL"/>
                             <constraint firstItem="3Uj-pu-WnI" firstAttribute="centerX" secondItem="8WO-FO-Cpb" secondAttribute="centerX" id="9ae-J1-fXL"/>
-                            <constraint firstItem="hew-pG-OMN" firstAttribute="centerX" relation="lessThanOrEqual" secondItem="U4a-GR-Poq" secondAttribute="centerX" id="9gS-9e-kiK"/>
                             <constraint firstItem="nQr-PE-4U0" firstAttribute="centerY" secondItem="hew-pG-OMN" secondAttribute="centerY" id="CvE-4q-JsC"/>
                             <constraint firstItem="3hR-Oo-zXt" firstAttribute="centerX" secondItem="ON6-3i-h2E" secondAttribute="centerX" id="DIv-uM-09v"/>
-                            <constraint firstItem="hew-pG-OMN" firstAttribute="centerY" secondItem="U4a-GR-Poq" secondAttribute="centerY" id="FLV-Wb-l8e"/>
+                            <constraint firstItem="hew-pG-OMN" firstAttribute="centerY" secondItem="U4a-GR-Poq" secondAttribute="centerY" identifier="signUpViewCenterConstraint" id="FLV-Wb-l8e"/>
                             <constraint firstItem="AIz-aT-DSR" firstAttribute="centerX" secondItem="oiW-4q-4ng" secondAttribute="centerX" id="NXr-fz-tsB"/>
                             <constraint firstItem="AIz-aT-DSR" firstAttribute="width" secondItem="oiW-4q-4ng" secondAttribute="width" multiplier="0.95" id="QWy-MY-qAG"/>
                             <constraint firstItem="3Uj-pu-WnI" firstAttribute="top" secondItem="8WO-FO-Cpb" secondAttribute="bottom" constant="2" id="WBn-OI-gwA"/>

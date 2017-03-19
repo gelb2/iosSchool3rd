@@ -31,7 +31,7 @@ static NSString *const POST_URL         = @"/post/";
 @implementation NetworkModule
 
 // Sign Up
-+ (void)signUpWithUsername:(NSString *)username withPassword1:(NSString *)password1 withPassword2:(NSString *)password2 {
++ (void)signUpWithUsername:(NSString *)username withPassword1:(NSString *)password1 withPassword2:(NSString *)password2 completionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock {
     
     // Session
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -47,23 +47,26 @@ static NSString *const POST_URL         = @"/post/";
     NSURLSessionUploadTask *postDataTask = [session uploadTaskWithRequest:request
                                                                  fromData:nil
                                                         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-
-                                                            NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
                                                             
-                                                            if (error.code == 0) {
+                                                            NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+                                                            
+//                                                            NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
+                                                            
+                                                            
+                                                            if (error == nil) {
                                                                 
                                                                 NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                                                                 
-                                                                NSLog(@"%@", [responseDic objectForKey:@"key"]);
-                                                                
-                                                                
+                                                                NSLog(@"%@",[responseDic objectForKey:@"key"]);
+                                                            
                                                                 [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
                                                                 
-
+                                                                completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
+                                                                
                                                             } else {
                                                                 
                                                                 NSLog(@"network error code %ld", error.code);
-                                                            
+                                                                
                                                             }
                                                         }];
     
@@ -72,7 +75,8 @@ static NSString *const POST_URL         = @"/post/";
 
 
 // Log In
-+ (void)logInWithUsername:(NSString *)username withPassword:(NSString *)password {
+
++ (void)logInWithUsername:(NSString *)username withPassword:(NSString *)password completionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock {
     
     // Session
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -89,19 +93,18 @@ static NSString *const POST_URL         = @"/post/";
                                                                  fromData:nil
                                                         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                                             
-                                                            NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
+                                                            NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
                                                             
                                                             
-                                                            if (error.code == 0) {
+                                                            if (error == nil) {
                                                                 
                                                                 NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                                                                 
                                                                 NSLog(@"%@",[responseDic objectForKey:@"key"]);
                                                                 
-                                                                
                                                                 [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
-//                                                                [[DataCenter sharedInstance].logInDelegate logInStart];
                                                                 
+                                                                completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
                                                                 
                                                             } else {
                                                                 
@@ -113,6 +116,45 @@ static NSString *const POST_URL         = @"/post/";
     
     [postDataTask resume];
 }
+
+//
+//- (void)postCreateWithTitle:(NSString *)title withContent:(NSString *)content withImgCover:(NSString *)imgCover {
+//    
+//    // Session
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    
+//    // Request
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, LOG_IN_URL]];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    
+//    request.HTTPBody = [[NSString stringWithFormat:@"username=%@&password=%@", username, password] dataUsingEncoding:NSUTF8StringEncoding];
+//    request.HTTPMethod = @"POST";
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    NSString *boundary = @"----------------0x0x0x0x0x0x";
+//    NSMutableData *body = [NSMutableData data];
+//    
+//    // start boundary
+//    // 타이틀 정보
+//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"title\"\r\n\r\n%@", title] dataUsingEncoding:NSUTF8StringEncoding]];
+//     
+//    // 컨텐츠 정보
+//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"content\"\r\n\r\n%@", content] dataUsingEncoding:NSUTF8StringEncoding]];
+//
+//    // 이미지 정보
+//    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"img_cover\"\r\n\r\n%@", content] dataUsingEncoding:NSUTF8StringEncoding]];
+//
+//    
+//}
 
 
 

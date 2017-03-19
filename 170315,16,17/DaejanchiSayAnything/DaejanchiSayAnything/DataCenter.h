@@ -17,16 +17,13 @@
 
 + (instancetype)sharedInstance;
 
-@property id <logInDelegate> logInDelegate;
 @property (nonatomic) NSString *token;
 
-@end
+@property (nonatomic) CGFloat loginViewMovingHeight;
+@property (weak, nonatomic) NSLayoutConstraint *loginViewCenterYConstraint;
 
-
-
-@protocol logInDelegate <NSObject>
-
-- (void)logInStart;
+@property (nonatomic) CGFloat signUpViewMovingHeight;
+@property (weak, nonatomic) NSLayoutConstraint *signUpViewCenterYConstraint;
 
 @end
 
