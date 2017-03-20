@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *password1Tf;
 @property (weak, nonatomic) IBOutlet UITextField *password2Tf;
 
+@property (weak, nonatomic) IBOutlet UIView *indicatorView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+
 @property (weak, nonatomic) UITextField *lastFirstResponder;
 
 @end
@@ -29,9 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    NSLog(@"SignUp VC viewDidLoad");
-    
+    NSLog(@"SignUp VC viewDidLoad");    
 
 }
 
@@ -58,14 +59,18 @@
 //    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
+
+//----------------- 초기 세팅 관련 -----------------//
+
 - (void)initialSetting {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillHideNotification object:nil];
+    
+    self.view.userInteractionEnabled = YES;     // TextField 외부 터치 이벤트 받기 위한 설정
     
     self.userNameTf.tag = 100;
     self.password1Tf.tag = 200;
     self.password2Tf.tag = 300;
     
+    self.indicatorView.layer.cornerRadius = 5;
     
     // constraint 주소 값이 매번 바뀌는 듯?    
     for (NSLayoutConstraint *constraint in [self.view constraints]) {
@@ -74,28 +79,75 @@
             break;
         }
     }
+    
+    // 키보드 노티 설정
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillHideNotification object:nil];
+
 }
 
 
+// 다른 곳 터치할 때, TextField First Responder 해제
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.lastFirstResponder isFirstResponder] && [touch view] != self.lastFirstResponder) {
+        [self.lastFirstResponder resignFirstResponder];
+    }
+}
+
+
+
+//----------------- UIButton 관련 -----------------//
+
 - (IBAction)signUpDoneBtnAction:(id)sender {
+    
+    [self.lastFirstResponder resignFirstResponder];
+    
+    [self.indicator startAnimating];
+    [self.indicatorView setHidden:NO];
+    
     [NetworkModule signUpWithUsername:self.userNameTf.text withPassword1:self.password1Tf.text withPassword2:self.password2Tf.text completionBlock:^(BOOL isSuccess, NSDictionary *result) {
         
         if(isSuccess) {
             NSLog(@"token : %@", [DataCenter sharedInstance].token);
+
+            dispatch_async(dispatch_get_main_queue(), ^{        // 이 부분 메인 스레드 돌여야 하는 이유?
+
+                // dismiss한 후 Login VC viewWillAppear에서 바로 Token 값 nil 체크해서, nil이 아닐시 main VC로 넘어가게 되어있음
+                [self dismissViewControllerAnimated:YES completion:nil];
             
-            MainViewController *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            [self presentViewController:mainVC animated:YES completion:nil];
+                [self.indicatorView setHidden:YES];
+                [self.indicator stopAnimating];
+                
+            });
             
         } else {
             NSLog(@"%@", result);
+            
+            self.password1Tf.text = nil;
+            self.password2Tf.text = nil;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+            
+                [self.indicatorView setHidden:YES];
+                [self.indicator stopAnimating];
+            });
         }
     }];
 }
 
 - (IBAction)cancelBtnAction:(id)sender {
+    
+    [self initializeTextField];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
+
+
+//----------------- 텍스트 필드, 키보드 관련 -----------------//
 
 - (void)keyboardNoti:(NSNotification *)keyboardNoti {
     

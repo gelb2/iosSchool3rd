@@ -16,4 +16,7 @@
 // Log In
 + (void)logInWithUsername:(NSString *)username withPassword:(NSString *)password completionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
 
+// Log Out
++ (void)logOutWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
+
 @end

@@ -19,8 +19,8 @@
 
 @property (nonatomic) NSString *token;
 
-@property (nonatomic) CGFloat loginViewMovingHeight;
-@property (weak, nonatomic) NSLayoutConstraint *loginViewCenterYConstraint;
+@property (nonatomic) CGFloat logInViewMovingHeight;
+@property (weak, nonatomic) NSLayoutConstraint *logInViewCenterYConstraint;
 
 @property (nonatomic) CGFloat signUpViewMovingHeight;
 @property (weak, nonatomic) NSLayoutConstraint *signUpViewCenterYConstraint;

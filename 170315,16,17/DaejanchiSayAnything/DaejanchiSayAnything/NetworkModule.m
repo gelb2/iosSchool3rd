@@ -20,9 +20,8 @@ static NSString *const USER_DETAIL_URL  = @"/member/profile/";
 static NSString *const POST_URL         = @"/post/";
 
 
-@interface NetworkModule ()
 
-@property (nonatomic) NSURLSession *session;
+@interface NetworkModule ()
 
 @end
 
@@ -46,36 +45,30 @@ static NSString *const POST_URL         = @"/post/";
     //Post Task 요청
     NSURLSessionUploadTask *postDataTask = [session uploadTaskWithRequest:request
                                                                  fromData:nil
-                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                                                            
-                                                            NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
-                                                            
-//                                                            NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
-                                                            
-                                                            
-                                                            if (error == nil) {
-                                                                
-                                                                NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                                
-                                                                NSLog(@"%@",[responseDic objectForKey:@"key"]);
-                                                            
-                                                                [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
-                                                                
-                                                                completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
-                                                                
-                                                            } else {
-                                                                
-                                                                NSLog(@"network error code %ld", error.code);
-                                                                
-                                                            }
-                                                        }];
+                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    {
+      
+        NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+//        NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
+
+        if (error == nil) {
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            NSLog(@"%@",[responseDic objectForKey:@"key"]);
+            
+            [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
+            completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
+            
+        } else {
+            NSLog(@"network error code %ld", error.code);
+            completionBlock(NO, nil);
+        }
+    }];
     
     [postDataTask resume];
 }
 
 
 // Log In
-
 + (void)logInWithUsername:(NSString *)username withPassword:(NSString *)password completionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock {
     
     // Session
@@ -84,40 +77,82 @@ static NSString *const POST_URL         = @"/post/";
     // Request
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, LOG_IN_URL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
+
     request.HTTPBody = [[NSString stringWithFormat:@"username=%@&password=%@", username, password] dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPMethod = @"POST";
     
     //Post Task 요청
     NSURLSessionUploadTask *postDataTask = [session uploadTaskWithRequest:request
                                                                  fromData:nil
-                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                                                            
-                                                            NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
-                                                            
-                                                            
-                                                            if (error == nil) {
-                                                                
-                                                                NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                                
-                                                                NSLog(@"%@",[responseDic objectForKey:@"key"]);
-                                                                
-                                                                [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
-                                                                
-                                                                completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
-                                                                
-                                                            } else {
-                                                                
-                                                                NSLog(@"network error code %ld", error.code);
-                                                                
-                                                            }
-                                                            
-                                                        }];
+                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    {
+      
+        NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+        
+        if (error == nil) {
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            NSLog(@"%@",[responseDic objectForKey:@"key"]);
+
+            [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
+            completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
+
+        } else {
+            NSLog(@"network error code %ld", error.code);
+            completionBlock(NO, nil);
+        }
+    }];
     
     [postDataTask resume];
 }
 
-//
+
+// Log Out
++ (void)logOutWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock {
+    
+    // Session
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    // Request
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, LOG_OUT_URL]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    // 헤더 세팅
+    [request addValue:[NSString stringWithFormat:@"token %@", [DataCenter sharedInstance].token] forHTTPHeaderField:@"Authorization"];
+
+    request.HTTPBody = [@"" dataUsingEncoding:NSUTF8StringEncoding];        // @"" 왜 넣어야하지?
+    request.HTTPMethod = @"POST";
+    
+    // Post Task 요청
+    NSURLSessionUploadTask *postDataTask = [session uploadTaskWithRequest:request
+                                                                 fromData:nil
+                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    {
+        
+        NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+
+        // NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
+        
+        if (error == nil) {
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+
+            NSLog(@"로그아웃, token : %@", [DataCenter sharedInstance].token);
+            [DataCenter sharedInstance].token = nil;
+            NSLog(@"초기화 완료 -> token : %@", [DataCenter sharedInstance].token);
+            
+            completionBlock(YES, responseDic);
+            
+        } else {
+            NSLog(@"network error code %ld", error.code);
+            completionBlock(NO, nil);
+        }
+    }];
+    
+    [postDataTask resume];
+    
+}
+
+
+
 //- (void)postCreateWithTitle:(NSString *)title withContent:(NSString *)content withImgCover:(NSString *)imgCover {
 //    
 //    // Session
@@ -155,6 +190,44 @@ static NSString *const POST_URL         = @"/post/";
 //
 //    
 //}
+
+
+
+// Log Out
++ (void)getPostListWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock {
+    
+    // Session
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    // Request
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, POST_URL]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    request.HTTPBody = [[NSString stringWithFormat:@"page=%d", 1] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"GET";
+    
+    // Get Task 요청
+    NSURLSessionDataTask *getDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"%@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+        
+        // NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]);
+        
+        if (error == nil) {
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            NSLog(@"GetPostList");
+            completionBlock(YES, responseDic);
+            
+        } else {
+            NSLog(@"network error code %ld", error.code);
+            completionBlock(NO, nil);
+        }
+    }];
+    
+    [getDataTask resume];
+    
+}
+
 
 
 

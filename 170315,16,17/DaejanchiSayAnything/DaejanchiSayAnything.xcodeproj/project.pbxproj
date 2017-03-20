@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F008C081E7A66AE006F6889 /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F008C071E7A66AE006F6889 /* NetworkModule.m */; };
 		3F008C0B1E7A7989006F6889 /* o_o.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F008C0A1E7A7989006F6889 /* o_o.gif */; };
-		3F008C111E7A7CAD006F6889 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F008C101E7A7CAD006F6889 /* LoginViewController.m */; };
+		3F008C111E7A7CAD006F6889 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F008C101E7A7CAD006F6889 /* LogInViewController.m */; };
 		3F008C141E7A8A78006F6889 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F008C131E7A8A78006F6889 /* SignUpViewController.m */; };
 		3F008C1A1E7ACA6A006F6889 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F008C191E7ACA6A006F6889 /* MainViewController.m */; };
 		3F56AEC01E7A5E18004B8F26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F56AEBF1E7A5E18004B8F26 /* main.m */; };
@@ -25,8 +25,8 @@
 		3F008C061E7A66AE006F6889 /* NetworkModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModule.h; sourceTree = "<group>"; };
 		3F008C071E7A66AE006F6889 /* NetworkModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModule.m; sourceTree = "<group>"; };
 		3F008C0A1E7A7989006F6889 /* o_o.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = o_o.gif; path = imges/o_o.gif; sourceTree = "<group>"; };
-		3F008C0F1E7A7CAD006F6889 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		3F008C101E7A7CAD006F6889 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3F008C0F1E7A7CAD006F6889 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		3F008C101E7A7CAD006F6889 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		3F008C121E7A8A78006F6889 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		3F008C131E7A8A78006F6889 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		3F008C181E7ACA6A006F6889 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 		3F008C1B1E7ACF2B006F6889 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3F008C0F1E7A7CAD006F6889 /* LoginViewController.h */,
-				3F008C101E7A7CAD006F6889 /* LoginViewController.m */,
+				3F008C0F1E7A7CAD006F6889 /* LogInViewController.h */,
+				3F008C101E7A7CAD006F6889 /* LogInViewController.m */,
 				3F008C121E7A8A78006F6889 /* SignUpViewController.h */,
 				3F008C131E7A8A78006F6889 /* SignUpViewController.m */,
 				3F008C181E7ACA6A006F6889 /* MainViewController.h */,
@@ -272,7 +272,7 @@
 				3F56AEC31E7A5E18004B8F26 /* AppDelegate.m in Sources */,
 				3F008C1A1E7ACA6A006F6889 /* MainViewController.m in Sources */,
 				3F56AEC01E7A5E18004B8F26 /* main.m in Sources */,
-				3F008C111E7A7CAD006F6889 /* LoginViewController.m in Sources */,
+				3F008C111E7A7CAD006F6889 /* LogInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

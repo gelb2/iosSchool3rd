@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="BYZ-38-t0r" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -73,7 +73,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="O5a-9n-eDV"/>
                                                         </connections>
@@ -156,16 +156,44 @@
                                     <constraint firstItem="DO6-nN-N0m" firstAttribute="width" secondItem="lva-3P-ycS" secondAttribute="width" multiplier="0.95" id="zUd-OP-yer"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HD4-f4-Rpa" userLabel="loginIndicatorView">
+                                <rect key="frame" x="122.5" y="288.5" width="130" height="90"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="skq-i5-oxx">
+                                        <rect key="frame" x="46.5" y="12.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 중입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB2-wQ-pet">
+                                        <rect key="frame" x="11" y="57" width="107.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="zB2-wQ-pet" firstAttribute="centerX" secondItem="HD4-f4-Rpa" secondAttribute="centerX" id="Ibn-Rd-rtn"/>
+                                    <constraint firstItem="skq-i5-oxx" firstAttribute="top" secondItem="HD4-f4-Rpa" secondAttribute="top" constant="12.5" id="KgX-C8-eUw"/>
+                                    <constraint firstAttribute="height" constant="90" id="h84-yg-1f4"/>
+                                    <constraint firstAttribute="bottom" secondItem="zB2-wQ-pet" secondAttribute="bottom" constant="12.5" id="peF-Zh-Qby"/>
+                                    <constraint firstAttribute="width" constant="130" id="rLt-Oc-cFz"/>
+                                    <constraint firstItem="skq-i5-oxx" firstAttribute="centerX" secondItem="HD4-f4-Rpa" secondAttribute="centerX" id="soG-VM-rFy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" identifier="loginViewCenterConstraint" id="Oyl-zh-NUY"/>
+                            <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" identifier="logInViewCenterConstraint" id="Oyl-zh-NUY"/>
+                            <constraint firstItem="HD4-f4-Rpa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eN7-0a-0uF"/>
                             <constraint firstItem="9Bx-GL-1vd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j1q-gq-Tdl"/>
+                            <constraint firstItem="HD4-f4-Rpa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nVM-8D-mUC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MaC-DR-ubL"/>
                     <connections>
-                        <outlet property="loginView" destination="9Bx-GL-1vd" id="81g-1B-zAJ"/>
+                        <outlet property="indicator" destination="skq-i5-oxx" id="1UT-Xo-M8a"/>
+                        <outlet property="indicatorView" destination="HD4-f4-Rpa" id="UbL-B7-ghv"/>
+                        <outlet property="logInView" destination="9Bx-GL-1vd" id="ob8-al-4kx"/>
                         <outlet property="passwordTf" destination="lva-3P-ycS" id="o1r-Mk-cec"/>
                         <outlet property="userNameTf" destination="yyX-Lh-KUr" id="jDK-Ta-H4s"/>
                     </connections>
@@ -187,19 +215,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4H-86-k2s">
-                                <rect key="frame" x="160" y="318.5" width="55" height="30"/>
-                                <state key="normal" title="Log Out"/>
+                                <rect key="frame" x="130" y="318.5" width="115" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="OLW-Zi-GtI"/>
+                                    <constraint firstAttribute="height" constant="30" id="XOi-ou-gcO"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="logOutBtnAction:" destination="AUb-sx-qTZ" eventType="touchUpInside" id="4bM-RB-exy"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKl-f1-OpT" userLabel="logOutIndicatorView">
+                                <rect key="frame" x="117.5" y="288.5" width="140" height="90"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="V0a-YO-mz4">
+                                        <rect key="frame" x="51.5" y="12.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃 중입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-u4-iUz">
+                                        <rect key="frame" x="9" y="57" width="123" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JNf-u4-iUz" secondAttribute="bottom" constant="12.5" id="28P-FE-tel"/>
+                                    <constraint firstItem="V0a-YO-mz4" firstAttribute="top" secondItem="FKl-f1-OpT" secondAttribute="top" constant="12.5" id="62v-Qb-EyI"/>
+                                    <constraint firstAttribute="height" constant="90" id="7QL-sn-yd5"/>
+                                    <constraint firstAttribute="width" constant="140" id="8s6-Xb-8UQ"/>
+                                    <constraint firstItem="V0a-YO-mz4" firstAttribute="centerX" secondItem="FKl-f1-OpT" secondAttribute="centerX" id="Ara-P7-ODg"/>
+                                    <constraint firstItem="JNf-u4-iUz" firstAttribute="centerX" secondItem="FKl-f1-OpT" secondAttribute="centerX" id="QCH-x0-IzR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FKl-f1-OpT" firstAttribute="centerY" secondItem="Dro-pJ-hYA" secondAttribute="centerY" id="23O-nk-lRJ"/>
+                            <constraint firstItem="FKl-f1-OpT" firstAttribute="centerX" secondItem="Dro-pJ-hYA" secondAttribute="centerX" id="Lrr-m4-HVK"/>
                             <constraint firstItem="E4H-86-k2s" firstAttribute="centerY" secondItem="Dro-pJ-hYA" secondAttribute="centerY" id="Lyl-s5-1Pt"/>
                             <constraint firstItem="E4H-86-k2s" firstAttribute="centerX" secondItem="Dro-pJ-hYA" secondAttribute="centerX" id="ip6-gP-lhH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicator" destination="V0a-YO-mz4" id="h6k-dB-vVu"/>
+                        <outlet property="indicatorView" destination="FKl-f1-OpT" id="kZT-QD-OVR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixe-dU-n2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,7 +364,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="MHq-3m-r8s" id="5C7-VG-KgL"/>
                                                 </connections>
@@ -373,6 +438,30 @@
                                     <constraint firstAttribute="height" constant="1" id="YMh-v1-6eu"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P08-5F-O8z" userLabel="signUpIndicatorView">
+                                <rect key="frame" x="117.5" y="288.5" width="140" height="90"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eOe-8g-VNy">
+                                        <rect key="frame" x="51.5" y="12.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입 중입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-2S-4F2">
+                                        <rect key="frame" x="9" y="57" width="122.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="LJH-kI-zRm"/>
+                                    <constraint firstItem="eOe-8g-VNy" firstAttribute="centerX" secondItem="P08-5F-O8z" secondAttribute="centerX" id="Ple-hJ-J9I"/>
+                                    <constraint firstItem="eOe-8g-VNy" firstAttribute="top" secondItem="P08-5F-O8z" secondAttribute="top" constant="12.5" id="dp5-Zy-sMx"/>
+                                    <constraint firstAttribute="height" constant="90" id="mmf-HA-DLc"/>
+                                    <constraint firstAttribute="bottom" secondItem="GyY-2S-4F2" secondAttribute="bottom" constant="12.5" id="nsu-y5-2ja"/>
+                                    <constraint firstItem="GyY-2S-4F2" firstAttribute="centerX" secondItem="P08-5F-O8z" secondAttribute="centerX" id="u4C-Fb-mbG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -389,11 +478,15 @@
                             <constraint firstItem="nQr-PE-4U0" firstAttribute="width" secondItem="hew-pG-OMN" secondAttribute="width" id="efx-9l-mKQ"/>
                             <constraint firstItem="AIz-aT-DSR" firstAttribute="top" secondItem="oiW-4q-4ng" secondAttribute="bottom" constant="2" id="eoM-b0-5DN"/>
                             <constraint firstItem="3hR-Oo-zXt" firstAttribute="top" secondItem="ON6-3i-h2E" secondAttribute="bottom" constant="2" id="fNx-Qk-Opp"/>
+                            <constraint firstItem="P08-5F-O8z" firstAttribute="centerY" secondItem="U4a-GR-Poq" secondAttribute="centerY" id="nd2-Bb-9K0"/>
+                            <constraint firstItem="P08-5F-O8z" firstAttribute="centerX" secondItem="U4a-GR-Poq" secondAttribute="centerX" id="pF2-Ws-auo"/>
                             <constraint firstItem="nQr-PE-4U0" firstAttribute="height" secondItem="hew-pG-OMN" secondAttribute="height" id="rtf-8X-AvE"/>
                             <constraint firstItem="3hR-Oo-zXt" firstAttribute="width" secondItem="ON6-3i-h2E" secondAttribute="width" multiplier="0.95" id="x97-PV-i4H"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="eOe-8g-VNy" id="3g1-uV-BMg"/>
+                        <outlet property="indicatorView" destination="P08-5F-O8z" id="UpU-De-xf1"/>
                         <outlet property="password1Tf" destination="ON6-3i-h2E" id="W2Z-Ep-WY3"/>
                         <outlet property="password2Tf" destination="8WO-FO-Cpb" id="Vag-3l-xdg"/>
                         <outlet property="signUpView" destination="hew-pG-OMN" id="Im5-Wd-2rD"/>
