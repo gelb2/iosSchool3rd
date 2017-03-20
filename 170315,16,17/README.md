@@ -1,4 +1,5 @@
-####2017.03.15~17 - #39~41 (10주차 2~4번째 수업)
+#### 2017.03.15~17
+#### #39 ~ 41 (10주차 2~4번째 수업)
 
 #### Server Network 붙여서 미니 프로젝트 진행함
 > [LeeHanYeong/FastCampus-iOS-API-Server](https://github.com/LeeHanYeong/FastCampus-iOS-API-Server)
