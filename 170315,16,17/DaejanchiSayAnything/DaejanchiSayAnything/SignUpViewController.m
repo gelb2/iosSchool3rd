@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameTf;
 @property (weak, nonatomic) IBOutlet UITextField *password1Tf;
 @property (weak, nonatomic) IBOutlet UITextField *password2Tf;
+@property (weak, nonatomic) IBOutlet UIButton *doneBtn;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *signUpViewCenterYConstraint;
 
@@ -75,12 +76,19 @@
 
 
 //----------------- 초기 세팅 관련 -----------------//
+#pragma mark - 초기 세팅 관련
 
 - (void)initialSetting {
     
     self.userNameTf.tag = 100;
     self.password1Tf.tag = 200;
     self.password2Tf.tag = 300;
+    [self.doneBtn setEnabled:NO];
+    
+    [self.userNameTf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
+    [self.password1Tf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
+    [self.password2Tf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
+    
     
     self.indicatorView.layer.cornerRadius = 5;
     
@@ -105,6 +113,7 @@
 
 
 //----------------- UIButton 관련 -----------------//
+#pragma mark - UIButton 관련
 
 - (IBAction)signUpDoneBtnAction:(id)sender {
     
@@ -153,6 +162,7 @@
 
 
 //----------------- 텍스트 필드, 키보드 관련 -----------------//
+#pragma mark - 텍스트 필드, 키보드 관련
 
 - (void)keyboardNoti:(NSNotification *)keyboardNoti {
     
@@ -195,12 +205,25 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
     NSLog(@"textFieldShouldBeginEditing");
+    
     self.lastFirstResponder = textField;
     
     return YES;
 }
+
+- (void)changeTextFieldText:(UITextField *)sender {
+    NSLog(@"@selector, changeTextFieldText");
+
+    
+    if ([self.password2Tf.text isEqualToString:@""] || [self.password1Tf.text isEqualToString:@""] || [self.userNameTf.text isEqualToString:@""]) {
+        [self.doneBtn setEnabled:NO];
+    } else {
+        [self.doneBtn setEnabled:YES];
+    }
+}
+
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     

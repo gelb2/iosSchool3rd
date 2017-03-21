@@ -9,11 +9,14 @@
 #import "MainViewController.h"
 #import "NetworkModule.h"
 #import "DataCenter.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *indicatorView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *img;
 
 @end
 
@@ -25,6 +28,13 @@
     
     NSLog(@"Main VC viewDidLoad");
     
+    [self initialSetting];
+    
+    
+    [self.img sd_setImageWithURL:[NSURL URLWithString:@"https://media.giphy.com/media/OazoCyXHeGyDm/giphy.gif"]
+                placeholderImage:[UIImage imageNamed:@"o_o.gif"]
+                         options:SDWebImageLowPriority];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +66,15 @@
     NSLog(@"mainView VC viewDidDisappear");
 }
 
+//----------------- 초기 세팅 관련 -----------------//
+#pragma mark - 초기 세팅 관련
+
+- (void)initialSetting {
+    self.indicatorView.layer.cornerRadius = 5;
+}
+
 //----------------- UIButton 관련 -----------------//
+#pragma mark - UIButton 관련
 
 - (IBAction)logOutBtnAction:(id)sender {
     

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *logInView;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTf;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTf;
+@property (weak, nonatomic) IBOutlet UIButton *logInBtn;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logInViewCenterYConstraint;
 
@@ -96,11 +97,15 @@
 
 
 //----------------- 초기 세팅 관련 -----------------//
+#pragma mark - 초기 세팅 관련
 
 - (void)initialSetting {
     
     self.userNameTf.tag = 100;
     self.passwordTf.tag = 200;
+    [self.logInBtn setEnabled:NO];
+    [self.userNameTf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordTf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
     
     self.indicatorView.layer.cornerRadius = 5;
 }
@@ -118,7 +123,9 @@
 
 
 
+
 //----------------- UIButton 관련 -----------------//
+#pragma mark - UIButton 관련
 
 - (IBAction)logInBtnAction:(id)sender {
     
@@ -165,6 +172,7 @@
 
 
 //----------------- 텍스트 필드, 키보드 관련 -----------------//
+#pragma mark - 텍스트 필드, 키보드 관련
 
 - (void)keyboardNoti:(NSNotification *)keyboardNoti {
     
@@ -240,6 +248,16 @@
     self.lastFirstResponder = textField;
     
     return YES;
+}
+
+- (void)changeTextFieldText:(UITextField *)sender {
+    NSLog(@"@selector, changeTextFieldText");
+
+    if ([self.passwordTf.text isEqualToString:@""] || [self.userNameTf.text isEqualToString:@""]) {
+        [self.logInBtn setEnabled:NO];
+    } else {
+        [self.logInBtn setEnabled:YES];
+    }
 }
 
 

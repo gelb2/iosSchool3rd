@@ -8,6 +8,7 @@
 
 #import "NetworkModule.h"
 #import "DataCenter.h"
+#import <AFNetworking/AFNetworking.h>
 
 
 static NSString *const API_BASE_URL     = @"https://fc-ios.lhy.kr/api";

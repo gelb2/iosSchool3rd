@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -193,6 +194,7 @@
                     <connections>
                         <outlet property="indicator" destination="skq-i5-oxx" id="1UT-Xo-M8a"/>
                         <outlet property="indicatorView" destination="HD4-f4-Rpa" id="UbL-B7-ghv"/>
+                        <outlet property="logInBtn" destination="6Qz-MP-t6V" id="X7P-AU-FsS"/>
                         <outlet property="logInView" destination="9Bx-GL-1vd" id="ob8-al-4kx"/>
                         <outlet property="logInViewCenterYConstraint" destination="Oyl-zh-NUY" id="9yz-hO-ILV"/>
                         <outlet property="passwordTf" destination="lva-3P-ycS" id="o1r-Mk-cec"/>
@@ -253,6 +255,13 @@
                                     <constraint firstItem="JNf-u4-iUz" firstAttribute="centerX" secondItem="FKl-f1-OpT" secondAttribute="centerX" id="QCH-x0-IzR"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-RM-cRq" customClass="FLAnimatedImageView">
+                                <rect key="frame" x="67" y="77" width="240" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5BK-o0-sUT"/>
+                                    <constraint firstAttribute="width" secondItem="EXO-RM-cRq" secondAttribute="height" multiplier="80:53" id="CFc-II-vsi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -260,16 +269,19 @@
                             <constraint firstItem="FKl-f1-OpT" firstAttribute="centerX" secondItem="Dro-pJ-hYA" secondAttribute="centerX" id="Lrr-m4-HVK"/>
                             <constraint firstItem="E4H-86-k2s" firstAttribute="centerY" secondItem="Dro-pJ-hYA" secondAttribute="centerY" id="Lyl-s5-1Pt"/>
                             <constraint firstItem="E4H-86-k2s" firstAttribute="centerX" secondItem="Dro-pJ-hYA" secondAttribute="centerX" id="ip6-gP-lhH"/>
+                            <constraint firstItem="EXO-RM-cRq" firstAttribute="centerX" secondItem="Dro-pJ-hYA" secondAttribute="centerX" id="lYq-K0-OOp"/>
+                            <constraint firstItem="EXO-RM-cRq" firstAttribute="top" secondItem="bBx-Yy-Rah" secondAttribute="bottom" constant="57" id="wfO-R6-dzF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="img" destination="EXO-RM-cRq" id="rNY-Og-XnV"/>
                         <outlet property="indicator" destination="V0a-YO-mz4" id="h6k-dB-vVu"/>
                         <outlet property="indicatorView" destination="FKl-f1-OpT" id="kZT-QD-OVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixe-dU-n2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="738"/>
+            <point key="canvasLocation" x="973.60000000000002" y="737.18140929535241"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="oNo-fP-0T1">
@@ -486,6 +498,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneBtn" destination="Kt3-kg-sBu" id="lf4-D6-FwH"/>
                         <outlet property="indicator" destination="eOe-8g-VNy" id="3g1-uV-BMg"/>
                         <outlet property="indicatorView" destination="P08-5F-O8z" id="UpU-De-xf1"/>
                         <outlet property="password1Tf" destination="ON6-3i-h2E" id="W2Z-Ep-WY3"/>
