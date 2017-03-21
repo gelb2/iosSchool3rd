@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameTf;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTf;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *logInViewCenterYConstraint;
+
 @property (weak, nonatomic) IBOutlet UIView *indicatorView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
@@ -32,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"Log In VC viewDidLoad");
     
     [self initialSetting];
 
@@ -44,10 +47,21 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"Log In VC viewWillAppear");
+    [super viewWillAppear:animated];
     
-    if ([DataCenter sharedInstance].token != nil) {
+    NSLog(@"Log In VC viewWillAppear");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"Log In VC viewDidAppear");
+
+    NSLog(@"UserToken : %@, %d", [DataCenter getUserToken], [DataCenter getUserToken] != nil);
+    
+    if ([DataCenter getUserToken] != nil) {
         // 자동로그인 & Sign up 후 바로 로그인
+        NSLog(@"자동로그인!");
         MainViewController *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
         [self presentViewController:mainVC animated:YES completion:nil];
         
@@ -61,24 +75,29 @@
 
 
 - (void)viewWillDisappear:(BOOL)animated {
-    NSLog(@"Log In VC viewWillDisappear 키보드 노티 해제");
+    [super viewWillDisappear:animated];
+    
+    NSLog(@"Log In VC viewWillDisappear");
 
-    // 노티 해제        signUp VC에서는?
-    [self initializeTextField];
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     
     NSLog(@"Log In VC viewDidDisappear");
+    
+    // 노티 해제        signUp VC에서는?
+    
+    NSLog(@"Log In VC 키보드 노티 해제");
+    [self initializeTextField];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+
 }
 
 
 //----------------- 초기 세팅 관련 -----------------//
 
 - (void)initialSetting {
-    
-    self.view.userInteractionEnabled = YES;     // TextField 외부 터치 이벤트 받기 위한 설정
     
     self.userNameTf.tag = 100;
     self.passwordTf.tag = 200;
@@ -89,7 +108,7 @@
 
 // 다른 곳 터치할 때, TextField First Responder 해제
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
+    [super touchesEnded:touches withEvent:event];
     
     UITouch *touch = [[event allTouches] anyObject];
     if ([self.lastFirstResponder isFirstResponder] && [touch view] != self.lastFirstResponder) {
@@ -111,7 +130,7 @@
     [NetworkModule logInWithUsername:self.userNameTf.text withPassword:self.passwordTf.text completionBlock:^(BOOL isSuccess, NSDictionary* result) {
         
         if(isSuccess) {
-            NSLog(@"token : %@", [DataCenter sharedInstance].token);
+            NSLog(@"token : %@", [DataCenter getUserToken]);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 MainViewController *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
@@ -161,24 +180,17 @@
         // 최소 키보드 높이 + 50씩은 뷰를 위로 올림
         [DataCenter sharedInstance].logInViewMovingHeight = (keyboardHeight + 50 - logInViewBottomMarginHeight) >= 0 ? (keyboardHeight + 50 - logInViewBottomMarginHeight) : 0;
         
-        for (NSLayoutConstraint *constraint in [self.view constraints]) {
-            if ([constraint.identifier isEqualToString:@"logInViewCenterConstraint"]) {
-                [DataCenter sharedInstance].logInViewCenterYConstraint = constraint;
-                break;
-            }
-        }
-        
         NSLog(@"keyboardHeight : %f, logInViewBottomMarginHeight : %f, movingHeight: %f", keyboardHeight, logInViewBottomMarginHeight, [DataCenter sharedInstance].logInViewMovingHeight);
     });
     
     
     // 키보드 노티에 따라 View 위 아래로 움직임
-    if([keyboardNoti.name isEqualToString:@"UIKeyboardWillShowNotification"] && !([DataCenter sharedInstance].logInViewCenterYConstraint.constant == -[DataCenter sharedInstance].logInViewMovingHeight)) {
+    if([keyboardNoti.name isEqualToString:@"UIKeyboardWillShowNotification"] && !(self.logInViewCenterYConstraint.constant == -[DataCenter sharedInstance].logInViewMovingHeight)) {
         
-        [DataCenter sharedInstance].logInViewCenterYConstraint.constant = -[DataCenter sharedInstance].logInViewMovingHeight;
+        self.logInViewCenterYConstraint.constant = -[DataCenter sharedInstance].logInViewMovingHeight;
         
     } else if([keyboardNoti.name isEqualToString:@"UIKeyboardWillHideNotification"]) {
-        [DataCenter sharedInstance].logInViewCenterYConstraint.constant = 0;
+        self.logInViewCenterYConstraint.constant = 0;
         
     }
     

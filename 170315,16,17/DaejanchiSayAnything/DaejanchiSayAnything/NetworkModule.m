@@ -55,7 +55,7 @@ static NSString *const POST_URL         = @"/post/";
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             NSLog(@"%@",[responseDic objectForKey:@"key"]);
             
-            [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
+            [DataCenter setUserTokenWithStr:[responseDic objectForKey:@"key"]];
             completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
             
         } else {
@@ -93,7 +93,7 @@ static NSString *const POST_URL         = @"/post/";
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             NSLog(@"%@",[responseDic objectForKey:@"key"]);
 
-            [DataCenter sharedInstance].token = [responseDic objectForKey:@"key"];
+            [DataCenter setUserTokenWithStr:[responseDic objectForKey:@"key"]];
             completionBlock([responseDic objectForKey:@"key"]!=nil, responseDic);
 
         } else {
@@ -117,7 +117,7 @@ static NSString *const POST_URL         = @"/post/";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     // 헤더 세팅
-    [request addValue:[NSString stringWithFormat:@"token %@", [DataCenter sharedInstance].token] forHTTPHeaderField:@"Authorization"];
+    [request addValue:[NSString stringWithFormat:@"token %@", [DataCenter getUserToken]] forHTTPHeaderField:@"Authorization"];
 
     request.HTTPBody = [@"" dataUsingEncoding:NSUTF8StringEncoding];        // @"" 왜 넣어야하지?
     request.HTTPMethod = @"POST";
@@ -135,9 +135,9 @@ static NSString *const POST_URL         = @"/post/";
         if (error == nil) {
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
 
-            NSLog(@"로그아웃, token : %@", [DataCenter sharedInstance].token);
-            [DataCenter sharedInstance].token = nil;
-            NSLog(@"초기화 완료 -> token : %@", [DataCenter sharedInstance].token);
+            NSLog(@"로그아웃, token : %@", [DataCenter getUserToken]);
+            [DataCenter removeUserToken];
+            NSLog(@"초기화 완료 -> token : %@", [DataCenter getUserToken]);
             
             completionBlock(YES, responseDic);
             

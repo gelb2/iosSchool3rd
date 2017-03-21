@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *password1Tf;
 @property (weak, nonatomic) IBOutlet UITextField *password2Tf;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *signUpViewCenterYConstraint;
+
 @property (weak, nonatomic) IBOutlet UIView *indicatorView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
@@ -42,21 +44,33 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     NSLog(@"SignUp VC viewWillAppear");
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"SignUp VC viewDidAppear");
     
     [self initialSetting];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"SignUp VC viewDidAppear");
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    NSLog(@"SignUp VC viewWillDisappear");
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    NSLog(@"SignUp VC viewWillDisappear");
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     
+    NSLog(@"SignUp VC viewDidDisappear");
     [self initializeTextField];
-//    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    //    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 
@@ -64,23 +78,14 @@
 
 - (void)initialSetting {
     
-    self.view.userInteractionEnabled = YES;     // TextField 외부 터치 이벤트 받기 위한 설정
-    
     self.userNameTf.tag = 100;
     self.password1Tf.tag = 200;
     self.password2Tf.tag = 300;
     
     self.indicatorView.layer.cornerRadius = 5;
     
-    // constraint 주소 값이 매번 바뀌는 듯?    
-    for (NSLayoutConstraint *constraint in [self.view constraints]) {
-        if ([constraint.identifier isEqualToString:@"signUpViewCenterConstraint"]) {
-            [DataCenter sharedInstance].signUpViewCenterYConstraint = constraint;
-            break;
-        }
-    }
-    
     // 키보드 노티 설정
+    NSLog(@"SignUp VC 키보드 노티 설정");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillHideNotification object:nil];
 
@@ -89,7 +94,7 @@
 
 // 다른 곳 터치할 때, TextField First Responder 해제
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
+    [super touchesEnded:touches withEvent:event];
     
     UITouch *touch = [[event allTouches] anyObject];
     if ([self.lastFirstResponder isFirstResponder] && [touch view] != self.lastFirstResponder) {
@@ -111,9 +116,9 @@
     [NetworkModule signUpWithUsername:self.userNameTf.text withPassword1:self.password1Tf.text withPassword2:self.password2Tf.text completionBlock:^(BOOL isSuccess, NSDictionary *result) {
         
         if(isSuccess) {
-            NSLog(@"token : %@", [DataCenter sharedInstance].token);
+            NSLog(@"token : %@", [DataCenter getUserToken]);
 
-            dispatch_async(dispatch_get_main_queue(), ^{        // 이 부분 메인 스레드 돌여야 하는 이유?
+            dispatch_async(dispatch_get_main_queue(), ^{
 
                 // dismiss한 후 Login VC viewWillAppear에서 바로 Token 값 nil 체크해서, nil이 아닐시 main VC로 넘어가게 되어있음
                 [self dismissViewControllerAnimated:YES completion:nil];
@@ -171,15 +176,15 @@
     });
     
     
-    NSLog(@"%d, %f", !([DataCenter sharedInstance].signUpViewCenterYConstraint.constant == -[DataCenter sharedInstance].signUpViewMovingHeight), [DataCenter sharedInstance].signUpViewMovingHeight);
+    NSLog(@"%d, %f", !(self.signUpViewCenterYConstraint.constant == -[DataCenter sharedInstance].signUpViewMovingHeight), [DataCenter sharedInstance].signUpViewMovingHeight);
     
     // 키보드 노티에 따라 View 위 아래로 움직임
-    if([keyboardNoti.name isEqualToString:@"UIKeyboardWillShowNotification"] && !([DataCenter sharedInstance].signUpViewCenterYConstraint.constant == -[DataCenter sharedInstance].signUpViewMovingHeight)) {
+    if([keyboardNoti.name isEqualToString:@"UIKeyboardWillShowNotification"] && !(self.signUpViewCenterYConstraint.constant == -[DataCenter sharedInstance].signUpViewMovingHeight)) {
 
-        [DataCenter sharedInstance].signUpViewCenterYConstraint.constant = -[DataCenter sharedInstance].signUpViewMovingHeight;
+        self.signUpViewCenterYConstraint.constant = -[DataCenter sharedInstance].signUpViewMovingHeight;
         
     } else if([keyboardNoti.name isEqualToString:@"UIKeyboardWillHideNotification"]) {
-        [DataCenter sharedInstance].signUpViewCenterYConstraint.constant = 0;
+        self.signUpViewCenterYConstraint.constant = 0;
         
     }
     

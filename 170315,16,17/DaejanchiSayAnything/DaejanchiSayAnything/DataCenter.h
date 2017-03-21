@@ -17,13 +17,16 @@
 
 + (instancetype)sharedInstance;
 
-@property (nonatomic) NSString *token;
-
 @property (nonatomic) CGFloat logInViewMovingHeight;
-@property (weak, nonatomic) NSLayoutConstraint *logInViewCenterYConstraint;
-
 @property (nonatomic) CGFloat signUpViewMovingHeight;
-@property (weak, nonatomic) NSLayoutConstraint *signUpViewCenterYConstraint;
+
+
+
+#pragma mark - Token setter, getter, remover
+
++ (void)setUserTokenWithStr:(NSString *)tokenStr;
++ (NSString *)getUserToken;
++ (void)removeUserToken;
 
 @end
 

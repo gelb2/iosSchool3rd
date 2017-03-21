@@ -194,6 +194,7 @@
                         <outlet property="indicator" destination="skq-i5-oxx" id="1UT-Xo-M8a"/>
                         <outlet property="indicatorView" destination="HD4-f4-Rpa" id="UbL-B7-ghv"/>
                         <outlet property="logInView" destination="9Bx-GL-1vd" id="ob8-al-4kx"/>
+                        <outlet property="logInViewCenterYConstraint" destination="Oyl-zh-NUY" id="9yz-hO-ILV"/>
                         <outlet property="passwordTf" destination="lva-3P-ycS" id="o1r-Mk-cec"/>
                         <outlet property="userNameTf" destination="yyX-Lh-KUr" id="jDK-Ta-H4s"/>
                     </connections>
@@ -490,6 +491,7 @@
                         <outlet property="password1Tf" destination="ON6-3i-h2E" id="W2Z-Ep-WY3"/>
                         <outlet property="password2Tf" destination="8WO-FO-Cpb" id="Vag-3l-xdg"/>
                         <outlet property="signUpView" destination="hew-pG-OMN" id="Im5-Wd-2rD"/>
+                        <outlet property="signUpViewCenterYConstraint" destination="FLV-Wb-l8e" id="uec-1b-uba"/>
                         <outlet property="userNameTf" destination="oiW-4q-4ng" id="8vK-Mu-nzi"/>
                     </connections>
                 </viewController>
