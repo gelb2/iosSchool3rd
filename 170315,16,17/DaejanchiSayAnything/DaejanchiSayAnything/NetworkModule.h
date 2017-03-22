@@ -10,13 +10,40 @@
 
 @interface NetworkModule : NSObject
 
+
 // Sign Up
-+ (void)signUpWithUsername:(NSString *)username withPassword1:(NSString *)password1 withPassword2:(NSString *)password2 completionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
++ (void)signUpRequestWithUsername:(NSString *)username
+                    withPassword1:(NSString *)password1
+                    withPassword2:(NSString *)password2
+              withCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
 
 // Log In
-+ (void)logInWithUsername:(NSString *)username withPassword:(NSString *)password completionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
++ (void)logInRequestWithUsername:(NSString *)username
+                    withPassword:(NSString *)password
+             withCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
 
 // Log Out
-+ (void)logOutWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
++ (void)logOutRequestWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
+
+
+
+
+
+// Post Create
+- (void)postCreateRequestWithTitle:(NSString *)title
+                       withContent:(NSString *)content
+                           withImg:(NSData *)imageData
+               withCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
+
+// Post List
++ (void)postListRequestWithPage:(NSInteger)page
+            withCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
+
+
+// Post Retrieve
+- (void)postRetrieveRequestWithPostPK:(NSInteger)postPK
+                  withCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary* result))completionBlock;
+
+
 
 @end

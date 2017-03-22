@@ -109,15 +109,11 @@
 		3F56AEBD1E7A5E18004B8F26 /* DaejanchiSayAnything */ = {
 			isa = PBXGroup;
 			children = (
-				3F008C091E7A797B006F6889 /* Imges */,
-				3F56AEC11E7A5E18004B8F26 /* AppDelegate.h */,
-				3F56AEC21E7A5E18004B8F26 /* AppDelegate.m */,
-				3F56AED91E7A62E5004B8F26 /* DataCenter.h */,
-				3F56AEDA1E7A62E5004B8F26 /* DataCenter.m */,
-				3F008C061E7A66AE006F6889 /* NetworkModule.h */,
-				3F008C071E7A66AE006F6889 /* NetworkModule.m */,
+				3FF5F7F61E82152100A20C71 /* AppDelegate */,
+				3FF5F7F71E82157100A20C71 /* Model */,
+				3FF5F7F81E82159A00A20C71 /* NetworkModule */,
 				3F008C1B1E7ACF2B006F6889 /* ViewController */,
-				3F56AEC71E7A5E18004B8F26 /* Main.storyboard */,
+				3FF5F7F91E8215F900A20C71 /* View */,
 				3F56AEBE1E7A5E18004B8F26 /* Supporting Files */,
 			);
 			path = DaejanchiSayAnything;
@@ -126,12 +122,48 @@
 		3F56AEBE1E7A5E18004B8F26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F008C091E7A797B006F6889 /* Imges */,
 				3F56AECA1E7A5E18004B8F26 /* Assets.xcassets */,
-				3F56AECC1E7A5E18004B8F26 /* LaunchScreen.storyboard */,
 				3F56AECF1E7A5E18004B8F26 /* Info.plist */,
 				3F56AEBF1E7A5E18004B8F26 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FF5F7F61E82152100A20C71 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3F56AEC11E7A5E18004B8F26 /* AppDelegate.h */,
+				3F56AEC21E7A5E18004B8F26 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3FF5F7F71E82157100A20C71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F56AED91E7A62E5004B8F26 /* DataCenter.h */,
+				3F56AEDA1E7A62E5004B8F26 /* DataCenter.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3FF5F7F81E82159A00A20C71 /* NetworkModule */ = {
+			isa = PBXGroup;
+			children = (
+				3F008C061E7A66AE006F6889 /* NetworkModule.h */,
+				3F008C071E7A66AE006F6889 /* NetworkModule.m */,
+			);
+			name = NetworkModule;
+			sourceTree = "<group>";
+		};
+		3FF5F7F91E8215F900A20C71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F56AEC71E7A5E18004B8F26 /* Main.storyboard */,
+				3F56AECC1E7A5E18004B8F26 /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		D3E77894A69F5E5E5F0DEA2F /* Frameworks */ = {

@@ -35,8 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"SignUp VC viewDidLoad");    
-
+    NSLog(@"SignUp VC viewDidLoad");
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +48,7 @@
     [super viewWillAppear:animated];
     
     NSLog(@"SignUp VC viewWillAppear");
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -90,13 +90,11 @@
     [self.password2Tf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
     
     
-    self.indicatorView.layer.cornerRadius = 5;
-    
     // 키보드 노티 설정
     NSLog(@"SignUp VC 키보드 노티 설정");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNoti:) name:UIKeyboardWillHideNotification object:nil];
-
+    
 }
 
 
@@ -122,34 +120,37 @@
     [self.indicator startAnimating];
     [self.indicatorView setHidden:NO];
     
-    [NetworkModule signUpWithUsername:self.userNameTf.text withPassword1:self.password1Tf.text withPassword2:self.password2Tf.text completionBlock:^(BOOL isSuccess, NSDictionary *result) {
-        
-        if(isSuccess) {
-            NSLog(@"token : %@", [DataCenter getUserToken]);
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                // dismiss한 후 Login VC viewWillAppear에서 바로 Token 값 nil 체크해서, nil이 아닐시 main VC로 넘어가게 되어있음
-                [self dismissViewControllerAnimated:YES completion:nil];
-            
-                [self.indicatorView setHidden:YES];
-                [self.indicator stopAnimating];
-                
-            });
-            
-        } else {
-            NSLog(@"%@", result);
-            
-            self.password1Tf.text = nil;
-            self.password2Tf.text = nil;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-            
-                [self.indicatorView setHidden:YES];
-                [self.indicator stopAnimating];
-            });
-        }
-    }];
+    [NetworkModule signUpRequestWithUsername:self.userNameTf.text
+                               withPassword1:self.password1Tf.text
+                               withPassword2:self.password2Tf.text
+                         withCompletionBlock:^(BOOL isSuccess, NSDictionary *result) {
+                             
+                             if(isSuccess) {
+                                 NSLog(@"token : %@", [DataCenter getUserToken]);
+                                 
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     
+                                     // dismiss한 후 Login VC viewWillAppear에서 바로 Token 값 nil 체크해서, nil이 아닐시 main VC로 넘어가게 되어있음
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                     [self.indicatorView setHidden:YES];
+                                     [self.indicator stopAnimating];
+                                     
+                                 });
+                                 
+                             } else {
+                                 NSLog(@"%@", result);
+                                 
+                                 self.password1Tf.text = nil;
+                                 self.password2Tf.text = nil;
+                                 
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     
+                                     [self.indicatorView setHidden:YES];
+                                     [self.indicator stopAnimating];
+                                 });
+                             }
+                         }];
 }
 
 - (IBAction)cancelBtnAction:(id)sender {
@@ -190,7 +191,7 @@
     
     // 키보드 노티에 따라 View 위 아래로 움직임
     if([keyboardNoti.name isEqualToString:@"UIKeyboardWillShowNotification"] && !(self.signUpViewCenterYConstraint.constant == -[DataCenter sharedInstance].signUpViewMovingHeight)) {
-
+        
         self.signUpViewCenterYConstraint.constant = -[DataCenter sharedInstance].signUpViewMovingHeight;
         
     } else if([keyboardNoti.name isEqualToString:@"UIKeyboardWillHideNotification"]) {
@@ -214,7 +215,7 @@
 
 - (void)changeTextFieldText:(UITextField *)sender {
     NSLog(@"@selector, changeTextFieldText");
-
+    
     
     if ([self.password2Tf.text isEqualToString:@""] || [self.password1Tf.text isEqualToString:@""] || [self.userNameTf.text isEqualToString:@""]) {
         [self.doneBtn setEnabled:NO];

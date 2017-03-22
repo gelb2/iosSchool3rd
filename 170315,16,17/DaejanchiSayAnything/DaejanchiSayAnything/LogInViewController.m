@@ -107,7 +107,6 @@
     [self.userNameTf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordTf addTarget:self action:@selector(changeTextFieldText:) forControlEvents:UIControlEventEditingChanged];
     
-    self.indicatorView.layer.cornerRadius = 5;
 }
 
 
@@ -134,7 +133,9 @@
     [self.indicator startAnimating];
     [self.indicatorView setHidden:NO];
     
-    [NetworkModule logInWithUsername:self.userNameTf.text withPassword:self.passwordTf.text completionBlock:^(BOOL isSuccess, NSDictionary* result) {
+    [NetworkModule logInRequestWithUsername:self.userNameTf.text
+                               withPassword:self.passwordTf.text
+                        withCompletionBlock:^(BOOL isSuccess, NSDictionary* result) {
         
         if(isSuccess) {
             NSLog(@"token : %@", [DataCenter getUserToken]);

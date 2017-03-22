@@ -70,7 +70,8 @@
 #pragma mark - 초기 세팅 관련
 
 - (void)initialSetting {
-    self.indicatorView.layer.cornerRadius = 5;
+    
+
 }
 
 //----------------- UIButton 관련 -----------------//
@@ -81,7 +82,7 @@
     [self.indicator startAnimating];
     [self.indicatorView setHidden:NO];
     
-    [NetworkModule logOutWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result) {
+    [NetworkModule logOutRequestWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result) {
 
         if(isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
