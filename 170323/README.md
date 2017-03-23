@@ -8,8 +8,9 @@
 - segue의 시작점은 button, tableView의 row, gesture등으로 시작하며 끝점은 진행될 다음 ViewController입니다.  
 - segue는 일반적으로 다음 ViewController로 진행되는 것을 가르키나, unwind segue를 통해 ViewController를 닫는 역할도 할 수 있습니다.
 
-### Modifying a Segue’s Behavior at Runtime  
-![Modifying a Segue’s Behavior at Runtime] (https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/Art/VCPG_displaying-view-controller-using-segue_9-4_2x.png)
+### Modifying a Segue’s Behavior at Runtime    
+
+  ![Modifying a Segue’s Behavior at Runtime](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/Art/VCPG_displaying-view-controller-using-segue_9-4_2x.png)  
 
 
 
