@@ -48,3 +48,7 @@
     NSLog(@"device");  
 #endif  
 ```  
+
+
+### 번외
+- UIColletionView로 CoverFlow 만들기
