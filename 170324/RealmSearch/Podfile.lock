@@ -1,0 +1,17 @@
+PODS:
+  - ABFRealmSearchViewController (2.2.1):
+    - Realm (>= 0.100.0)
+  - Realm (2.5.0):
+    - Realm/Headers (= 2.5.0)
+  - Realm/Headers (2.5.0)
+
+DEPENDENCIES:
+  - ABFRealmSearchViewController
+
+SPEC CHECKSUMS:
+  ABFRealmSearchViewController: 3d30a178972a723f8edef8af9e0b74e4ef9a5d4b
+  Realm: 62abce501668580092d2be9b6ba7324a3d5f906a
+
+PODFILE CHECKSUM: d14d906d9c11d496c00c6d85bd80dd4e1788839e
+
+COCOAPODS: 1.2.0.beta.1
