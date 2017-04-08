@@ -1,8 +1,7 @@
 # FastCampus - iOS SCHOOL 3rd  
-> 2017.01.09~  
+#### 17.01.09~  
 
-## 강의
-> 2017.01.09 ~ 2017.03.24  
+## 강의 (17.01.09 ~ 17.03.24)  
 ### 1주차  
 - [170109 - 1일차 과제 : 프로그래밍 언어별 Hello, World!](https://github.com/fastcampus-school/computer_basic_assignment_171q/blob/master/170109/Jeheonjeol/LanguageHelloWorld.md)
 - [170110 - 2일차 과제 : RAM, 한글 인코딩 방식 조사](https://github.com/fastcampus-school/computer_basic_assignment_171q/tree/master/170110/i.jeheon.choi)
@@ -68,8 +67,7 @@
 - [170323 - Segue, 기기별 Size Class](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170323)
 - [170324 - UISearchController, Project Setting(Precompiled Header, Preprocessor Macros)](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170324)
 
-## Team Project  
-> 2017.03.27 ~  
+## Team Project (17.03.27 ~  )  
 ### 내가 아끼는 곳, 나만의 지도 [MOMO](https://github.com/iOSTeam4/Momo)
 
 
