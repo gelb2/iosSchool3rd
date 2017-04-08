@@ -1,5 +1,5 @@
 # FastCampus - iOS SCHOOL 3rd  
-#### 2017.01.09~
+#### 2017.01.09~  
 
 
 ## 1주차  
@@ -16,45 +16,54 @@
 - [170120 - init메소드, 테스트](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170120)
 
 ## 3주차  
-- [170123](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170123)
+- [170123 - Objective-C Class File, #import VS @class](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170123)  
 
 ## 4주차  
-- [170131](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170131)
-- [170201](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170201)
-- [170202](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170202)
-- [170203](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170203)
+- [170131 - 리뷰, Switch문](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170131)
+- [170201 - 연습문제 풀기(D-Day구하기 등), 반복문(for, while)](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170201)
+- [170202 - iOS 구조 파악, UI Base Guide](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170202)
+- [170203 - UIView, UIImageView, UIImage, UILabel, UIFont, UIButton](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170203)
 
 ## 5주차  
-- [170206](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170206)
-- [170207](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170207)
-- [170208](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170208)
-- [170209](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170209)
-- [170210](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170210)
+- [170205 - 자판기 과제 Pokemon-Back](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170205)
+- [170206 - UIButton, UITextFiled, Delegate Protocol](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170206)
+- [170207 - UIScrollView, UIPageControl, UISwitch](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170207)
+- [170208 - 자료구조1 포인터, 메모리구조, struct, Array, Dictionary, json](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170208)
+- [170209 - 자료구조2 for-in, 스택&큐, 정렬 알고리즘](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170209)
+- [170210 - Property, ARC (Automatic Reference Counting)](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170210)
 
 ## 6주차  
-- [170213](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170213)
-- [170215](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170215)
-- [170216](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170216)
-- [170217](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170217)
+- [170213 - Application Life Cycle](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170213)
+- [170215 - UITableView 기초](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170215)
+- [170216 - UITableView 활용](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170216)
+- [170217 - UITableView (CustomUITableViewCell)](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170217)
 
 
 ## 7주차  
-- [170219](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170219)
-- [170220](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170220)
-- [170221](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170221)
-- [170223](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170223)
-- [170224](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170224)
+- [170219 - UITableView 과제 - AT Copy App](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170219)
+- [170220 - UIViewController](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170220)
+- [170221 - NavigationController, TabBarController](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170221)
+- [170223 - Singleton, NSUserDefault](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170223)
+- [170224 - Notification](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170224)
 
 ## 8주차  
-- [170227](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170227)
-- [170228](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170228)
-- [170302](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170302)
-- [170303](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170303)
+- [170227 - Storyboard AutoLayout](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170227)
+- [170228 - Storyboard StackView AutoLayout](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170228)
+- [170302 - UIAlertController, UIGestureRecognizer](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170302)
+- [170303 - Data 저장 (Bundle & Documents plist)](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170303)
 
 ## 9주차  
-- [170306](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170306)
-- [170307 - 기기테스트, MapKit](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170307)
+- [170306 - typedef, const, enum, option, macro](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170306) 
+- [170307 - 기기테스트, MapKit](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170307)  
+- [170308~09 - 해커톤(PingPong)](https://github.com/Jeheonjeol/CoupleMissionAPP)  
 - [170310 - Block](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170310)  
 
 ## 10주차
 - [170313 - Thread](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170313)
+- [170315~17 - Network](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170315%2C16%2C17)
+
+## 11주차
+- [170320 - Category, Class Extensions, UIAnimation](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170320)
+- [170323 - Segue, 기기별 Size Class](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170323)
+- [170324 - UISearchController, Project Setting(Precompiled Header, Preprocessor Macros) ](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170324)
+
