@@ -1,8 +1,8 @@
-####2017.02.09 - #21 (5주차 4번째 수업)
+#### 2017.02.09 - #21 (5주차 4번째 수업)
 
-#자료구조 2
+# 자료구조 2
 
-##for-in
+## for-in
 ```objc
 for (<type *object> in <collection>) {
     <statements>
@@ -21,15 +21,15 @@ for (NSString *k in dic1)
 ```
 
 
-##처음부터? 마지막부터? (스택 & 큐)  
-###스택 (Stack)
+## 처음부터? 마지막부터? (스택 & 큐)  
+### 스택 (Stack)
 
-###큐 (Queue)  
+### 큐 (Queue)  
 
 
-##정렬 알고리즘  
-###1. 단순 비효율 정렬 : O(n^2)  
-####selection sort (선택 정렬)    
+## 정렬 알고리즘  
+### 1. 단순 비효율 정렬 : O(n^2)  
+#### selection sort (선택 정렬)    
 
 ```objc
 - (NSMutableArray *)selectionSortWithArr:(NSMutableArray *)arr
@@ -50,8 +50,8 @@ for (NSString *k in dic1)
 }
 ```  
 
-####insertion sort (삽입 정렬)  
-####bubble sort (버블 정렬)  
+#### insertion sort (삽입 정렬)  
+#### bubble sort (버블 정렬)  
 ```objc
 - (NSMutableArray *)bubbleSortWithArr:(NSMutableArray *)arr
 {
@@ -67,13 +67,13 @@ for (NSString *k in dic1)
 }
 ```
 
-###2. 복잡 효율 정렬  
-####merge sort (합병 정렬)  
-####quick sort (퀵 정렬)  
-####heap sort (힙 정렬)  
-####radix sort (기수 정렬)  
+### 2. 복잡 효율 정렬  
+#### merge sort (합병 정렬)  
+#### quick sort (퀵 정렬)  
+#### heap sort (힙 정렬)  
+#### radix sort (기수 정렬)  
 
-##알고리즘 복잡도
+## 알고리즘 복잡도
 - 가장 최악의 경우 걸리는 시간  
 - big O 표기법으로 표시  
 
