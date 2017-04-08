@@ -17,25 +17,20 @@
       ```  
   - Singleton.m
     
-      ```objc
-
-      @implementation Singleton
-
+      ```objc  
+      @implementation Singleton  
+      
       + (instancetype)sharedInstance {
-    
-            static Singleton *singleton = nil;
-    
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                singleton = [[self alloc] init];
-            });
-    
-            return singleton;
-      }
-
-      @end
-
-      ```
+          static Singleton *singleton = nil;
+      
+          static dispatch_once_t onceToken;  
+          dispatch_once(&onceToken, ^{  
+              singleton = [[self alloc] init];  
+          });  
+          return singleton;  
+      }  
+      @end   
+      ```  
 
 
 ## NSUserDefault  
