@@ -1,10 +1,10 @@
-####2017.02.13 - #23 (6주차 1번째 수업)
+#### 2017.02.13 - #23 (6주차 1번째 수업)
 
 ## 알고리즘 문제
-####Q.  
+#### Q.  
 TextField로 입력받은 숫자가 Harshad Number인지 아닌지 알아내기 (Harshad Number : 숫자 / 각자릿수 합 = 정수)
 
-####A.  
+#### A.  
 ```objc
 // Integer Version
 - (BOOL)algorithmWithNum:(NSInteger)num
@@ -43,4 +43,7 @@ TextField로 입력받은 숫자가 Harshad Number인지 아닌지 알아내기 
 ```
 
 ## Application Life Cycle
+> [apple docu - The App Life Cycle](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html)  
+
+![iOS Application Life Cycle](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Art/core_objects_2x.png)
 
