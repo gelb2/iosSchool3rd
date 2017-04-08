@@ -1,4 +1,4 @@
-####2017.03.07 - #36 (9주차 2번째 수업)
+#### 2017.03.07 - #36 (9주차 2번째 수업)
 
 ## 기기테스트  
 - [[블로그] Developer Program 기기테스트 방법](http://lab.anybuild.co.kr/page/basic_app2)
