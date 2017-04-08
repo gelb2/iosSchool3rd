@@ -1,4 +1,4 @@
-####2017.03.13 - #38 (10주차 1번째 수업)
+#### 2017.03.13 - #38 (10주차 1번째 수업)
 
 ## Thread
 - 스레드(thread)는 어떠한 프로그램 내에서, 특히 **프로세스 내에서 실행되는 흐름의 단위를 말한다.** 일반적으로 한 프로그램은 하나의 스레드를 가지고 있지만, 프로그램 환경에 따라 둘 이상의 스레드를 동시에 실행할 수 있다. 이러한 실행 방식을 멀티스레드(multithread)라고 한다.   
@@ -10,7 +10,7 @@
 - 기본적인 UI 및 모든 행동은 main thread에서 실행된다.
 
 
-##Multi Thread?
+## Multi Thread?
 - When is use
   - 동시에 작업이 필요한 경우
   - Multi core process를 사용하기 위해
@@ -38,7 +38,7 @@
 
   
   
-###iOS MultiThread방법  
+### iOS MultiThread방법  
 - NSThread : 직접 thread를 만들어서 제어 하는 방식
 - GCD : Block기반의 기법으로 코드 가독성이 좋고 간편하다.
 - NSOperation : GCD기반의 rapper Class. 간단하게 사용가능하고 고수준의 API를 제공한다. 성능이 느린편
@@ -46,7 +46,7 @@
 - NSTimer : 간단한 interval Notification를 제공해 주는 Class. 특이하게도 NSTimer는 mainLoop에서 실행된다.
 
 
-##NSThread
+## NSThread
 - main thread 외 다른 스레드를 만드는 클래스
 - UI는 절대 추가 Thread에서 실행시키면 안된다.
 - Selector로 실행된 Method가 종료후 자연스럽게 Thread도 종료 된다.
@@ -95,7 +95,7 @@
 
 
 
-##GCD(Grand Central Dispatch)
+## GCD(Grand Central Dispatch)
 - 비동기로 작업을 수행시키는 강력하고 쉬운 방법이다.
 - 멀티코어 프로세서에서 최적화 되어 작동 된다.
 - dispatch queue를 이용해 작업들을 컨트롤 한다.
