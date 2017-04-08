@@ -56,14 +56,14 @@
 - [170306 - typedef, const, enum, option, macro](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170306) 
 - [170307 - 기기테스트, MapKit](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170307)  
 - [170308~09 - 해커톤(PingPong)](https://github.com/Jeheonjeol/CoupleMissionAPP)  
-- [170310 - Block](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170310)  
+- [170310 - Block객체](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170310)  
 
 ## 10주차
-- [170313 - Thread](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170313)
+- [170313 - Thread(NSThread, GCD(Grand Central Dispatch))](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170313)
 - [170315~17 - Network](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170315%2C16%2C17)
 
 ## 11주차
 - [170320 - Category, Class Extensions, UIAnimation](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170320)
 - [170323 - Segue, 기기별 Size Class](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170323)
-- [170324 - UISearchController, Project Setting(Precompiled Header, Preprocessor Macros) ](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170324)
+- [170324 - UISearchController, Project Setting(Precompiled Header, Preprocessor Macros)](https://github.com/Jeheonjeol/iosSchool3rd/tree/master/170324)
 
