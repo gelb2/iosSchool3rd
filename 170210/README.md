@@ -1,8 +1,8 @@
-####2017.02.10 - #22 (5주차 5번째 수업)
+#### 2017.02.10 - #22 (5주차 5번째 수업)
 
-##Property
+## Property
 
-##ARC (Automatic Reference Counting)
+## ARC (Automatic Reference Counting)
 
 
 - 예외상황 : NSString weak 프로퍼티에 리터럴로 값을 넣으면 null이 아니다. -> String Literal은 Data 영역에 생성된다.  
