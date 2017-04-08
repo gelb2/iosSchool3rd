@@ -33,7 +33,7 @@
 ```
 
 
-## NavigationBar
+## NavigationBar (NavigationController)
 - NavigationBar의 Frame 변경이 불가능  
 - 높이 64pt로 고정..(상태바 20pt, 네비바 44pt)
 
@@ -42,7 +42,7 @@
 - 기본 옵션은 hidden이다.
 
 
-## TabBarController  
+## TabBar (TabBarController)  
 - 이 역시 Frame 변경 불가..
 - 높이 49pt 고정
 - item 5개까지 표시 가능 (5개 넘어가면 자동으로 ...More로 표현됨)
